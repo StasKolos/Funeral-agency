@@ -1,0 +1,76 @@
+.wrapper {
+    position: relative;
+    background-color: #ebc880;
+    color: #000000;
+}
+
+.items {
+    padding: 20px 20px 40px 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    overflow-x: auto;
+    opacity: 0;
+  
+    &.animated {
+        animation: var(--fadeInWithScale-animation) 0.6s ease-out forwards;
+    }
+
+    @media (max-width: 500px) {
+        gap: 20px;
+    }
+
+    &::-webkit-scrollbar {
+        height: 6px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #000000;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #ffffff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+
+.item {
+    position: relative;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3%);
+    }
+}
+
+.image {
+    box-shadow: 0px 2px 4px -2px #0000001A, 0px 4px 6px -1px #0000001A;
+    border-radius: 8px;
+
+    @media (max-width: 1000px) {
+        width: 300px;
+        height: 190px;
+    }
+
+    @media (max-width: 700px) {
+        width: 200px;
+        height: 130px;
+    }
+
+    @media (max-width: 500px) {
+        width: 140px;
+        height: 90px;
+    }
+}
+
+.tap-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

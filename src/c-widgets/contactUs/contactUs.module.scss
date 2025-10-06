@@ -1,0 +1,47 @@
+.wrapper {
+    background-color: #e4e4e4;
+    color: #000000;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 1.25rem;
+}
+
+.main-info {
+    text-align: center;
+}
+
+.phone-info, .address-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+        font-style: italic;
+    }
+}
+
+.phone-link, .address-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+.schedule-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+        &:last-child {
+            font-style: italic;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.wrapper {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: #e4e4e4;
+    color: #000000;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+}
