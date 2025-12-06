@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { ToastContainer } from 'react-toastify';
-import '../style.scss';
+import './style.scss';
 
 export const metadata: Metadata = {
     title: 'Грань ДВ',
