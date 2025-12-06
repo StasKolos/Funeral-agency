@@ -2,13 +2,50 @@
 
 import { examplesItems } from '@/d-shared/data/examplesItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import clsx from 'clsx';
 import Image from 'next/image';
-import Link from 'next/link';
 import s from './examples.module.scss';
 
 const Examples = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
+
+    const openImageGallery = (index: number) => {
+        const reworkeditems = examplesItems.map(item => ({
+            src: item.src,
+            type: 'image',
+            caption: item.alt,
+        }));
+
+        Fancybox.show(reworkeditems, {
+            startIndex: index,
+            Carousel: {
+                Thumbs: {
+                    type: 'classic',
+                },
+                Zoomable: {
+                    Panzoom: {
+                        startPos: {
+                            x: 0,
+                            y: 0,
+                            scale: 0.8,
+                        },
+                        minScale: 0.5,
+                        maxScale: 2,
+                    },
+                },
+                Toolbar: {
+                    enabled: true,
+                    display: {
+                        left: [ 'infobar' ],
+                        middle: [],
+                        right: [ 'zoomIn', 'zoomOut', 'toggle1to1', 'thumbs', 'close' ],
+                    },
+                },
+            },
+        });
+    };
 
     return (
         <section className={clsx('section-wrapper', s['wrapper'])}>
@@ -26,9 +63,10 @@ const Examples = () => {
                     ref={listRef}
                 >
                     {
-                        examplesItems.map(item => (
+                        examplesItems.map((item, index) => (
                             <li
-                                key={item.id}
+                                key={index}
+                                onClick={() => openImageGallery(index)}
                                 className={s['item']}
                             >
                                 <Image
@@ -38,17 +76,13 @@ const Examples = () => {
                                     alt={'Иконка клик по кнопке'}
                                     className={s['tap-icon']}
                                 />
-                                <Link
-                                    href={`examples-gallery/${item.id}`}
-                                >
-                                    <Image
-                                        width={400}
-                                        height={260}
-                                        src={item.src}
-                                        alt={item.alt}
-                                        className={s['image']}
-                                    />
-                                </Link>
+                                <Image
+                                    width={400}
+                                    height={260}
+                                    src={item.src}
+                                    alt={item.alt}
+                                    className={s['image']}
+                                />
                             </li>
                         ))
                     }

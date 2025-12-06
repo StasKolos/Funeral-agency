@@ -1,98 +1,100 @@
 export interface ExamplesItem {
-    id: string;
     src: string;
     alt: string;
 }
 
 export const examplesItems: ExamplesItem[] = [
     {
-        id: '1',
         src: '/examples-1.png',
-        alt: 'Перва фотка работы',
+        alt: '1 фотка работы',
     },
     {
-        id: '2',
         src: '/examples-2.png',
-        alt: 'Вторая фотка работы',
+        alt: '2 фотка работы',
     },
     {
-        id: '3',
         src: '/examples-3.png',
-        alt: 'Третья фотка работы',
+        alt: '3 фотка работы',
     },
     {
-        id: '4',
         src: '/examples-4.png',
-        alt: 'Четвёртая фотка работы',
+        alt: '4 фотка работы',
     },
     {
-        id: '5',
         src: '/examples-5.png',
-        alt: 'Пятая фотка работы',
+        alt: '5 фотка работы',
     },
     {
-        id: '6',
         src: '/examples-6.png',
-        alt: 'Шестая фотка работы',
+        alt: '6 фотка работы',
     },
     {
-        id: '7',
         src: '/examples-7.png',
-        alt: 'Седьмая фотка работы',
+        alt: '7 фотка работы',
     },
     {
-        id: '8',
         src: '/examples-8.png',
-        alt: 'Перва фотка работы',
+        alt: '8 фотка работы',
     },
     {
-        id: '9',
         src: '/examples-9.png',
-        alt: 'Вторая фотка работы',
+        alt: '9 фотка работы',
     },
     {
-        id: '10',
         src: '/examples-10.png',
-        alt: 'Вторая фотка работы',
+        alt: '10 фотка работы',
     },
     {
-        id: '11',
         src: '/examples-11.png',
-        alt: 'Вторая фотка работы',
+        alt: '11 фотка работы',
     },
     {
-        id: '12',
         src: '/examples-12.png',
-        alt: 'Вторая фотка работы',
+        alt: '12 фотка работы',
     },
     {
-        id: '13',
         src: '/examples-13.png',
-        alt: 'Вторая фотка работы',
+        alt: '13 фотка работы',
     },
     {
-        id: '14',
         src: '/examples-14.png',
-        alt: 'Вторая фотка работы',
+        alt: '14 фотка работы',
     },
     {
-        id: '15',
         src: '/examples-15.png',
-        alt: 'Вторая фотка работы',
+        alt: '15 фотка работы',
     },
     {
-        id: '16',
         src: '/examples-16.png',
-        alt: 'Вторая фотка работы',
+        alt: '16 фотка работы',
     },
     {
-        id: '17',
         src: '/examples-17.png',
-        alt: 'Вторая фотка работы',
+        alt: '17 фотка работы',
     },
     {
-        id: '18',
         src: '/examples-18.png',
-        alt: 'Вторая фотка работы',
+        alt: '18 фотка работы',
+    },
+    {
+        src: '/examples-19.png',
+        alt: '19 фотка работы',
+    },
+    {
+        src: '/examples-20.png',
+        alt: '20 фотка работы',
+    },
+    {
+        src: '/examples-21.png',
+        alt: '21 фотка работы',
+    },
+    {
+        src: '/examples-22.png',
+        alt: '22 фотка работы',
+    },
+    {
+
+        src: '/examples-23.png',
+        alt: '23 фотка работы',
     },
 ];

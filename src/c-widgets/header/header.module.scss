@@ -31,14 +31,14 @@
 
 .desktop-logo {
     position: absolute;
-    top: -70px;
+    top: -100px;
     left: 0;
     z-index: 400;
     transition: top 0.3s ease;
     
     &:hover {
         cursor: pointer;
-        top: -100px;
+        top: -120px;
     }
 
     @media (max-width: 700px) {
