@@ -18,28 +18,28 @@ const Footer = () => (
                     </li>
                     <li>
                         <Link
-                            href={'/services'}
+                            href={'/services#FuneralServices'}
                         >
                             Услуги
                         </Link>
                     </li>
                     <li>
                         <Link
-                            href={'/products'}
+                            href={'/products#Products'}
                         >
                             Товары
                         </Link>
                     </li>
                     <li>
                         <Link
-                            href={'/contacts'}
+                            href={'/contacts#ContactUs'}
                         >
                             Контакты
                         </Link>
                     </li>
                     <li>
                         <Link
-                            href={'/about'}
+                            href={'/about#AboutUs'}
                         >
                             О нас
                         </Link>

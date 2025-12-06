@@ -53,7 +53,7 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <Link
-                                href={'/services'}
+                                href={'/services#FuneralServices'}
                                 onClick={handleCloseSidebar}
                             >
                                 Услуги
@@ -61,7 +61,7 @@ const Sidebar = () => {
                         </li>
                         <li>
                             <Link
-                                href={'/products'}
+                                href={'/products#Products'}
                                 onClick={handleCloseSidebar}
                             >
                                 Товары
