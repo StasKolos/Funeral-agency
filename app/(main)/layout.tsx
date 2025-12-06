@@ -1,4 +1,5 @@
 import ContentLayout from '@/c-widgets/contentLayout/contentLayout';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { PropsWithChildren } from 'react';
@@ -19,6 +20,7 @@ const montserrat = Montserrat({
 const RootLayout = ({ children }: PropsWithChildren) => (
     <html lang={'ru'}>
         <body className={montserrat.className}>
+            <SpeedInsights/>
             <ToastContainer
                 position={'bottom-right'}
                 autoClose={5000}
