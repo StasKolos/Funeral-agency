@@ -14,14 +14,14 @@ const Header = () => (
                     width={120}
                     height={240}
                     src={'desktop-logo.svg'}
-                    alt={'Логотип Ритуальные услуги'}
+                    alt={'Логотип Грань ДВ'}
                     className={s['desktop-logo']}
                 />
                 <Image
                     width={80}
                     height={80}
                     src={'mobile-logo.svg'}
-                    alt={'Логотип Ритуальные услуги'}
+                    alt={'Логотип Грань ДВ'}
                     className={s['mobile-logo']}
                 />
             </Link>

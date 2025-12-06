@@ -1,41 +1,14 @@
 'use client';
 
 import { examplesItems } from '@/d-shared/data/examplesItems';
+import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import s from './examples.module.scss';
-import { useEffect, useRef } from 'react';
 
 const Examples = () => {
-    const listRef = useRef<HTMLUListElement | null>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(s['animated']);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px',
-            },
-        );
-
-        if (listRef.current) {
-            observer.observe(listRef.current);
-        }
-
-        return () => {
-            if (listRef.current) {
-                observer.unobserve(listRef.current);
-            }
-        };
-    }, []);
+    const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
         <section className={classNames('section-wrapper', s['wrapper'])}>

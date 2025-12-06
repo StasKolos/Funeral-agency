@@ -1,40 +1,13 @@
 'use client';
 
 import { cremationItems } from '@/d-shared/data/cremationItems';
+import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 import s from './cremationServices.module.scss';
 
 const CremationServices = () => {
-    const listRef = useRef<HTMLUListElement | null>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(s['animated']);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.2,
-                rootMargin: '0px 0px -50px 0px',
-            },
-        );
-
-        if (listRef.current) {
-            observer.observe(listRef.current);
-        }
-
-        return () => {
-            if (listRef.current) {
-                observer.unobserve(listRef.current);
-            }
-        };
-    }, []);
+    const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
         <section id={'CremationServices'} className={classNames('section-wrapper', s['wrapper'])}>

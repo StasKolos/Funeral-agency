@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import '../style.scss';
 
 export const metadata: Metadata = {
-    title: 'Ритуальные услуги',
+    title: 'Грань ДВ',
     description: 'Организация захоронений, оказание ритуальных услуг, продажа ритуальных товаров',
 };
 

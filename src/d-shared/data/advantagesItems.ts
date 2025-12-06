@@ -33,7 +33,7 @@ export const advantagesItems = [
     },
     {
         header: 'Индивидуальный подход',
-        text: 'учитываем все пожелания семьи',
+        text: 'учитываем все пожелания родственников',
         img: {
             src: 'advantages-5.svg',
             alt: 'Иконка рукопожатие',

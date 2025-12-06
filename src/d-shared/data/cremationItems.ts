@@ -3,7 +3,7 @@ export const cremationItems = [
         name: 'Бесплатная',
         free: 'Бесплатно',
         img: {
-            src: 'services-1.svg',
+            src: 'cremation-1.svg',
             alt: 'Иконка похороны',
         },
         list: [ 'за счёт государства' ],
@@ -12,7 +12,7 @@ export const cremationItems = [
         name: 'Платная',
         cost: '30 000',
         img: {
-            src: 'services-2.svg',
+            src: 'cremation-2.svg',
             alt: 'Иконка похороны',
         },
         list: [ 'платная кремация', 'гроб', 'урна', 'катафалк', 'бригада', 'копка могилы под урну', 'оформление документов' ],
