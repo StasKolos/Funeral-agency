@@ -2,7 +2,7 @@
 
 import { advantagesItems } from '@/d-shared/data/advantagesItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import s from './advantages.module.scss';
 
@@ -10,8 +10,8 @@ const Advantages = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
-        <section className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>Приемущества</p>
                     <h2>Почему выбирают именно нас</h2>

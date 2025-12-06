@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -91,7 +91,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
     return (
         <>
             <section
-                className={classNames(s['modal'], {
+                className={clsx(s['modal'], {
                     [s['modal-is-closed']]: !isOpen,
                 })}
             >
@@ -105,7 +105,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <div
-                        className={classNames(s['full-name-field'], s['field'], {
+                        className={clsx(s['full-name-field'], s['field'], {
                             [s['field-filled']]: isFieldFilled('fullName'),
                         })}
                     >
@@ -129,7 +129,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                         }
                     </div>
                     <div
-                        className={classNames(s['email-field'], s['field'], {
+                        className={clsx(s['email-field'], s['field'], {
                             [s['field-filled']]: isFieldFilled('email'),
                         })}
                     >
@@ -153,7 +153,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                         }
                     </div>
                     <div
-                        className={classNames(s['phone-number-field'], s['field'], {
+                        className={clsx(s['phone-number-field'], s['field'], {
                             [s['field-filled']]: isFieldFilled('phoneNumber'),
                         })}
                     >
@@ -177,7 +177,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                         }
                     </div>
                     <div
-                        className={classNames(s['question-field'], s['field'], {
+                        className={clsx(s['question-field'], s['field'], {
                             [s['field-filled']]: isFieldFilled('question'),
                         })}
                     >
@@ -201,7 +201,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                         }
                     </div>
                     <button
-                        className={classNames(s['submit-button'], {
+                        className={clsx(s['submit-button'], {
                             [s['submit-button-loading']]: isLoading,
                         })}
                         type={'submit'}
@@ -211,7 +211,7 @@ const FeedbackModal = ({ isOpen, handleClose }: FeedbackModalProps) => {
                 </form>
             </section>
             <div
-                className={classNames(s['background-opacity'], {
+                className={clsx(s['background-opacity'], {
                     [s['background-opacity--active']]: isOpen,
                 })}
                 onClick={handleClose}

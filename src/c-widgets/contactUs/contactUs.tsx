@@ -1,11 +1,11 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import s from './contactUs.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const ContactUs = () => (
-    <section id={'ContactUs'} className={classNames('section-wrapper', s['wrapper'])}>
-        <div className={classNames('content-wrapper', 'content')}>
+    <section id={'ContactUs'} className={clsx('section-wrapper', s['wrapper'])}>
+        <div className={clsx('content-wrapper', 'content')}>
             <div className={'header'}>
                 <h2>
                     Контакты

@@ -1,7 +1,7 @@
 'use client';
 
 import { delay } from '@/d-shared/utils/delay';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -102,13 +102,13 @@ const Gallery = ({ items, route, isProductsGallery }: GalleryProps) => {
             {
                 isLoading &&
                 <div
-                    className={classNames(s['loading-container'], {
+                    className={clsx(s['loading-container'], {
                         [s['loading-container-small']]: isProductsGallery,
                     })}
                 />
             }
             <Image
-                className={classNames(s['main-image'], {
+                className={clsx(s['main-image'], {
                     [s['main-image-loading']]: isLoading,
                     [s['main-image-small']]: isProductsGallery,
                 })}
@@ -145,7 +145,7 @@ const Gallery = ({ items, route, isProductsGallery }: GalleryProps) => {
                                 href={`/${route}/${item.id}`}
                             >
                                 <Image
-                                    className={classNames(s['preview-image'], {
+                                    className={clsx(s['preview-image'], {
                                         [s['preview-image-active']]: item.id === currentItem.id,
                                         [s['preview-image-small']]: isProductsGallery,
                                     })}

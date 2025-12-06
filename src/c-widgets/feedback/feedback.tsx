@@ -1,6 +1,6 @@
 'use client';
 
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -15,8 +15,8 @@ const Feedback = () => {
     const handleCloseModal = () => setModalIsOpen(false);
 
     return (
-        <section className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>
                         Мы рядом 24 часа в сутки

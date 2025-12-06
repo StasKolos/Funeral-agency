@@ -1,11 +1,11 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import s from './footer.module.scss';
 
 const Footer = () => (
     <footer id={'Footer'} className={s['footer-wrapper']}>
-        <div className={classNames(s['footer'], 'content-wrapper')}>
+        <div className={clsx(s['footer'], 'content-wrapper')}>
             <div className={s['background-opacity']}/>
             <nav className={s['navigation']}>
                 <ul>

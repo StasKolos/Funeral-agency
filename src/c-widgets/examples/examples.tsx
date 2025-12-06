@@ -2,7 +2,7 @@
 
 import { examplesItems } from '@/d-shared/data/examplesItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import s from './examples.module.scss';
@@ -11,8 +11,8 @@ const Examples = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
-        <section className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>
                         Примеры

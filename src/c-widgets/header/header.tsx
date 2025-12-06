@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import Sidebar from './components/sidebar';
@@ -6,7 +6,7 @@ import s from './header.module.scss';
 
 const Header = () => (
     <header className={s['header-wrapper']}>
-        <div className={classNames(s['header'], 'content-wrapper')}>
+        <div className={clsx(s['header'], 'content-wrapper')}>
             <Link
                 href={'#Footer'}
             >

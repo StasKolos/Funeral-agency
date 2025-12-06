@@ -1,10 +1,10 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import s from './aboutUs.module.scss';
 
 const AboutUs = () => (
-    <section id={'AboutUs'} className={classNames('section-wrapper', s['wrapper'])}>
-        <div className={classNames('content-wrapper', 'content')}>
+    <section id={'AboutUs'} className={clsx('section-wrapper', s['wrapper'])}>
+        <div className={clsx('content-wrapper', 'content')}>
             <div className={'header'}>
                 <p>
                     Ваша опора в минуту прощания

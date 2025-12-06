@@ -1,9 +1,9 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import s from './law.module.scss';
 
 const Law = () => (
-    <section className={classNames('section-wrapper', s['wrapper'])}>
-        <div className={classNames('content-wrapper', 'content')}>
+    <section className={clsx('section-wrapper', s['wrapper'])}>
+        <div className={clsx('content-wrapper', 'content')}>
             <div className={'header'}>
                 <p>
                     Работаем в соответствии с Федеральным законом

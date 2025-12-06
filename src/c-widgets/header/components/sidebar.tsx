@@ -1,6 +1,6 @@
 'use client';
 
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -16,7 +16,7 @@ const Sidebar = () => {
     return (
         <>
             <button
-                className={classNames(s['sidebar-button'], {
+                className={clsx(s['sidebar-button'], {
                     [s['sidebar-button--active']]: isOpen,
                 })}
                 onClick={handleClick}
@@ -29,7 +29,7 @@ const Sidebar = () => {
                 />
             </button>
             <div
-                className={classNames(s['sidebar'], {
+                className={clsx(s['sidebar'], {
                     [s['sidebar--active']]: isOpen,
                 })}
             >
@@ -79,7 +79,7 @@ const Sidebar = () => {
                 </nav>
             </div>
             <div
-                className={classNames(s['background-opacity'], {
+                className={clsx(s['background-opacity'], {
                     [s['background-opacity--active']]: isOpen,
                 })}
                 onClick={handleClick}

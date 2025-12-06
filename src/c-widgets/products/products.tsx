@@ -3,7 +3,7 @@
 import { ProductsEnum, ProductsEnumType } from '@/d-shared/enums/productsEnum';
 import { ProductInterface } from '@/d-shared/interfaces/productInterface';
 import { Pagination } from '@mui/material';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -43,8 +43,8 @@ const Products = () => {
     };
 
     return (
-        <section id={'Products'} className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section id={'Products'} className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>
                         Самые низкие цены в Хабаровске
@@ -57,7 +57,7 @@ const Products = () => {
                     {
                         Object.values(ProductsEnum).map(product => (
                             <button
-                                className={classNames(s['button'], {
+                                className={clsx(s['button'], {
                                     [s['button-active']]: currentFilter === product.value,
                                 })}
                                 key={product.value}
@@ -73,7 +73,7 @@ const Products = () => {
                         currentItems?.map(item => (
                             <li
                                 key={item.id}
-                                className={classNames(s['item'], {
+                                className={clsx(s['item'], {
                                     [s['coffin-item']]: isCoffinItems,
                                 })}
                             >

@@ -2,7 +2,7 @@
 
 import { cremationItems } from '@/d-shared/data/cremationItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import s from './cremationServices.module.scss';
 
@@ -10,8 +10,8 @@ const CremationServices = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
-        <section id={'CremationServices'} className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section id={'CremationServices'} className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>
                         Цены

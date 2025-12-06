@@ -1,9 +1,9 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import s from './banner.module.scss';
 
 const Banner = () => (
-    <section className={classNames('section-wrapper', s['wrapper'])}>
+    <section className={clsx('section-wrapper', s['wrapper'])}>
         <Image
             width={100}
             height={100}

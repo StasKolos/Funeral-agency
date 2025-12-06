@@ -1,12 +1,12 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import s from './main.module.scss';
 
 const Main = () => (
-    <section className={classNames('section-wrapper', s['main'])}>
+    <section className={clsx('section-wrapper', s['main'])}>
         <div className={s['background-opacity']}/>
-        <div className={classNames('content-wrapper', s['main-content'])}>
+        <div className={clsx('content-wrapper', s['main-content'])}>
             <h1 className={s['info']}>
                 Оказание ритуальных услуг и организация похорон в Хабаровске
                 <span>

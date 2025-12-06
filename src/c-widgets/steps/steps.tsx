@@ -2,7 +2,7 @@
 
 import { stepsItems } from '@/d-shared/data/stepsItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { Fragment, useState } from 'react';
 import s from './steps.module.scss';
@@ -16,8 +16,8 @@ const Steps = () => {
     };
 
     return (
-        <section className={classNames('section-wrapper', s['wrapper'])}>
-            <div className={classNames('content-wrapper', 'content')}>
+        <section className={clsx('section-wrapper', s['wrapper'])}>
+            <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>
                         Если умер близкий человек
@@ -37,7 +37,7 @@ const Steps = () => {
                             >
                                 <li
 
-                                    className={classNames(
+                                    className={clsx(
                                         s['item'],
                                         { [s['flipped']]: flippedIndex === index },
                                     )}
