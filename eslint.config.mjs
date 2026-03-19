@@ -125,6 +125,14 @@ const eslintConfig = [
       'max-statements-per-line': 'warn',
     },
   },
+  {
+    files: ["next-sitemap.config.js"],
+    languageOptions: {
+      parserOptions: {
+        project: null
+      }
+    }
+  },
 ];
 
 export default eslintConfig;
