@@ -4,12 +4,12 @@ import FuneralServices from '@/c-widgets/services/funeralServices/funeralService
 
 const ServicesPage = () => (
     <div className={'page-container'}>
-        <Main/>
-        <div className={'divider'}/>
-        <FuneralServices/>
-        <div className={'divider'}/>
-        <CremationServices/>
-        <div className={'divider'}/>
+        <Main />
+        <div className={'divider'} />
+        <FuneralServices />
+        <div className={'divider'} />
+        <CremationServices />
+        <div className={'divider'} />
     </div>
 );
 

@@ -1,5 +1,5 @@
 import MainPage from '@/b-pages/mainPage/mainPage';
 
-const Page = () => <MainPage/>;
+const Page = () => <MainPage />;
 
 export default Page;

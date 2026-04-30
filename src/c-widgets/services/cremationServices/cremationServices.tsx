@@ -1,74 +1,53 @@
 'use client';
 
-import { cremationItems } from '@/d-shared/data/cremationItems';
-import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 import clsx from 'clsx';
 import Image from 'next/image';
+
+import { cremationItems } from '@/d-shared/data/cremationItems';
+import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
+
 import s from './cremationServices.module.scss';
 
 const CremationServices = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
-        <section id={'CremationServices'} className={clsx('section-wrapper', s['wrapper'])}>
+        <section
+            className={clsx('section-wrapper', s['wrapper'])}
+            id={'CremationServices'}
+        >
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
-                    <p>
-                        Цены
-                    </p>
-                    <h2>
-                        Кремация
-                    </h2>
+                    <p>Цены</p>
+                    <h2>Кремация</h2>
                 </div>
                 <ul
                     className={s['items']}
                     ref={listRef}
                 >
-                    {
-                        cremationItems.map((item, index) => (
-                            <li
-                                key={index}
-                                className={s['item']}
-                            >
-                                <div className={s['item-info']}>
-                                    <h3>
-                                        {item.name}
-                                    </h3>
-                                    <Image
-                                        width={150}
-                                        height={150}
-                                        src={item.img.src}
-                                        alt={item.img.alt}
-                                        className={s['icon']}
-                                    />
-                                    {
-                                        item.cost
-                                        ? (
-                                            <p>
-                                                {`От ${item.cost} ₽`}
-                                            </p>
-                                        )
-                                        : (
-                                            <p>
-                                                {item.free}
-                                            </p>
-                                        )
-                                    }
-                                    <ul>
-                                        {
-                                            item.list.map((listItem, index) => (
-                                                <li
-                                                    key={index}
-                                                >
-                                                    {listItem}
-                                                </li>
-                                            ))
-                                        }
-                                    </ul>
-                                </div>
-                            </li>
-                        ))
-                    }
+                    {cremationItems.map((item, index) => (
+                        <li
+                            className={s['item']}
+                            key={index}
+                        >
+                            <div className={s['item-info']}>
+                                <h3>{item.name}</h3>
+                                <Image
+                                    alt={item.img.alt}
+                                    className={s['icon']}
+                                    height={150}
+                                    src={item.img.src}
+                                    width={150}
+                                />
+                                {item.cost ? <p>{`От ${item.cost} ₽`}</p> : <p>{item.free}</p>}
+                                <ul>
+                                    {item.list.map((listItem, index) => (
+                                        <li key={index}>{listItem}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </section>

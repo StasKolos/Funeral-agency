@@ -1,9 +1,11 @@
 'use client';
 
-import { advantagesItems } from '@/d-shared/data/advantagesItems';
-import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 import clsx from 'clsx';
 import Image from 'next/image';
+
+import { advantagesItems } from '@/d-shared/data/advantagesItems';
+import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
+
 import s from './advantages.module.scss';
 
 const Advantages = () => {
@@ -13,7 +15,7 @@ const Advantages = () => {
         <section className={clsx('section-wrapper', s['wrapper'])}>
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
-                    <p>Приемущества</p>
+                    <p>Преимущества</p>
                     <h2>Почему выбирают именно нас</h2>
                 </div>
                 <ul
@@ -22,16 +24,16 @@ const Advantages = () => {
                 >
                     {advantagesItems.map((item, index) => (
                         <li
-                            key={index}
                             className={s['item']}
+                            key={index}
                         >
                             <Image
-                                width={60}
+                                alt={item.img.alt}
                                 height={60}
                                 src={item.img.src}
-                                alt={item.img.alt}
+                                width={60}
                             />
-                            <div className={s['divider']}/>
+                            <div className={s['divider']} />
                             <p>
                                 <span>{item.header}</span>
                                 {item.text}

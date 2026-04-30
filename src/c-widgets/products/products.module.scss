@@ -1,92 +1,225 @@
 .wrapper {
-    background-color: #e4e4e4;
-    color: #000000;
+  background-color: #e4e4e4;
+  color: #000000;
 }
 
 .filters {
+  width: 100%;
+}
+
+.filter-tabs {
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 4px 10px;
+  justify-self: center;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .button {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    min-height: 44px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: scale(0.97);
+      opacity: 0.7;
+    }
+  }
+
+  .button-active {
+    color: #ffffff;
+    background-color: #000000;
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: #000000;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background-color: #ffffff;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.filter-select-wrapper {
+  display: none;
+
+  @media (max-width: 700px) {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
 
-    .button {
-        padding: 10px;
-        min-width: 200px;
-        max-width: 200px;
-        min-height: 60px;
-        border-radius: 10px;
-        font-size: 1rem;
-        color: #ffffff;
-        background-color: #000000;
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.02);
-        }
-
-        &:active {
-            transform: scale(0.9);
-            opacity: 0.7;
-        }
+    span {
+      font-size: 0.9rem;
+      font-weight: 700;
     }
+  }
+}
 
-    .button-active {
-        transform: scale(0.9);
-        opacity: 0.7;
-    }
+.filter-select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  color: #000000;
+  background-color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 3px solid #ebc880;
+    outline-offset: 2px;
+  }
 }
 
 .items {
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
 .item {
-    position: relative;
-    padding: 20px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 4px -2px #0000001A, 0px 4px 6px -1px #0000001A;
-    border-radius: 8px;
-    color: #000000;
-    text-align: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+  position: relative;
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  box-shadow:
+    0px 2px 4px -2px #0000001a,
+    0px 4px 6px -1px #0000001a;
+  border-radius: 8px;
+  color: #000000;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 
-    &:hover {
-        transform: translateY(-3%);
-    }
+  &:hover {
+    transform: translateY(-3%);
+  }
 
-    h3 {
-        height: 50px;
-    }
+  h3 {
+    height: 50px;
+  }
+}
 
-    .image {
-        padding: 10px 0;
-        border-top: 3px solid #000000;
-        border-bottom: 3px solid #000000;
-    }
+.image-wrapper {
+  padding: 10px 0;
+  border-top: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+  background-color: #ffffff;
+}
+
+.image {
+  object-fit: contain;
 }
 
 .coffin-item {
-    width: 300;
+  width: 300px;
 
-    .image {
-        width: 200px;
-        height: 150px;
-    }
+  .image-wrapper,
+  .image {
+    width: 200px;
+  }
+
+  .image {
+    height: 150px;
+  }
 }
 
 .tap-icon {
-    position: absolute;
-    top: 4px;
-    right: 4px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0 0;
+}
+
+.pagination-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #9f9f9f;
+  border-radius: 6px;
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover:not(:disabled) {
+    border-color: #000000;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.pagination-button-active {
+  border-color: #000000;
+  color: #ffffff;
+  background-color: #000000;
 }

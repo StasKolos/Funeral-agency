@@ -4,10 +4,11 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+
 import s from '../header.module.scss';
 
 const Sidebar = () => {
-    const [ isOpen, setIsOpen ] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => setIsOpen(!isOpen);
 
@@ -16,22 +17,27 @@ const Sidebar = () => {
     return (
         <>
             <button
+                aria-controls={'mobile-sidebar'}
+                aria-expanded={isOpen}
+                aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
                 className={clsx(s['sidebar-button'], {
                     [s['sidebar-button--active']]: isOpen,
                 })}
                 onClick={handleClick}
+                type={'button'}
             >
                 <Image
-                    width={30}
+                    alt={'Иконка бокового меню'}
                     height={30}
                     src={'sidebar-icon.svg'}
-                    alt={'Иконка бокового меню'}
+                    width={30}
                 />
             </button>
             <div
                 className={clsx(s['sidebar'], {
                     [s['sidebar--active']]: isOpen,
                 })}
+                id={'mobile-sidebar'}
             >
                 <nav className={s['sidebar-navigation']}>
                     <ul>
@@ -79,10 +85,11 @@ const Sidebar = () => {
                 </nav>
             </div>
             <div
+                aria-hidden={true}
                 className={clsx(s['background-opacity'], {
                     [s['background-opacity--active']]: isOpen,
                 })}
-                onClick={handleClick}
+                onClick={handleCloseSidebar}
             />
         </>
     );

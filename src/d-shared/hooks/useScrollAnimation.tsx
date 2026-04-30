@@ -7,19 +7,22 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLElement>(animatio
         const element = ref.current;
         if (!element) return;
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(animationClass);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(animationClass);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 },
+        );
 
         observer.observe(element);
 
         return () => observer.unobserve(element);
-    }, [ animationClass ]);
+    }, [animationClass]);
 
     return ref;
 };

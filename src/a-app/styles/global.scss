@@ -1,11 +1,12 @@
 html,
 body {
-  height: 100vh;
+  min-height: 100%;
   width: 100%;
   max-width: 100vw;
   font-size: 16px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  color-scheme: light;
 
   &::-webkit-scrollbar {
     width: 0;
@@ -55,12 +56,6 @@ ul li {
   list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
 button {
   font-family: inherit;
   padding: 0;
@@ -72,11 +67,11 @@ button {
   padding: 40px 100px;
 
   @media (max-width: 1100px) {
-      padding: 80px 60px;
+    padding: 80px 60px;
   }
 
   @media (max-width: 400px) {
-      padding: 80px 30px;
+    padding: 80px 30px;
   }
 }
 
@@ -104,7 +99,8 @@ button {
   gap: 10px;
   text-align: center;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     bottom: -20px;
@@ -129,7 +125,8 @@ button {
     position: relative;
     font-size: 1.1rem;
 
-    &::before, &::after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       width: 10px;
@@ -160,7 +157,8 @@ svg {
   fill: #000000;
 }
 
-.Toastify__toast--success, .Toastify__toast--error {
+.Toastify__toast--success,
+.Toastify__toast--error {
   font-family: inherit;
   font-size: inherit;
   background-color: #ffffff;
@@ -170,7 +168,7 @@ svg {
 
   .Toastify__toast-icon {
     svg {
-        fill: #000000;
+      fill: #000000;
     }
   }
 }
@@ -178,7 +176,7 @@ svg {
 .Toastify__toast--error {
   .Toastify__toast-icon {
     svg {
-        fill: #ed3d3d;
+      fill: #ed3d3d;
     }
   }
 }
@@ -186,7 +184,25 @@ svg {
 .Toastify__toast--success {
   .Toastify__toast-icon {
     svg {
-        fill: #000000;
+      fill: #000000;
     }
+  }
+}
+
+.app-fancybox {
+  --fancybox-bg: rgba(0, 0, 0, 0.88);
+  --fancybox-color: #ffffff;
+
+  .fancybox__slide {
+    padding: 24px;
+  }
+
+  .f-panzoom__content {
+    background-color: #e6e1d2;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .f-caption {
+    font-family: inherit;
   }
 }

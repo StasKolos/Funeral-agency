@@ -1,0 +1,50 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(228, 228, 228, 0.9),
+      rgba(255, 255, 255, 0.95),
+      rgba(228, 228, 228, 0.9)
+    ),
+    #e4e4e4;
+  background-size: 220% 100%;
+  animation: image-skeleton-shimmer 1.2s ease-in-out infinite;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.image {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.wrapper-loaded {
+  .skeleton {
+    opacity: 0;
+  }
+
+  .image {
+    opacity: 1;
+  }
+}
+
+@keyframes image-skeleton-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: -120% 0;
+  }
+}

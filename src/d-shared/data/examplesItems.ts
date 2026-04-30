@@ -1,100 +1,99 @@
 export interface ExamplesItem {
-    src: string;
     alt: string;
+    src: string;
 }
 
 export const examplesItems: ExamplesItem[] = [
     {
-        src: '/examples-1.png',
-        alt: '1 фотка работы',
+        src: '/examples-1.webp',
+        alt: 'Фото работы 1',
     },
     {
-        src: '/examples-2.png',
-        alt: '2 фотка работы',
+        src: '/examples-2.webp',
+        alt: 'Фото работы 2',
     },
     {
-        src: '/examples-3.png',
-        alt: '3 фотка работы',
+        src: '/examples-3.webp',
+        alt: 'Фото работы 3',
     },
     {
-        src: '/examples-4.png',
-        alt: '4 фотка работы',
+        src: '/examples-4.webp',
+        alt: 'Фото работы 4',
     },
     {
-        src: '/examples-5.png',
-        alt: '5 фотка работы',
+        src: '/examples-5.webp',
+        alt: 'Фото работы 5',
     },
     {
-        src: '/examples-6.png',
-        alt: '6 фотка работы',
+        src: '/examples-6.webp',
+        alt: 'Фото работы 6',
     },
     {
-        src: '/examples-7.png',
-        alt: '7 фотка работы',
+        src: '/examples-7.webp',
+        alt: 'Фото работы 7',
     },
     {
-        src: '/examples-8.png',
-        alt: '8 фотка работы',
+        src: '/examples-8.webp',
+        alt: 'Фото работы 8',
     },
     {
-        src: '/examples-9.png',
-        alt: '9 фотка работы',
+        src: '/examples-9.webp',
+        alt: 'Фото работы 9',
     },
     {
-        src: '/examples-10.png',
-        alt: '10 фотка работы',
+        src: '/examples-10.webp',
+        alt: 'Фото работы 10',
     },
     {
-        src: '/examples-11.png',
-        alt: '11 фотка работы',
+        src: '/examples-11.webp',
+        alt: 'Фото работы 11',
     },
     {
-        src: '/examples-12.png',
-        alt: '12 фотка работы',
+        src: '/examples-12.webp',
+        alt: 'Фото работы 12',
     },
     {
-        src: '/examples-13.png',
-        alt: '13 фотка работы',
+        src: '/examples-13.webp',
+        alt: 'Фото работы 13',
     },
     {
-        src: '/examples-14.png',
-        alt: '14 фотка работы',
+        src: '/examples-14.webp',
+        alt: 'Фото работы 14',
     },
     {
-        src: '/examples-15.png',
-        alt: '15 фотка работы',
+        src: '/examples-15.webp',
+        alt: 'Фото работы 15',
     },
     {
-        src: '/examples-16.png',
-        alt: '16 фотка работы',
+        src: '/examples-16.webp',
+        alt: 'Фото работы 16',
     },
     {
-        src: '/examples-17.png',
-        alt: '17 фотка работы',
+        src: '/examples-17.webp',
+        alt: 'Фото работы 17',
     },
     {
-        src: '/examples-18.png',
-        alt: '18 фотка работы',
+        src: '/examples-18.webp',
+        alt: 'Фото работы 18',
     },
     {
-        src: '/examples-19.png',
-        alt: '19 фотка работы',
+        src: '/examples-19.webp',
+        alt: 'Фото работы 19',
     },
     {
-        src: '/examples-20.png',
-        alt: '20 фотка работы',
+        src: '/examples-20.webp',
+        alt: 'Фото работы 20',
     },
     {
-        src: '/examples-21.png',
-        alt: '21 фотка работы',
+        src: '/examples-21.webp',
+        alt: 'Фото работы 21',
     },
     {
-        src: '/examples-22.png',
-        alt: '22 фотка работы',
+        src: '/examples-22.webp',
+        alt: 'Фото работы 22',
     },
     {
-
-        src: '/examples-23.png',
-        alt: '23 фотка работы',
+        src: '/examples-23.webp',
+        alt: 'Фото работы 23',
     },
 ];

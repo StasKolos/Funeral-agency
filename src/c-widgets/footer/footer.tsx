@@ -1,125 +1,112 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import s from './footer.module.scss';
 
+const OFFICE_2GIS_URL = 'https://2gis.ru/khabarovsk/firm/70000001101924571';
+const OFFICE_MAP_FRAME_SRC =
+    'https://www.openstreetmap.org/export/embed.html?bbox=135.135879%2C48.501446%2C135.139379%2C48.503646&layer=mapnik&marker=48.502546%2C135.137629';
+
 const Footer = () => (
-    <footer id={'Footer'} className={s['footer-wrapper']}>
+    <footer
+        className={s['footer-wrapper']}
+        id={'Footer'}
+    >
         <div className={clsx(s['footer'], 'content-wrapper')}>
-            <div className={s['background-opacity']}/>
+            <div className={s['background-opacity']} />
             <nav className={s['navigation']}>
                 <ul>
                     <li>
-                        <Link
-                            href={'/'}
-                        >
-                            Главная
-                        </Link>
+                        <Link href={'/'}>Главная</Link>
                     </li>
                     <li>
-                        <Link
-                            href={'/services#FuneralServices'}
-                        >
-                            Услуги
-                        </Link>
+                        <Link href={'/services#FuneralServices'}>Услуги</Link>
                     </li>
                     <li>
-                        <Link
-                            href={'/products#Products'}
-                        >
-                            Товары
-                        </Link>
+                        <Link href={'/products#Products'}>Товары</Link>
                     </li>
                     <li>
-                        <Link
-                            href={'/contacts#ContactUs'}
-                        >
-                            Контакты
-                        </Link>
+                        <Link href={'/contacts#ContactUs'}>Контакты</Link>
                     </li>
                     <li>
-                        <Link
-                            href={'/about#AboutUs'}
-                        >
-                            О нас
-                        </Link>
+                        <Link href={'/about#AboutUs'}>О нас</Link>
                     </li>
                 </ul>
             </nav>
             <ul className={s['contacts']}>
                 <li>
                     <Image
-                        width={24}
+                        alt={'Иконка телефона'}
                         height={24}
                         src={'phone-icon.svg'}
-                        alt={'Иконка телефона'}
+                        width={24}
                     />
-                    <Link
-                        href={'tel:+79625873238'}
-                    >
-                        +7(962)587-32-38
-                    </Link>
+                    <Link href={'tel:+79625873238'}>+7(962)587-32-38</Link>
                 </li>
                 <li>
                     <Image
-                        width={24}
+                        alt={'Иконка WhatsApp'}
                         height={24}
                         src={'whatsapp-icon.svg'}
-                        alt={'Иконка WatsApp'}
+                        width={24}
                     />
-                    <Link
-                        href={'https://wa.me/+79625873238?text=Здравствуйте%2C'}
-                    >
+                    <Link href={'https://wa.me/+79625873238?text=Здравствуйте%2C'}>
                         +7(962)587-32-38
                     </Link>
                 </li>
                 <li>
                     <Image
-                        width={24}
+                        alt={'Иконка Telegram'}
                         height={24}
                         src={'telegram-icon.svg'}
-                        alt={'Иконка Telegram'}
+                        width={24}
                     />
-                    <Link
-                        href={'https://t.me/ritual_uslugi_khv'}
-                    >
-                        @ritual_uslugi_khv
-                    </Link>
+                    <Link href={'https://t.me/ritual_uslugi_khv'}>@ritual_uslugi_khv</Link>
                 </li>
                 <li>
                     <Image
-                        width={24}
+                        alt={'Иконка Email'}
                         height={24}
                         src={'email-icon.svg'}
-                        alt={'Иконка Email'}
+                        width={24}
                     />
-                    <Link
-                        href={'mailto:z-l00@bk.ru'}
-                    >
-                        z-l00@bk.ru
-                    </Link>
+                    <Link href={'mailto:z-l00@bk.ru'}>z-l00@bk.ru</Link>
                 </li>
                 <li>
                     <Image
-                        width={24}
+                        alt={'Иконка Локации'}
                         height={24}
                         src={'location-icon.svg'}
-                        alt={'Иконка Локации'}
+                        width={24}
                     />
                     <Link
-                        href={'#Footer'}
+                        href={OFFICE_2GIS_URL}
+                        rel={'noopener noreferrer'}
+                        target={'_blank'}
                     >
-                        Карла Маркса 176
+                        Карла Маркса, 176
                     </Link>
                 </li>
             </ul>
-            <iframe
-                width={'100%'}
-                height={'400px'}
-                src={'https://widgets.2gis.com/widget?type=firmsonmap&options=%7B%22pos%22%3A%7B%22lat%22%3A48.50439053030863%2C%22lon%22%3A135.13562536056273%2C%22zoom%22%3A16%7D%2C%22opt%22%3A%7B%22city%22%3A%22khabarovsk%22%7D%2C%22org%22%3A%2270000001101924571%22%7D'}
-                className={s['map']}
-            >
-            </iframe>
+            <div className={s['map-wrapper']}>
+                <iframe
+                    allowFullScreen
+                    className={s['map']}
+                    loading={'lazy'}
+                    referrerPolicy={'no-referrer-when-downgrade'}
+                    src={OFFICE_MAP_FRAME_SRC}
+                    title={'Карта с адресом Грань ДВ'}
+                ></iframe>
+                <Link
+                    className={s['map-link']}
+                    href={OFFICE_2GIS_URL}
+                    rel={'noopener noreferrer'}
+                    target={'_blank'}
+                >
+                    Открыть в 2ГИС
+                </Link>
+            </div>
         </div>
     </footer>
 );

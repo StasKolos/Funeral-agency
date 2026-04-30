@@ -1,16 +1,80 @@
 .wrapper {
-    padding-bottom: 40px;
-    padding-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    background-color: #e4e4e4;
-    color: #000000;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  background-color: #e4e4e4;
+  color: #000000;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0.85;
+  transform: translateX(100vw);
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    gap: 0;
+    opacity: 1;
+    transform: none;
+    text-align: center;
+  }
+}
+
+.vehicle {
+  flex: 0 0 auto;
+
+  @media (max-width: 750px) {
+    opacity: 0.85;
+    transform: translateX(100vw);
+  }
+}
+
+.animated {
+  .content {
+    animation: banner-drive-in 0.95s ease-out forwards;
 
     @media (max-width: 750px) {
-        flex-direction: column;
-        gap: 0;
-        text-align: center;
+      animation: none;
     }
+  }
+
+  .vehicle {
+    @media (max-width: 750px) {
+      animation: banner-drive-in 0.85s ease-out forwards;
+    }
+  }
+}
+
+@keyframes banner-drive-in {
+  0% {
+    opacity: 0.85;
+    transform: translateX(100vw);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .vehicle {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animated {
+    .content,
+    .vehicle {
+      animation: none;
+    }
+  }
 }
