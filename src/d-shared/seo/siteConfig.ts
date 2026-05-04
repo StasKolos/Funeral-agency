@@ -16,8 +16,9 @@ export const SITE_TELEGRAM_URL = 'https://t.me/ritual_uslugi_khv';
 export const SITE_WHATSAPP_URL = 'https://wa.me/+79625873238';
 export const SITE_LATITUDE = '48.502546';
 export const SITE_LONGITUDE = '135.137629';
-export const SITE_RATING = '5.0';
-export const SITE_REVIEW_COUNT = '22';
+export const SITE_OG_IMAGE = '/og-image.png';
+export const SITE_OG_IMAGE_HEIGHT = 630;
+export const SITE_OG_IMAGE_WIDTH = 1200;
 
 const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 const DEFAULT_CHANGE_FREQUENCY = 'weekly';
@@ -101,6 +102,7 @@ export const getAbsoluteUrl = (path = '/') => new URL(path, SITE_URL).toString()
 
 export const createPageMetadata = ({ description, path, title }: SiteRoute): Metadata => {
     const url = getAbsoluteUrl(path);
+    const image = getAbsoluteUrl(SITE_OG_IMAGE);
 
     return {
         title,
@@ -115,11 +117,25 @@ export const createPageMetadata = ({ description, path, title }: SiteRoute): Met
             siteName: SITE_NAME,
             locale: SITE_LOCALE,
             type: 'website',
+            images: [
+                {
+                    url: image,
+                    width: SITE_OG_IMAGE_WIDTH,
+                    height: SITE_OG_IMAGE_HEIGHT,
+                    alt: SITE_NAME,
+                },
+            ],
         },
         twitter: {
-            card: 'summary',
+            card: 'summary_large_image',
             title,
             description,
+            images: [
+                {
+                    url: image,
+                    alt: SITE_NAME,
+                },
+            ],
         },
     };
 };
@@ -152,7 +168,7 @@ export const createRootMetadata = (): Metadata => ({
 
 export const createLocalBusinessJsonLd = () => ({
     '@context': 'https://schema.org',
-    '@type': 'FuneralHome',
+    '@type': 'LocalBusiness',
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
@@ -177,12 +193,6 @@ export const createLocalBusinessJsonLd = () => ({
     areaServed: {
         '@type': 'City',
         name: SITE_CITY,
-    },
-    aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: SITE_RATING,
-        reviewCount: SITE_REVIEW_COUNT,
-        bestRating: '5',
     },
     sameAs: [SITE_2GIS_URL, SITE_TELEGRAM_URL, SITE_WHATSAPP_URL],
     hasOfferCatalog: {
