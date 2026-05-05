@@ -48,12 +48,6 @@
     height: 50px;
   }
 
-  img {
-    padding: 10px 0;
-    border-top: 3px solid #000000;
-    border-bottom: 3px solid #000000;
-  }
-
   p {
     font-size: 1.3rem;
   }
@@ -82,6 +76,14 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+.icon {
+  width: 150px;
+  height: auto;
+  padding: 10px 0;
+  border-top: 3px solid #000000;
+  border-bottom: 3px solid #000000;
 }
 
 .button {

@@ -25,7 +25,10 @@ const montserrat = Montserrat({
 });
 
 const RootLayout = ({ children }: PropsWithChildren) => (
-    <html lang={'ru'}>
+    <html
+        data-scroll-behavior={'smooth'}
+        lang={'ru'}
+    >
         <body className={montserrat.className}>
             <script
                 dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }}

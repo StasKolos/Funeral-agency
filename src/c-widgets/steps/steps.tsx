@@ -56,6 +56,7 @@ const Steps = () => {
                                     />
                                     <Image
                                         alt={item.img.alt}
+                                        className={s['icon']}
                                         height={60}
                                         src={item.img.src}
                                         width={60}
