@@ -6,16 +6,6 @@ export const SITE_NAME = 'Грань ДВ';
 export const SITE_URL = 'https://грань-дв-хабаровск.рф';
 export const SITE_HOST = new URL(SITE_URL).hostname;
 export const SITE_LOCALE = 'ru_RU';
-export const SITE_CITY = 'Хабаровск';
-export const SITE_REGION = 'Хабаровский край';
-export const SITE_STREET_ADDRESS = 'улица Карла Маркса, 176';
-export const SITE_PHONE = '+79625873238';
-export const SITE_EMAIL = 'z-l00@bk.ru';
-export const SITE_2GIS_URL = 'https://2gis.ru/khabarovsk/firm/70000001101924571';
-export const SITE_TELEGRAM_URL = 'https://t.me/ritual_uslugi_khv';
-export const SITE_WHATSAPP_URL = 'https://wa.me/+79625873238';
-export const SITE_LATITUDE = '48.502546';
-export const SITE_LONGITUDE = '135.137629';
 export const SITE_OG_IMAGE = '/og-image.png';
 export const SITE_OG_IMAGE_HEIGHT = 630;
 export const SITE_OG_IMAGE_WIDTH = 1200;
@@ -166,65 +156,14 @@ export const createRootMetadata = (): Metadata => ({
     },
 });
 
-export const createLocalBusinessJsonLd = () => ({
+export const createWebSiteJsonLd = () => ({
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}/#organization`,
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: getAbsoluteUrl('/desktop-logo.svg'),
-    image: getAbsoluteUrl('/desktop-logo.svg'),
-    telephone: SITE_PHONE,
-    email: SITE_EMAIL,
-    priceRange: '₽₽',
-    address: {
-        '@type': 'PostalAddress',
-        streetAddress: SITE_STREET_ADDRESS,
-        addressLocality: SITE_CITY,
-        addressRegion: SITE_REGION,
-        addressCountry: 'RU',
-    },
-    geo: {
-        '@type': 'GeoCoordinates',
-        latitude: SITE_LATITUDE,
-        longitude: SITE_LONGITUDE,
-    },
-    openingHours: 'Mo-Su 00:00-23:59',
-    areaServed: {
-        '@type': 'City',
-        name: SITE_CITY,
-    },
-    sameAs: [SITE_2GIS_URL, SITE_TELEGRAM_URL, SITE_WHATSAPP_URL],
-    hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Ритуальные услуги',
-        itemListElement: [
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Организация похорон',
-                    areaServed: SITE_CITY,
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Кремация',
-                    areaServed: SITE_CITY,
-                },
-            },
-            {
-                '@type': 'Offer',
-                itemOffered: {
-                    '@type': 'Service',
-                    name: 'Транспортировка груза 200',
-                    areaServed: SITE_CITY,
-                },
-            },
-        ],
-    },
+    description: SITE_DESCRIPTION,
+    inLanguage: 'ru-RU',
 });
 
 export const stringifyJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');

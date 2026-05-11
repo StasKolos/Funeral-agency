@@ -7,8 +7,8 @@ import { ToastContainer } from 'react-toastify';
 
 import ContentLayout from '@/c-widgets/contentLayout/contentLayout';
 import {
-    createLocalBusinessJsonLd,
     createRootMetadata,
+    createWebSiteJsonLd,
     stringifyJsonLd,
 } from '@/d-shared/seo/siteConfig';
 
@@ -16,7 +16,7 @@ import './style.scss';
 
 export const metadata: Metadata = createRootMetadata();
 
-const localBusinessJsonLd = stringifyJsonLd(createLocalBusinessJsonLd());
+const webSiteJsonLd = stringifyJsonLd(createWebSiteJsonLd());
 
 const montserrat = Montserrat({
     weight: ['400', '700'],
@@ -31,7 +31,7 @@ const RootLayout = ({ children }: PropsWithChildren) => (
     >
         <body className={montserrat.className}>
             <script
-                dangerouslySetInnerHTML={{ __html: localBusinessJsonLd }}
+                dangerouslySetInnerHTML={{ __html: webSiteJsonLd }}
                 type={'application/ld+json'}
             />
             <SpeedInsights />
