@@ -1,35 +1,44 @@
-// @ts-check
-import eslint from '@eslint/js';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import eslint from '@ws-serenity/eslint';
 
-export default tseslint.config(
-  {
-    ignores: ['eslint.config.mjs'],
-  },
-  eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
-  eslintPluginPrettierRecommended,
-  {
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.jest,
-      },
-      sourceType: 'commonjs',
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
+const configFileGlobs = ['*.config.{js,mjs,cjs}', 'eslint.config.mjs'];
+const nodeGlobals = {
+    Buffer: 'readonly',
+    console: 'readonly',
+    module: 'readonly',
+    process: 'readonly',
+    setTimeout: 'readonly',
+};
+
+export default [
+    ...eslint(),
+    {
+        settings: {
+            react: {
+                version: '19.0',
+            },
+        },
     },
-  },
-  {
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn',
-      "prettier/prettier": ["error", { endOfLine: "auto" }],
+    {
+        linterOptions: {
+            reportUnusedDisableDirectives: 'warn',
+        },
     },
-  },
-);
+    {
+        files: ['src/**/*.ts', ...configFileGlobs],
+        languageOptions: {
+            globals: nodeGlobals,
+        },
+    },
+    {
+        files: ['src/main.ts'],
+        rules: {
+            'no-magic-numbers': ['warn', { ignore: [-1, 0, 1, 2, 100, 3000] }],
+        },
+    },
+    {
+        files: configFileGlobs,
+        rules: {
+            'no-magic-numbers': 'off',
+        },
+    },
+];
