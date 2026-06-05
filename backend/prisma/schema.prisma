@@ -20,7 +20,7 @@ model ProductCategory {
 model Product {
   id         Int             @id @default(autoincrement())
   name       String
-  imageKey   String
+  imageKey   String          @unique
   sortOrder  Int             @default(0)
   categoryId Int
   category   ProductCategory @relation(fields: [categoryId], references: [id])

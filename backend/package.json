@@ -9,6 +9,8 @@
         "build": "nest build",
         "format": "prettier . --write",
         "format:check": "prettier . --check",
+        "prisma:seed": "tsx prisma/seed.ts",
+        "s3:upload-product-images": "tsx prisma/upload-product-images.ts",
         "start": "nest start",
         "start:dev": "nest start --watch",
         "start:debug": "nest start --debug --watch",
@@ -17,6 +19,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@aws-sdk/client-s3": "^3.1062.0",
         "@nestjs/common": "^11.0.1",
         "@nestjs/config": "^4.0.4",
         "@nestjs/core": "^11.0.1",
@@ -43,6 +46,7 @@
         "ts-loader": "^9.5.2",
         "ts-node": "^10.9.2",
         "tsconfig-paths": "^4.2.0",
+        "tsx": "^4.22.4",
         "typescript": "^5.7.3"
     }
 }
