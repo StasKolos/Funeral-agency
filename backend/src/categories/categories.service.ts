@@ -20,7 +20,6 @@ export class CategoriesService {
                 id: true,
                 code: true,
                 name: true,
-                sortOrder: true,
             },
         });
     }

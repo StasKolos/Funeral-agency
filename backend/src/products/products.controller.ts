@@ -7,7 +7,15 @@ export class ProductsController {
     constructor(private readonly productsService: ProductsService) {}
 
     @Get()
-    findAll(@Query('category') category?: string) {
-        return this.productsService.findAll(category);
+    findAll(
+        @Query('category') category?: string,
+        @Query('page') page?: string,
+        @Query('size') size?: string,
+    ) {
+        return this.productsService.findAll({
+            category,
+            page,
+            size,
+        });
     }
 }
