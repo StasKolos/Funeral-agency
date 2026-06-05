@@ -32,7 +32,7 @@ export default [
     {
         files: ['src/main.ts'],
         rules: {
-            'no-magic-numbers': ['warn', { ignore: [-1, 0, 1, 2, 100, 3000] }],
+            'no-magic-numbers': ['warn', { ignore: [-1, 0, 1, 2, 100, 3001] }],
         },
     },
     {
