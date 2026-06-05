@@ -5,6 +5,7 @@ import { Montserrat } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { ToastContainer } from 'react-toastify';
 
+import QueryProvider from '@/a-app/providers/queryProvider';
 import ContentLayout from '@/c-widgets/contentLayout/contentLayout';
 import {
     createRootMetadata,
@@ -44,7 +45,9 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                 newestOnTop={false}
                 position={'bottom-right'}
             />
-            <ContentLayout>{children}</ContentLayout>
+            <QueryProvider>
+                <ContentLayout>{children}</ContentLayout>
+            </QueryProvider>
         </body>
     </html>
 );

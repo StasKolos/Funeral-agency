@@ -1,20 +1,22 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
 import clsx from 'clsx';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { type KeyboardEvent, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import { ProductsEnum, type ProductsEnumType } from '@/d-shared/enums/productsEnum';
-import ImageWithSkeleton from '@/d-shared/ui/imageWithSkeleton/imageWithSkeleton';
+import { categoriesQueryKey, getCategories } from '@/d-shared/api/categories';
+import { getProducts, getProductsQueryKey } from '@/d-shared/api/products';
 import { openImageGallery } from '@/d-shared/utils/openImageGallery';
 
+import ProductCard, { type ProductGalleryItem } from './productCard';
 import s from './products.module.scss';
+import ProductSkeletonCard from './productSkeletonCard';
 
-const COFFIN_PRODUCT_IMAGE_HEIGHT = 150;
-const COFFIN_PRODUCT_IMAGE_WIDTH = 200;
-const PRODUCT_IMAGE_HEIGHT = 200;
-const PRODUCT_IMAGE_WIDTH = 150;
+const COFFIN_CATEGORY_CODE = 'COFFIN';
+const PRODUCTS_PAGE_SIZE = 12;
+const SKELETON_ITEMS_COUNT = PRODUCTS_PAGE_SIZE;
 
 const getPaginationItems = (currentPage: number, totalPages: number) => {
     const pages = new Set([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
@@ -28,41 +30,88 @@ const Products = () => {
     const router = useRouter();
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [currentFilter, setCurrentFilter] = useState<ProductsEnumType>(
-        ProductsEnum.VERTICAL_MONUMENT.value,
+    const [currentFilter, setCurrentFilter] = useState('');
+
+    const {
+        data: categories = [],
+        isError: isCategoriesError,
+        isLoading: isCategoriesLoading,
+    } = useQuery({
+        queryKey: categoriesQueryKey,
+        queryFn: getCategories,
+    });
+
+    const selectedCategory = currentFilter || categories[0]?.code || '';
+
+    const {
+        data: productsResponse,
+        isError: isProductsError,
+        isLoading: isProductsLoading,
+    } = useQuery({
+        queryKey: getProductsQueryKey({
+            category: selectedCategory,
+            page: currentPage,
+            size: PRODUCTS_PAGE_SIZE,
+        }),
+        queryFn: () =>
+            getProducts({
+                category: selectedCategory,
+                page: currentPage,
+                size: PRODUCTS_PAGE_SIZE,
+            }),
+        enabled: selectedCategory.length > 0,
+    });
+
+    const isLoading = isCategoriesLoading || isProductsLoading;
+    const productItems = useMemo<ProductGalleryItem[]>(
+        () =>
+            (productsResponse?.items ?? []).map((product) => ({
+                alt: product.name,
+                header: product.name,
+                id: product.id,
+                src: product.imageUrl,
+            })),
+        [productsResponse?.items],
+    );
+    const totalPages = productsResponse?.totalPages ?? 0;
+    const isCoffinItems = selectedCategory === COFFIN_CATEGORY_CODE;
+    const skeletonItems = useMemo(
+        () => Array.from({ length: SKELETON_ITEMS_COUNT }, (_, index) => index),
+        [],
     );
 
-    const itemsPerPage = 12;
-    const productItems = ProductsEnum[currentFilter].items;
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItems = productItems.slice(startIndex, endIndex);
-    const totalPages = Math.ceil(productItems.length / itemsPerPage);
-    const isCoffinItems = currentFilter === ProductsEnum.COFFIN.value;
+    useEffect(() => {
+        if (!isCategoriesError) return;
+
+        toast.error('Не удалось загрузить категории', {
+            toastId: 'products-categories-error',
+        });
+    }, [isCategoriesError]);
+
+    useEffect(() => {
+        if (!isProductsError) return;
+
+        toast.error('Не удалось загрузить товары', {
+            toastId: 'products-error',
+        });
+    }, [isProductsError]);
 
     const handleOpenImageGallery = (index: number) => {
-        openImageGallery(productItems, startIndex + index);
+        openImageGallery(productItems, index);
     };
 
-    const handleFilterChange = (filter: ProductsEnumType) => {
+    const handleFilterChange = (filter: string) => {
         setCurrentFilter(filter);
         setCurrentPage(1);
     };
 
     const handleFilterSelectChange = (filter: string) => {
-        handleFilterChange(filter as ProductsEnumType);
+        handleFilterChange(filter);
     };
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
         router.push('/products#Products');
-    };
-
-    const handleGalleryKeyDown = (event: KeyboardEvent<HTMLLIElement>, index: number) => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-
-        event.preventDefault();
-        handleOpenImageGallery(index);
     };
 
     return (
@@ -83,18 +132,18 @@ const Products = () => {
                         className={s['filter-tabs']}
                         role={'tablist'}
                     >
-                        {Object.values(ProductsEnum).map((product) => (
+                        {categories.map((category) => (
                             <button
-                                aria-selected={currentFilter === product.value}
+                                aria-selected={selectedCategory === category.code}
                                 className={clsx(s['button'], {
-                                    [s['button-active']]: currentFilter === product.value,
+                                    [s['button-active']]: selectedCategory === category.code,
                                 })}
-                                key={product.value}
-                                onClick={() => handleFilterChange(product.value)}
+                                key={category.code}
+                                onClick={() => handleFilterChange(category.code)}
                                 role={'tab'}
                                 type={'button'}
                             >
-                                {product.name}
+                                {category.name}
                             </button>
                         ))}
                     </div>
@@ -103,62 +152,43 @@ const Products = () => {
                         <select
                             className={s['filter-select']}
                             onChange={(event) => handleFilterSelectChange(event.target.value)}
-                            value={currentFilter}
+                            value={selectedCategory}
                         >
-                            {Object.values(ProductsEnum).map((product) => (
+                            {categories.map((category) => (
                                 <option
-                                    key={product.value}
-                                    value={product.value}
+                                    key={category.code}
+                                    value={category.code}
                                 >
-                                    {product.name}
+                                    {category.name}
                                 </option>
                             ))}
                         </select>
                     </label>
                 </div>
-                <ul className={s['items']}>
-                    {currentItems?.map((item, index) => (
-                        <li
-                            className={clsx(s['item'], {
-                                [s['coffin-item']]: isCoffinItems,
-                            })}
-                            key={item.src}
-                            onClick={() => handleOpenImageGallery(index)}
-                            onKeyDown={(event) => handleGalleryKeyDown(event, index)}
-                            role={'button'}
-                            tabIndex={0}
-                        >
-                            <Image
-                                alt={'Иконка клик по кнопке'}
-                                className={s['tap-icon']}
-                                height={30}
-                                src={'tap-click-icon.svg'}
-                                width={30}
+                {isLoading && (
+                    <ul className={s['items']}>
+                        {skeletonItems.map((item) => (
+                            <ProductSkeletonCard
+                                isCoffinItems={isCoffinItems}
+                                key={item}
                             />
-                            <h3>{item.header}</h3>
-                            <ImageWithSkeleton
-                                alt={item.alt}
-                                className={s['image']}
-                                height={
-                                    isCoffinItems
-                                        ? COFFIN_PRODUCT_IMAGE_HEIGHT
-                                        : PRODUCT_IMAGE_HEIGHT
-                                }
-                                sizes={
-                                    isCoffinItems
-                                        ? `${COFFIN_PRODUCT_IMAGE_WIDTH}px`
-                                        : `${PRODUCT_IMAGE_WIDTH}px`
-                                }
-                                src={item.src}
-                                width={
-                                    isCoffinItems ? COFFIN_PRODUCT_IMAGE_WIDTH : PRODUCT_IMAGE_WIDTH
-                                }
-                                wrapperClassName={s['image-wrapper']}
+                        ))}
+                    </ul>
+                )}
+                {!isLoading && (
+                    <ul className={s['items']}>
+                        {productItems.map((item, index) => (
+                            <ProductCard
+                                index={index}
+                                isCoffinItems={isCoffinItems}
+                                item={item}
+                                key={item.id}
+                                onOpenImageGallery={handleOpenImageGallery}
                             />
-                        </li>
-                    ))}
-                </ul>
-                {totalPages > 1 && (
+                        ))}
+                    </ul>
+                )}
+                {!isLoading && totalPages > 1 && (
                     <nav
                         aria-label={'Пагинация товаров'}
                         className={s['pagination']}
