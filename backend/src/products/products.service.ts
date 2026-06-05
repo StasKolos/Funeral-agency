@@ -10,8 +10,17 @@ export class ProductsService {
         private readonly storage: StorageService,
     ) {}
 
-    async findAll() {
+    async findAll(category?: string) {
+        const categoryCode = category?.trim().toUpperCase();
+
         const products = await this.prisma.product.findMany({
+            where: categoryCode
+                ? {
+                      category: {
+                          code: categoryCode,
+                      },
+                  }
+                : undefined,
             orderBy: [
                 {
                     category: {
