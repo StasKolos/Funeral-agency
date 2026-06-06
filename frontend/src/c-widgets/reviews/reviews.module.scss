@@ -11,7 +11,6 @@
   gap: 20px;
   padding: 20px 24px;
   border: 2px solid #000000;
-  border-radius: 8px;
   background-color: #ffffff;
 
   span {
@@ -35,7 +34,6 @@
 .source-link {
   flex: 0 0 auto;
   padding: 14px 18px;
-  border-radius: 8px;
   color: #ffffff;
   background-color: #000000;
   font-weight: 700;
@@ -46,7 +44,7 @@
 }
 
 .items {
-  padding: 20px 20px 40px 20px;
+  padding-bottom: 20px;
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
@@ -61,19 +59,16 @@
 
   &::-webkit-scrollbar {
     height: 6px;
-    border-radius: 10px;
     cursor: pointer;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: #000000;
-    border-radius: 10px;
     cursor: pointer;
   }
 
   &::-webkit-scrollbar-track {
     background-color: #ffffff;
-    border-radius: 10px;
     cursor: pointer;
   }
 
@@ -92,7 +87,6 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
-    border-radius: 8px;
     background-color: #ffffff;
     border: 2px solid #000000;
     box-shadow:

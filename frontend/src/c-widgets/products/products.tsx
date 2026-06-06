@@ -105,10 +105,6 @@ const Products = () => {
         setCurrentPage(1);
     };
 
-    const handleFilterSelectChange = (filter: string) => {
-        handleFilterChange(filter);
-    };
-
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
         router.push('/products#Products');
@@ -124,47 +120,24 @@ const Products = () => {
                     <p>Самые низкие цены в Хабаровске</p>
                     <h2>Товары</h2>
                 </div>
-                <div
-                    aria-label={'Категории товаров'}
-                    className={s['filters']}
-                >
-                    <div
-                        className={s['filter-tabs']}
-                        role={'tablist'}
+                <label className={s['filter-select-wrapper']}>
+                    <span>Категория товаров</span>
+                    <select
+                        className={s['filter-select']}
+                        disabled={categories.length === 0}
+                        onChange={(event) => handleFilterChange(event.target.value)}
+                        value={selectedCategory}
                     >
                         {categories.map((category) => (
-                            <button
-                                aria-selected={selectedCategory === category.code}
-                                className={clsx(s['button'], {
-                                    [s['button-active']]: selectedCategory === category.code,
-                                })}
+                            <option
                                 key={category.code}
-                                onClick={() => handleFilterChange(category.code)}
-                                role={'tab'}
-                                type={'button'}
+                                value={category.code}
                             >
                                 {category.name}
-                            </button>
+                            </option>
                         ))}
-                    </div>
-                    <label className={s['filter-select-wrapper']}>
-                        <span>Категория товаров</span>
-                        <select
-                            className={s['filter-select']}
-                            onChange={(event) => handleFilterSelectChange(event.target.value)}
-                            value={selectedCategory}
-                        >
-                            {categories.map((category) => (
-                                <option
-                                    key={category.code}
-                                    value={category.code}
-                                >
-                                    {category.name}
-                                </option>
-                            ))}
-                        </select>
-                    </label>
-                </div>
+                    </select>
+                </label>
                 {isLoading && (
                     <ul className={s['items']}>
                         {skeletonItems.map((item) => (

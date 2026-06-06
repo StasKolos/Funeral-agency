@@ -28,6 +28,10 @@ export const servicesItems = [
     {
         name: 'Транспортировка груза 200',
         cost: '1 200',
+        button: {
+            href: '/services#CremationServices',
+            name: 'Подробнее',
+        },
         img: {
             src: 'services-3.svg',
             alt: 'Иконка транспортировки груза 200',
@@ -37,6 +41,10 @@ export const servicesItems = [
     {
         name: 'Благоустройство захоронений',
         cost: '2 800',
+        button: {
+            href: '/services#CremationServices',
+            name: 'Подробнее',
+        },
         img: {
             src: 'services-4.svg',
             alt: 'Иконка благоустройства захоронений',

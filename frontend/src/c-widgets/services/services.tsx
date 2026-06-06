@@ -33,7 +33,7 @@ const Services = () => {
                                 <Image
                                     alt={item.img.alt}
                                     className={s['icon']}
-                                    height={150}
+                                    height={174}
                                     src={item.img.src}
                                     width={150}
                                 />

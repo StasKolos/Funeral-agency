@@ -4,6 +4,7 @@ import Examples from '@/c-widgets/examples/examples';
 import Feedback from '@/c-widgets/feedback/feedback';
 import Law from '@/c-widgets/law/law';
 import Main from '@/c-widgets/main/main';
+import Reviews from '@/c-widgets/reviews/reviews';
 import Services from '@/c-widgets/services/services';
 import Steps from '@/c-widgets/steps/steps';
 
@@ -24,6 +25,8 @@ const MainPage = () => (
         <Examples />
         <div className={'divider'} />
         <Law />
+        <div className={'divider'} />
+        <Reviews />
         <div className={'divider'} />
     </div>
 );

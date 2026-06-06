@@ -1,6 +1,7 @@
 import ContactUs from '@/c-widgets/contactUs/contactUs';
 import Feedback from '@/c-widgets/feedback/feedback';
 import Main from '@/c-widgets/main/main';
+import Reviews from '@/c-widgets/reviews/reviews';
 
 const ContactsPage = () => (
     <div className={'page-container'}>
@@ -9,6 +10,8 @@ const ContactsPage = () => (
         <ContactUs />
         <div className={'divider'} />
         <Feedback />
+        <div className={'divider'} />
+        <Reviews />
         <div className={'divider'} />
     </div>
 );

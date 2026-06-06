@@ -1,3 +1,4 @@
+import Feedback from '@/c-widgets/feedback/feedback';
 import Main from '@/c-widgets/main/main';
 import CremationServices from '@/c-widgets/services/cremationServices/cremationServices';
 import FuneralServices from '@/c-widgets/services/funeralServices/funeralServices';
@@ -9,6 +10,8 @@ const ServicesPage = () => (
         <FuneralServices />
         <div className={'divider'} />
         <CremationServices />
+        <div className={'divider'} />
+        <Feedback />
         <div className={'divider'} />
     </div>
 );

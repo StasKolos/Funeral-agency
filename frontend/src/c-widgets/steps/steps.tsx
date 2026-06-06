@@ -2,7 +2,6 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { type KeyboardEvent, useState } from 'react';
 
 import { stepsItems } from '@/d-shared/data/stepsItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
@@ -11,18 +10,6 @@ import s from './steps.module.scss';
 
 const Steps = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
-    const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
-
-    const handleToggleCard = (index: number) => {
-        setFlippedIndex(flippedIndex === index ? null : index);
-    };
-
-    const handleCardKeyDown = (event: KeyboardEvent<HTMLLIElement>, index: number) => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
-
-        event.preventDefault();
-        handleToggleCard(index);
-    };
 
     return (
         <section className={clsx('section-wrapper', s['wrapper'])}>
@@ -37,36 +24,22 @@ const Steps = () => {
                 >
                     {stepsItems.map((item, index) => (
                         <li
-                            className={clsx(s['item'], { [s['flipped']]: flippedIndex === index })}
+                            className={s['item']}
                             key={item.frontText}
-                            onClick={() => handleToggleCard(index)}
-                            onKeyDown={(event) => handleCardKeyDown(event, index)}
-                            role={'button'}
-                            tabIndex={0}
                         >
-                            <div className={s['card-wrapper']}>
-                                <div className={s['card-front']}>
-                                    <p>{`${index + 1}.`}</p>
-                                    <Image
-                                        alt={'Иконка клик по кнопке'}
-                                        className={s['tap-icon']}
-                                        height={30}
-                                        src={'tap-click-icon.svg'}
-                                        width={30}
-                                    />
-                                    <Image
-                                        alt={item.img.alt}
-                                        className={s['icon']}
-                                        height={60}
-                                        src={item.img.src}
-                                        width={60}
-                                    />
-                                    <p>{item.frontText}</p>
-                                </div>
-                                <div className={s['card-back']}>
-                                    <p>{item.backText}</p>
-                                </div>
+                            <span className={s['step-number']}>{index + 1}</span>
+                            <div className={s['item-header']}>
+                                <Image
+                                    alt={item.img.alt}
+                                    className={s['icon']}
+                                    height={60}
+                                    src={item.img.src}
+                                    width={60}
+                                />
+                                <h3>{item.frontText}</h3>
                             </div>
+                            <div className={s['divider']} />
+                            <p>{item.backText}</p>
                         </li>
                     ))}
                 </ul>

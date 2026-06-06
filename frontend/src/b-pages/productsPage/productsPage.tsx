@@ -1,3 +1,4 @@
+import Feedback from '@/c-widgets/feedback/feedback';
 import Main from '@/c-widgets/main/main';
 import Products from '@/c-widgets/products/products';
 
@@ -6,6 +7,8 @@ const ProductsPage = () => (
         <Main />
         <div className={'divider'} />
         <Products />
+        <div className={'divider'} />
+        <Feedback />
         <div className={'divider'} />
     </div>
 );
