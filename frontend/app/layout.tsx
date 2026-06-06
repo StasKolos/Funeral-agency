@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import QueryProvider from '@/a-app/providers/queryProvider';
 import ContentLayout from '@/c-widgets/contentLayout/contentLayout';
 import {
+    createFuneralHomeJsonLd,
     createRootMetadata,
     createWebSiteJsonLd,
     stringifyJsonLd,
@@ -17,6 +18,7 @@ import './style.scss';
 
 export const metadata: Metadata = createRootMetadata();
 
+const funeralHomeJsonLd = stringifyJsonLd(createFuneralHomeJsonLd());
 const webSiteJsonLd = stringifyJsonLd(createWebSiteJsonLd());
 
 const montserrat = Montserrat({
@@ -33,6 +35,10 @@ const RootLayout = ({ children }: PropsWithChildren) => (
         <body className={montserrat.className}>
             <script
                 dangerouslySetInnerHTML={{ __html: webSiteJsonLd }}
+                type={'application/ld+json'}
+            />
+            <script
+                dangerouslySetInnerHTML={{ __html: funeralHomeJsonLd }}
                 type={'application/ld+json'}
             />
             <SpeedInsights />

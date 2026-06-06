@@ -9,6 +9,16 @@ export const SITE_LOCALE = 'ru_RU';
 export const SITE_OG_IMAGE = '/og-image.png';
 export const SITE_OG_IMAGE_HEIGHT = 630;
 export const SITE_OG_IMAGE_WIDTH = 1200;
+export const SITE_PHONE = '+79625873238';
+export const SITE_EMAIL = 'z-l00@bk.ru';
+export const SITE_ADDRESS_STREET = 'улица Карла Маркса, дом 176';
+export const SITE_ADDRESS_CITY = 'Хабаровск';
+export const SITE_ADDRESS_REGION = 'Хабаровский край';
+export const SITE_ADDRESS_COUNTRY = 'RU';
+export const SITE_LATITUDE = 48.502546;
+export const SITE_LONGITUDE = 135.137629;
+export const SITE_TELEGRAM_URL = 'https://t.me/ritual_uslugi_khv';
+export const SITE_WHATSAPP_URL = 'https://wa.me/79625873238';
 
 const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 const DEFAULT_CHANGE_FREQUENCY = 'weekly';
@@ -164,6 +174,60 @@ export const createWebSiteJsonLd = () => ({
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     inLanguage: 'ru-RU',
+});
+
+export const createFuneralHomeJsonLd = () => ({
+    '@context': 'https://schema.org',
+    '@type': 'FuneralHome',
+    '@id': `${SITE_URL}/#funeral-home`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    image: getAbsoluteUrl(SITE_OG_IMAGE),
+    telephone: SITE_PHONE,
+    email: SITE_EMAIL,
+    description: SITE_DESCRIPTION,
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: SITE_ADDRESS_STREET,
+        addressLocality: SITE_ADDRESS_CITY,
+        addressRegion: SITE_ADDRESS_REGION,
+        addressCountry: SITE_ADDRESS_COUNTRY,
+    },
+    geo: {
+        '@type': 'GeoCoordinates',
+        latitude: SITE_LATITUDE,
+        longitude: SITE_LONGITUDE,
+    },
+    areaServed: {
+        '@type': 'City',
+        name: SITE_ADDRESS_CITY,
+    },
+    openingHoursSpecification: [
+        {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday',
+            ],
+            opens: '09:00',
+            closes: '18:00',
+        },
+    ],
+    contactPoint: [
+        {
+            '@type': 'ContactPoint',
+            telephone: SITE_PHONE,
+            contactType: 'customer service',
+            areaServed: SITE_ADDRESS_COUNTRY,
+            availableLanguage: ['Russian'],
+        },
+    ],
+    sameAs: [SITE_TELEGRAM_URL, SITE_WHATSAPP_URL],
 });
 
 export const stringifyJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');

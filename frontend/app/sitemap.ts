@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 import { getAbsoluteUrl, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
 
-const LAST_MODIFIED = new Date('2026-04-30');
+const LAST_MODIFIED = new Date('2026-06-06');
 
 const sitemap = (): MetadataRoute.Sitemap =>
     Object.values(SITE_ROUTES).map(({ changeFrequency, path, priority }) => ({
