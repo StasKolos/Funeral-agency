@@ -4,7 +4,7 @@ export const stepsItems = [
     {
         frontText: 'Позвонить в агентство "Грань ДВ"',
         img: {
-            src: 'steps-1.svg',
+            src: '/steps-1.svg',
             alt: 'Иконка венок',
         },
         backText: inlineText`
@@ -15,7 +15,7 @@ export const stepsItems = [
     {
         frontText: 'Позвонить в полицию и в скорую',
         img: {
-            src: 'steps-2.svg',
+            src: '/steps-2.svg',
             alt: 'Иконка телефона',
         },
         backText: inlineText`
@@ -27,7 +27,7 @@ export const stepsItems = [
     {
         frontText: 'Транспортировка в морг',
         img: {
-            src: 'steps-3.svg',
+            src: '/steps-3.svg',
             alt: 'Иконка морг',
         },
         backText: inlineText`
@@ -38,7 +38,7 @@ export const stepsItems = [
     {
         frontText: 'Оформление документов',
         img: {
-            src: 'steps-4.svg',
+            src: '/steps-4.svg',
             alt: 'Иконка документов',
         },
         backText: inlineText`
@@ -50,7 +50,7 @@ export const stepsItems = [
     {
         frontText: 'Организация похорон и погребение',
         img: {
-            src: 'steps-5.svg',
+            src: '/steps-5.svg',
             alt: 'Иконка гроб',
         },
         backText: inlineText`

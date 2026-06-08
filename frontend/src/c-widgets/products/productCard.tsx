@@ -48,7 +48,7 @@ const ProductCard = ({ index, isCoffinItems, item, onOpenImageGallery }: Product
                 alt={'Иконка клик по кнопке'}
                 className={s['tap-icon']}
                 height={30}
-                src={'tap-click-icon.svg'}
+                src={'/tap-click-icon.svg'}
                 width={30}
             />
             <h3>{item.header}</h3>

@@ -20,7 +20,7 @@ const Banner = () => {
                     alt={'Иконка катафалк'}
                     className={s['vehicle']}
                     height={100}
-                    src={'banner-icon.svg'}
+                    src={'/banner-icon.svg'}
                     width={100}
                 />
                 <h2>Осуществляем бесплатную транспортировку в любой морг Хабаровска</h2>

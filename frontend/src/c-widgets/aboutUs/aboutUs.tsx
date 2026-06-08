@@ -17,7 +17,7 @@ const AboutUs = () => (
                 <Image
                     alt={'Иконка компании "Грань ДВ"'}
                     height={300}
-                    src={'mobile-logo.svg'}
+                    src={'/mobile-logo.svg'}
                     width={300}
                 />
                 <div className={s['info']}>

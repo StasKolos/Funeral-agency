@@ -46,7 +46,7 @@ const Feedback = () => {
                                 <Image
                                     alt={'Иконка клик по кнопке'}
                                     height={30}
-                                    src={'tap-click-icon.svg'}
+                                    src={'/tap-click-icon.svg'}
                                     width={30}
                                 />
                                 Написать нам
@@ -61,7 +61,7 @@ const Feedback = () => {
                                 <Image
                                     alt={'Иконка клик по кнопке'}
                                     height={30}
-                                    src={'tap-click-icon.svg'}
+                                    src={'/tap-click-icon.svg'}
                                     width={30}
                                 />
                                 +7 (962) 587-32-38

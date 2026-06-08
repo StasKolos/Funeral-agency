@@ -39,7 +39,7 @@ const Footer = () => (
                     <Image
                         alt={'Иконка телефона'}
                         height={24}
-                        src={'phone-icon.svg'}
+                        src={'/phone-icon.svg'}
                         width={24}
                     />
                     <Link href={'tel:+79625873238'}>+7(962)587-32-38</Link>
@@ -48,7 +48,7 @@ const Footer = () => (
                     <Image
                         alt={'Иконка WhatsApp'}
                         height={24}
-                        src={'whatsapp-icon.svg'}
+                        src={'/whatsapp-icon.svg'}
                         width={24}
                     />
                     <Link href={'https://wa.me/+79625873238?text=Здравствуйте%2C'}>
@@ -59,7 +59,7 @@ const Footer = () => (
                     <Image
                         alt={'Иконка Telegram'}
                         height={24}
-                        src={'telegram-icon.svg'}
+                        src={'/telegram-icon.svg'}
                         width={24}
                     />
                     <Link href={'https://t.me/ritual_uslugi_khv'}>@ritual_uslugi_khv</Link>
@@ -68,7 +68,7 @@ const Footer = () => (
                     <Image
                         alt={'Иконка Email'}
                         height={24}
-                        src={'email-icon.svg'}
+                        src={'/email-icon.svg'}
                         width={24}
                     />
                     <Link href={'mailto:z-l00@bk.ru'}>z-l00@bk.ru</Link>
@@ -77,7 +77,7 @@ const Footer = () => (
                     <Image
                         alt={'Иконка Локации'}
                         height={24}
-                        src={'location-icon.svg'}
+                        src={'/location-icon.svg'}
                         width={24}
                     />
                     <Link

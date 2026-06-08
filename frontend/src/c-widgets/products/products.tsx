@@ -15,7 +15,7 @@ import s from './products.module.scss';
 import ProductSkeletonCard from './productSkeletonCard';
 
 const COFFIN_CATEGORY_CODE = 'COFFIN';
-const PRODUCTS_PAGE_SIZE = 12;
+const PRODUCTS_PAGE_SIZE = 10;
 const SKELETON_ITEMS_COUNT = PRODUCTS_PAGE_SIZE;
 
 const getPaginationItems = (currentPage: number, totalPages: number) => {

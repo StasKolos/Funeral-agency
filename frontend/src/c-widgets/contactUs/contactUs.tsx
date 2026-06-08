@@ -6,12 +6,14 @@ import s from './contactUs.module.scss';
 
 const ContactUs = () => (
     <section
+        aria-labelledby={'contacts-title'}
         className={clsx('section-wrapper', s['wrapper'])}
         id={'ContactUs'}
     >
         <div className={clsx('content-wrapper', 'content')}>
             <div className={'header'}>
-                <h2>Контакты</h2>
+                <p>Мы на связи круглосуточно и поможем сориентироваться в первых шагах</p>
+                <h2 id={'contacts-title'}>Контакты</h2>
             </div>
             <div className={s['info-wrapper']}>
                 <p className={s['main-info']}>
@@ -26,7 +28,7 @@ const ContactUs = () => (
                         <Image
                             alt={'Иконка клик по кнопке'}
                             height={30}
-                            src={'tap-click-icon.svg'}
+                            src={'/tap-click-icon.svg'}
                             width={30}
                         />
                     </div>
@@ -42,7 +44,7 @@ const ContactUs = () => (
                         <Image
                             alt={'Иконка клик по кнопке'}
                             height={30}
-                            src={'tap-click-icon.svg'}
+                            src={'/tap-click-icon.svg'}
                             width={30}
                         />
                     </div>
