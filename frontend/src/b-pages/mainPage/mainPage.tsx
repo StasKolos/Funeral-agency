@@ -1,6 +1,7 @@
 import Advantages from '@/c-widgets/advantages/advantages';
 import Banner from '@/c-widgets/banner/banner';
 import Examples from '@/c-widgets/examples/examples';
+import Faq from '@/c-widgets/faq/faq';
 import Feedback from '@/c-widgets/feedback/feedback';
 import Law from '@/c-widgets/law/law';
 import Main from '@/c-widgets/main/main';
@@ -24,9 +25,11 @@ const MainPage = () => (
         <div className={'divider'} />
         <Examples />
         <div className={'divider'} />
-        <Law />
+        <Faq />
         <div className={'divider'} />
         <Reviews />
+        <div className={'divider'} />
+        <Law />
         <div className={'divider'} />
     </div>
 );
