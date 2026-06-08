@@ -12,8 +12,8 @@ export const reviewsSummary = {
 
 export const reviewsItems = [
     {
-        name: 'Клиент Яндекс Карт',
-        initials: 'КЯ',
+        name: 'Анастасия Л.',
+        initials: 'АЛ',
         date: 'Яндекс Карты',
         rating: 5,
         text: reviewText`
@@ -22,8 +22,8 @@ export const reviewsItems = [
         `,
     },
     {
-        name: 'Семья клиента',
-        initials: 'СК',
+        name: 'Дегтярева',
+        initials: 'Д',
         date: 'Яндекс Карты',
         rating: 5,
         text: reviewText`
