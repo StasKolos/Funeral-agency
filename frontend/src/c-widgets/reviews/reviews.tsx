@@ -66,6 +66,7 @@ const ReviewText = ({ text, author, isExpanded, onExpand }: ReviewTextProps) => 
 
 const Reviews = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
+    const summaryRef = useScrollAnimation<HTMLDivElement>(s['animated']);
     const [expandedReviewKey, setExpandedReviewKey] = useState<string | null>(null);
 
     return (
@@ -75,12 +76,16 @@ const Reviews = () => {
                     <p>Отзывы клиентов</p>
                     <h2>Нам доверяют в сложные моменты</h2>
                 </div>
-                <div className={s['summary']}>
+                <div
+                    className={s['summary']}
+                    ref={summaryRef}
+                >
                     <div>
                         <span>{reviewsSummary.rating}</span>
                         <p>{reviewsSummary.count} в 2ГИС</p>
                     </div>
                     <Link
+                        aria-label={'Смотреть отзывы о компании в 2ГИС, откроется в новой вкладке'}
                         className={s['source-link']}
                         href={reviewsSummary.sourceUrl}
                         rel={'noopener noreferrer'}
@@ -120,9 +125,13 @@ const Reviews = () => {
                                     <div
                                         aria-label={`${review.rating} из ${MAX_RATING}`}
                                         className={s['stars']}
+                                        role={'img'}
                                     >
                                         {Array.from({ length: MAX_RATING }).map((_, index) => (
-                                            <span key={index}>
+                                            <span
+                                                aria-hidden={true}
+                                                key={index}
+                                            >
                                                 {index < review.rating ? '★' : '☆'}
                                             </span>
                                         ))}
