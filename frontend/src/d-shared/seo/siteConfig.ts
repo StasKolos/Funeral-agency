@@ -24,6 +24,7 @@ const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 const DEFAULT_CHANGE_FREQUENCY = 'weekly';
 const HOME_PRIORITY = 1;
 const SECTION_PRIORITY = 0.8;
+const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 export const SITE_DESCRIPTION = inlineText`
     Ритуальное агентство в Хабаровске: организация похорон, кремация, транспортировка груза 200,
@@ -31,13 +32,9 @@ export const SITE_DESCRIPTION = inlineText`
 `;
 
 export const SITE_KEYWORDS = [
-    'ритуальные услуги Хабаровск',
-    'организация похорон Хабаровск',
-    'кремация Хабаровск',
-    'груз 200 Хабаровск',
-    'перевозка умерших Хабаровск',
-    'благоустройство захоронений',
-    'памятники Хабаровск',
+    'ритуальные услуги Хабаровск', 'организация похорон Хабаровск',
+    'кремация Хабаровск', 'груз 200 Хабаровск', 'перевозка умерших Хабаровск',
+    'благоустройство захоронений', 'памятники Хабаровск',
 ];
 
 type SiteRoute = {
@@ -48,6 +45,14 @@ type SiteRoute = {
     title: string;
 };
 
+const createSectionRoute = (path: string, title: string, description: string): SiteRoute => ({
+    path,
+    title,
+    description,
+    changeFrequency: DEFAULT_CHANGE_FREQUENCY,
+    priority: SECTION_PRIORITY,
+});
+
 export const SITE_ROUTES = {
     home: {
         path: '/',
@@ -56,46 +61,118 @@ export const SITE_ROUTES = {
         changeFrequency: DEFAULT_CHANGE_FREQUENCY,
         priority: HOME_PRIORITY,
     },
-    services: {
-        path: '/services',
-        title: 'Услуги',
-        description: inlineText`
+    services: createSectionRoute(
+        '/services',
+        'Услуги',
+        inlineText`
             Организация похорон, кремация, транспортировка груза 200 и сопровождение
             ритуальных услуг в Хабаровске. Работаем круглосуточно.
         `,
-        changeFrequency: DEFAULT_CHANGE_FREQUENCY,
-        priority: SECTION_PRIORITY,
-    },
-    products: {
-        path: '/products',
-        title: 'Ритуальные товары',
-        description: inlineText`
+    ),
+    funeralService: createSectionRoute(
+        '/funeral',
+        'Похороны',
+        inlineText`
+            Организация похорон в Хабаровске: вызов служб, перевозка в морг, оформление документов,
+            выбор тарифа, прощание, отпевание, катафалк, бригада и захоронение.
+        `,
+    ),
+    funeralEconomyService: createSectionRoute(
+        '/funeral/economy',
+        'Похороны эконом',
+        inlineText`
+            Похороны эконом в Хабаровске от 21 000 ₽: ситцевый гроб, временный бетонный памятник,
+            табличка с ФИО, катафалк, бригада, копка могилы и сопровождение документов.
+        `,
+    ),
+    funeralEconomyPlusService: createSectionRoute(
+        '/funeral/economy-plus',
+        'Похороны эконом плюс',
+        inlineText`
+            Похороны эконом плюс в Хабаровске от 40 000 ₽: бархатный гроб, памятник из
+            мраморной крошки, катафалк, бригада, копка могилы и помощь с документами.
+        `,
+    ),
+    funeralStandardService: createSectionRoute(
+        '/funeral/standard',
+        'Похороны стандарт',
+        inlineText`
+            Похороны стандарт в Хабаровске от 65 000 ₽: бархатный гроб, памятник из серого
+            или черного гранита 800 мм, транспорт, бригада, документы и сопровождение семьи.
+        `,
+    ),
+    funeralPremiumService: createSectionRoute(
+        '/funeral/premium',
+        'Похороны премиум',
+        inlineText`
+            Похороны премиум в Хабаровске от 90 000 ₽: лакированный гроб премиум-класса,
+            мягкая подушка, гранитный памятник, транспорт, бригада и сопровождение церемонии.
+        `,
+    ),
+    cremationService: createSectionRoute(
+        '/cremation',
+        'Кремация',
+        inlineText`
+            Кремация в Хабаровске: бесплатный и платный вариант, оформление документов,
+            передача вещей в морг, гроб, урна, транспорт и сопровождение семьи.
+        `,
+    ),
+    cremationFreeService: createSectionRoute(
+        '/cremation/free',
+        'Бесплатная кремация',
+        inlineText`
+            Бесплатная кремация в Хабаровске: проверка условий, консультация по документам,
+            передача вещей в морг через специалиста и базовое сопровождение семьи.
+        `,
+    ),
+    cremationPaidService: createSectionRoute(
+        '/cremation/paid',
+        'Платная кремация',
+        inlineText`
+            Платная кремация в Хабаровске: гроб, урна, катафалк, бригада, копка могилы под урну,
+            оформление документов и передача вещей в морг через специалиста.
+        `,
+    ),
+    cargoService: createSectionRoute(
+        '/cargo',
+        'Транспортировка груза 200',
+        inlineText`
+            Транспортировка груза 200 из Хабаровска и в Хабаровск: документы, бальзамирование,
+            цинковый короб, наземная перевозка или авиа и доставка до согласованного адреса.
+        `,
+    ),
+    graveImprovementService: createSectionRoute(
+        '/grave-improvement',
+        'Благоустройство захоронений',
+        inlineText`
+            Благоустройство захоронений в Хабаровске: бесплатный выезд, осмотр, замеры,
+            памятники, лавочки, столы, фундамент, стяжка, плитка, брусчатка и гранит.
+        `,
+    ),
+    products: createSectionRoute(
+        '/products',
+        'Ритуальные товары',
+        inlineText`
             Каталог ритуальных товаров в Хабаровске: памятники, венки, гробы, кресты, корзины,
             вазы и товары для благоустройства захоронений.
         `,
-        changeFrequency: DEFAULT_CHANGE_FREQUENCY,
-        priority: SECTION_PRIORITY,
-    },
-    contacts: {
-        path: '/contacts',
-        title: 'Контакты',
-        description: inlineText`
+    ),
+    contacts: createSectionRoute(
+        '/contacts',
+        'Контакты',
+        inlineText`
             Контакты ритуального агентства Грань ДВ в Хабаровске: телефон, адрес офиса
             и способы связи для срочной помощи.
         `,
-        changeFrequency: DEFAULT_CHANGE_FREQUENCY,
-        priority: SECTION_PRIORITY,
-    },
-    about: {
-        path: '/about',
-        title: 'О компании',
-        description: inlineText`
+    ),
+    about: createSectionRoute(
+        '/about',
+        'О компании',
+        inlineText`
             Информация о ритуальном агентстве Грань ДВ: опыт, подход к организации похорон
             и поддержка семей в Хабаровске.
         `,
-        changeFrequency: DEFAULT_CHANGE_FREQUENCY,
-        priority: SECTION_PRIORITY,
-    },
+    ),
 } satisfies Record<string, SiteRoute>;
 
 export const getAbsoluteUrl = (path = '/') => new URL(path, SITE_URL).toString();
@@ -198,22 +275,11 @@ export const createFuneralHomeJsonLd = () => ({
         latitude: SITE_LATITUDE,
         longitude: SITE_LONGITUDE,
     },
-    areaServed: {
-        '@type': 'City',
-        name: SITE_ADDRESS_CITY,
-    },
+    areaServed: { '@type': 'City', name: SITE_ADDRESS_CITY },
     openingHoursSpecification: [
         {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: [
-                'Monday',
-                'Tuesday',
-                'Wednesday',
-                'Thursday',
-                'Friday',
-                'Saturday',
-                'Sunday',
-            ],
+            dayOfWeek: WEEK_DAYS,
             opens: '09:00',
             closes: '18:00',
         },

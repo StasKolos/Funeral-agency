@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { funeralItems } from '@/d-shared/data/funeralItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
@@ -46,6 +47,12 @@ const FuneralServices = () => {
                                     ))}
                                 </ul>
                             </div>
+                            <Link
+                                className={s['button']}
+                                href={item.button.href}
+                            >
+                                {item.button.name}
+                            </Link>
                         </li>
                     ))}
                 </ul>

@@ -2,8 +2,12 @@ export const funeralItems = [
     {
         name: 'Эконом',
         cost: '21 000',
+        button: {
+            href: '/funeral/economy',
+            name: 'Подробнее',
+        },
         img: {
-            src: 'funeral-1.svg',
+            src: '/funeral-1.svg',
             alt: 'Иконка тарифа Эконом',
         },
         list: [
@@ -18,8 +22,12 @@ export const funeralItems = [
     {
         name: 'Эконом плюс',
         cost: '40 000',
+        button: {
+            href: '/funeral/economy-plus',
+            name: 'Подробнее',
+        },
         img: {
-            src: 'funeral-2.svg',
+            src: '/funeral-2.svg',
             alt: 'Иконка тарифа Эконом плюс',
         },
         list: ['гроб бархат', 'памятник (мраморная крошка)', 'бригада', 'катафалк', 'копка могилы'],
@@ -27,8 +35,12 @@ export const funeralItems = [
     {
         name: 'Стандарт',
         cost: '65 000',
+        button: {
+            href: '/funeral/standard',
+            name: 'Подробнее',
+        },
         img: {
-            src: 'funeral-3.svg',
+            src: '/funeral-3.svg',
             alt: 'Иконка тарифа Стандарт',
         },
         list: ['гроб бархат', 'чёрный гранит 80 см', 'бригада', 'катафалк', 'копка могилы'],
@@ -36,8 +48,12 @@ export const funeralItems = [
     {
         name: 'Премиум',
         cost: '90 000',
+        button: {
+            href: '/funeral/premium',
+            name: 'Подробнее',
+        },
         img: {
-            src: 'funeral-4.svg',
+            src: '/funeral-4.svg',
             alt: 'Иконка тарифа Премиум',
         },
         list: [

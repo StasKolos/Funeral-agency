@@ -17,7 +17,7 @@ const Services = () => {
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>Самые доступные цены в Хабаровске</p>
-                    <h2>Грань ДВ</h2>
+                    <h2>Услуги</h2>
                 </div>
                 <ul
                     className={s['items']}
@@ -44,14 +44,12 @@ const Services = () => {
                                     ))}
                                 </ul>
                             </div>
-                            {item.button && (
-                                <Link
-                                    className={s['button']}
-                                    href={item.button.href}
-                                >
-                                    {item.button.name}
-                                </Link>
-                            )}
+                            <Link
+                                className={s['button']}
+                                href={item.button.href}
+                            >
+                                {item.button.name}
+                            </Link>
                         </li>
                     ))}
                 </ul>

@@ -1,13 +1,34 @@
+import { serviceNavigationItems } from './serviceNavigationItems';
+
+const [funeralNavigationGroup, cremationNavigationGroup, cargoService, graveImprovementService] =
+    serviceNavigationItems;
+
+export type ServiceButton = {
+    href: string;
+    name: string;
+};
+
+export type ServiceItem = {
+    button: ServiceButton;
+    cost: string;
+    img: {
+        alt: string;
+        src: string;
+    };
+    list: string[];
+    name: string;
+};
+
 export const servicesItems = [
     {
         name: 'Похороны',
         cost: '21 000',
         button: {
-            href: '/services#FuneralServices',
+            href: funeralNavigationGroup.href,
             name: 'Подробнее',
         },
         img: {
-            src: 'services-1.svg',
+            src: '/services-1.svg',
             alt: 'Иконка организации похорон',
         },
         list: ['гроб', 'памятник', 'бригада', 'катафалк', 'копка могилы'],
@@ -16,11 +37,11 @@ export const servicesItems = [
         name: 'Кремация',
         cost: '19 000',
         button: {
-            href: '/services#CremationServices',
+            href: cremationNavigationGroup.href,
             name: 'Подробнее',
         },
         img: {
-            src: 'services-2.svg',
+            src: '/services-2.svg',
             alt: 'Иконка кремации',
         },
         list: ['кремация', 'гроб и урна', 'бригада', 'катафалк', 'копка могилы под урну'],
@@ -29,11 +50,11 @@ export const servicesItems = [
         name: 'Транспортировка груза 200',
         cost: '1 200',
         button: {
-            href: '/services#CremationServices',
+            href: cargoService.href,
             name: 'Подробнее',
         },
         img: {
-            src: 'services-3.svg',
+            src: '/services-3.svg',
             alt: 'Иконка транспортировки груза 200',
         },
         list: ['железная дорога', 'самолёт', 'спецтранспорт', 'встреча и отправка в любой регион'],
@@ -42,11 +63,11 @@ export const servicesItems = [
         name: 'Благоустройство захоронений',
         cost: '2 800',
         button: {
-            href: '/services#CremationServices',
+            href: graveImprovementService.href,
             name: 'Подробнее',
         },
         img: {
-            src: 'services-4.svg',
+            src: '/services-4.svg',
             alt: 'Иконка благоустройства захоронений',
         },
         list: ['песок', 'отсев', 'щебень', 'мраморная крошка', 'брусчатка', 'гранитная плитка'],
@@ -59,9 +80,9 @@ export const servicesItems = [
             name: 'Каталог',
         },
         img: {
-            src: 'services-5.svg',
+            src: '/services-5.svg',
             alt: 'Иконка изготовления памятников',
         },
         list: ['памятник', 'гравировка', 'доставка', 'установка'],
     },
-];
+] satisfies ServiceItem[];
