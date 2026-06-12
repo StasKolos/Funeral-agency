@@ -76,7 +76,7 @@ export const servicesItems = [
         name: 'Изготовление памятников',
         cost: '3 000',
         button: {
-            href: '/products',
+            href: '/products#Products',
             name: 'Каталог',
         },
         img: {

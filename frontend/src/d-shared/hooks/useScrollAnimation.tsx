@@ -16,7 +16,10 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLElement>(animatio
                     }
                 });
             },
-            { threshold: 0.1 },
+            {
+                rootMargin: '0px 0px 120px 0px',
+                threshold: 0.1,
+            },
         );
 
         observer.observe(element);

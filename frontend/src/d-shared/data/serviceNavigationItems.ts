@@ -18,46 +18,46 @@ export const isServiceNavigationGroup = (
 export const serviceNavigationItems = [
     {
         name: 'Похороны',
-        href: '/funeral',
+        href: '/funeral#ServiceDetails',
         children: [
             {
                 name: 'Эконом',
-                href: '/funeral/economy',
+                href: '/funeral/economy#ServiceDetails',
             },
             {
                 name: 'Эконом плюс',
-                href: '/funeral/economy-plus',
+                href: '/funeral/economy-plus#ServiceDetails',
             },
             {
                 name: 'Стандарт',
-                href: '/funeral/standard',
+                href: '/funeral/standard#ServiceDetails',
             },
             {
                 name: 'Премиум',
-                href: '/funeral/premium',
+                href: '/funeral/premium#ServiceDetails',
             },
         ],
     },
     {
         name: 'Кремация',
-        href: '/cremation',
+        href: '/cremation#ServiceDetails',
         children: [
             {
                 name: 'Бесплатная',
-                href: '/cremation/free',
+                href: '/cremation/free#ServiceDetails',
             },
             {
                 name: 'Платная',
-                href: '/cremation/paid',
+                href: '/cremation/paid#ServiceDetails',
             },
         ],
     },
     {
         name: 'Транспортировка груза 200',
-        href: '/cargo',
+        href: '/cargo#ServiceDetails',
     },
     {
         name: 'Благоустройство захоронений',
-        href: '/grave-improvement',
+        href: '/grave-improvement#ServiceDetails',
     },
 ] as const satisfies readonly ServiceNavigationItem[];

@@ -3,7 +3,7 @@ export const funeralItems = [
         name: 'Эконом',
         cost: '21 000',
         button: {
-            href: '/funeral/economy',
+            href: '/funeral/economy#ServiceDetails',
             name: 'Подробнее',
         },
         img: {
@@ -23,7 +23,7 @@ export const funeralItems = [
         name: 'Эконом плюс',
         cost: '40 000',
         button: {
-            href: '/funeral/economy-plus',
+            href: '/funeral/economy-plus#ServiceDetails',
             name: 'Подробнее',
         },
         img: {
@@ -36,7 +36,7 @@ export const funeralItems = [
         name: 'Стандарт',
         cost: '65 000',
         button: {
-            href: '/funeral/standard',
+            href: '/funeral/standard#ServiceDetails',
             name: 'Подробнее',
         },
         img: {
@@ -49,7 +49,7 @@ export const funeralItems = [
         name: 'Премиум',
         cost: '90 000',
         button: {
-            href: '/funeral/premium',
+            href: '/funeral/premium#ServiceDetails',
             name: 'Подробнее',
         },
         img: {

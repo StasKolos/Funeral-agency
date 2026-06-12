@@ -20,6 +20,7 @@ const ServiceDetails = ({ details }: ServiceDetailsProps) => {
         <section
             aria-labelledby={titleId}
             className={clsx('section-wrapper', s['wrapper'])}
+            id={'ServiceDetails'}
         >
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>

@@ -40,13 +40,13 @@ const Header = () => (
                         <ServicesDropdown />
                     </li>
                     <li className={s['navigation-item']}>
-                        <Link href={'/products'}>Товары</Link>
+                        <Link href={'/products#Products'}>Товары</Link>
                     </li>
                     <li className={s['navigation-item']}>
-                        <Link href={'/contacts'}>Контакты</Link>
+                        <Link href={'/contacts#ContactUs'}>Контакты</Link>
                     </li>
                     <li className={s['navigation-item']}>
-                        <Link href={'/about'}>О нас</Link>
+                        <Link href={'/about#AboutUs'}>О нас</Link>
                     </li>
                 </ul>
             </nav>

@@ -3,7 +3,7 @@ export const cremationItems = [
         name: 'Бесплатная',
         free: 'Бесплатно',
         button: {
-            href: '/cremation/free',
+            href: '/cremation/free#ServiceDetails',
             name: 'Подробнее',
         },
         img: {
@@ -16,7 +16,7 @@ export const cremationItems = [
         name: 'Платная',
         cost: '30 000',
         button: {
-            href: '/cremation/paid',
+            href: '/cremation/paid#ServiceDetails',
             name: 'Подробнее',
         },
         img: {

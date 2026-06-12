@@ -19,7 +19,7 @@ const FuneralServices = () => {
         >
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
-                    <p>Цены</p>
+                    <p>Самые низкие цены в Хабаровске</p>
                     <h2>Похороны</h2>
                 </div>
                 <ul
