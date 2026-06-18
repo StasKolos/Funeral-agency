@@ -1,5 +1,6 @@
 import type { Metadata, MetadataRoute } from 'next';
 
+import { SITE_KEYWORDS } from '@/d-shared/seo/siteKeywords';
 import { inlineText } from '@/d-shared/utils/inlineText';
 
 export const SITE_NAME = 'Грань ДВ';
@@ -17,6 +18,8 @@ export const SITE_ADDRESS_REGION = 'Хабаровский край';
 export const SITE_ADDRESS_COUNTRY = 'RU';
 export const SITE_LATITUDE = 48.502546;
 export const SITE_LONGITUDE = 135.137629;
+export const SITE_2GIS_URL = 'https://2gis.ru/khabarovsk/firm/70000001101924571';
+export const SITE_YANDEX_MAPS_URL = 'https://yandex.ru/maps/org/gran_dv/245556292587/';
 export const SITE_TELEGRAM_URL = 'https://t.me/ritual_uslugi_khv';
 export const SITE_WHATSAPP_URL = 'https://wa.me/79625873238';
 
@@ -30,12 +33,6 @@ export const SITE_DESCRIPTION = inlineText`
     Ритуальное агентство в Хабаровске: организация похорон, кремация, транспортировка груза 200,
     перевозка умерших 24/7, благоустройство захоронений и продажа ритуальных товаров.
 `;
-
-export const SITE_KEYWORDS = [
-    'ритуальные услуги Хабаровск', 'организация похорон Хабаровск',
-    'кремация Хабаровск', 'груз 200 Хабаровск', 'перевозка умерших Хабаровск',
-    'благоустройство захоронений', 'памятники Хабаровск',
-];
 
 type SiteRoute = {
     changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
@@ -293,7 +290,7 @@ export const createFuneralHomeJsonLd = () => ({
             availableLanguage: ['Russian'],
         },
     ],
-    sameAs: [SITE_TELEGRAM_URL, SITE_WHATSAPP_URL],
+    sameAs: [SITE_2GIS_URL, SITE_YANDEX_MAPS_URL, SITE_TELEGRAM_URL, SITE_WHATSAPP_URL],
 });
 
 export const stringifyJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
