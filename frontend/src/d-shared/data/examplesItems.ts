@@ -96,4 +96,52 @@ export const examplesItems: ExamplesItem[] = [
         src: '/examples-23.webp',
         alt: 'Фото работы 23',
     },
+    {
+        src: '/examples-24.webp',
+        alt: 'Фото работы 24',
+    },
+    {
+        src: '/examples-25.webp',
+        alt: 'Фото работы 25',
+    },
+    {
+        src: '/examples-26.webp',
+        alt: 'Фото работы 26',
+    },
+    {
+        src: '/examples-27.webp',
+        alt: 'Фото работы 27',
+    },
+    {
+        src: '/examples-28.webp',
+        alt: 'Фото работы 28',
+    },
+    {
+        src: '/examples-29.webp',
+        alt: 'Фото работы 29',
+    },
+    {
+        src: '/examples-30.webp',
+        alt: 'Фото работы 30',
+    },
+    {
+        src: '/examples-31.webp',
+        alt: 'Фото работы 31',
+    },
+    {
+        src: '/examples-32.webp',
+        alt: 'Фото работы 32',
+    },
+    {
+        src: '/examples-33.webp',
+        alt: 'Фото работы 33',
+    },
+    {
+        src: '/examples-34.webp',
+        alt: 'Фото работы 34',
+    },
+    {
+        src: '/examples-35.webp',
+        alt: 'Фото работы 35',
+    },
 ];
