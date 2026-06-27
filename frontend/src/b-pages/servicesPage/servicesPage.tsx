@@ -1,19 +1,12 @@
-import Feedback from '@/c-widgets/feedback/feedback';
-import Main from '@/c-widgets/main/main';
+import { PageContent } from '@/c-widgets/contentLayout/contentLayout';
 import CremationServices from '@/c-widgets/services/cremationServices/cremationServices';
 import FuneralServices from '@/c-widgets/services/funeralServices/funeralServices';
 
 const ServicesPage = () => (
-    <div className={'page-container'}>
-        <Main />
-        <div className={'divider'} />
+    <PageContent>
         <FuneralServices />
-        <div className={'divider'} />
         <CremationServices />
-        <div className={'divider'} />
-        <Feedback />
-        <div className={'divider'} />
-    </div>
+    </PageContent>
 );
 
 export default ServicesPage;

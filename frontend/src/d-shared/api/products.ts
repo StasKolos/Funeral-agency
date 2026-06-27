@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import type { PaginatedResponse, Product } from './types';
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? '/api/backend').replace(/\/$/, '');
+import { getApiBaseUrl } from './apiConfig';
 
 type GetProductsParams = {
     category?: string;
@@ -32,7 +32,7 @@ export const getProducts = async ({ category, page, size }: GetProductsParams = 
     const url = `/products${queryString ? `?${queryString}` : ''}`;
 
     try {
-        const response = await axios.get<PaginatedResponse<Product>>(`${API_BASE_URL}${url}`);
+        const response = await axios.get<PaginatedResponse<Product>>(`${getApiBaseUrl()}${url}`);
 
         return response.data;
     } catch (error) {

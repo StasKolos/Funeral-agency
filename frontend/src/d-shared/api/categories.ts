@@ -2,13 +2,13 @@ import axios from 'axios';
 
 import type { ProductCategory } from './types';
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL ?? '/api/backend').replace(/\/$/, '');
+import { getApiBaseUrl } from './apiConfig';
 
 export const categoriesQueryKey = ['categories'] as const;
 
 export const getCategories = async () => {
     try {
-        const response = await axios.get<ProductCategory[]>(`${API_BASE_URL}/categories`);
+        const response = await axios.get<ProductCategory[]>(`${getApiBaseUrl()}/categories`);
 
         return response.data;
     } catch (error) {

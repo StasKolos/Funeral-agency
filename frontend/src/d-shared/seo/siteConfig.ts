@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import type { Metadata, MetadataRoute } from 'next';
 
 import { SITE_KEYWORDS } from '@/d-shared/seo/siteKeywords';
@@ -37,15 +38,22 @@ export const SITE_DESCRIPTION = inlineText`
 type SiteRoute = {
     changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'];
     description: string;
+    offerPrice?: string;
     path: string;
     priority: number;
     title: string;
 };
 
-const createSectionRoute = (path: string, title: string, description: string): SiteRoute => ({
+const createSectionRoute = (
+    path: string,
+    title: string,
+    description: string,
+    offerPrice?: string,
+): SiteRoute => ({
     path,
     title,
     description,
+    ...(offerPrice ? { offerPrice } : {}),
     changeFrequency: DEFAULT_CHANGE_FREQUENCY,
     priority: SECTION_PRIORITY,
 });
@@ -73,6 +81,7 @@ export const SITE_ROUTES = {
             Организация похорон в Хабаровске: вызов служб, перевозка в морг, оформление документов,
             выбор тарифа, прощание, отпевание, катафалк, бригада и захоронение.
         `,
+        '21000',
     ),
     funeralEconomyService: createSectionRoute(
         '/funeral/economy',
@@ -81,6 +90,7 @@ export const SITE_ROUTES = {
             Похороны эконом в Хабаровске от 21 000 ₽: ситцевый гроб, временный бетонный памятник,
             табличка с ФИО, катафалк, бригада, копка могилы и сопровождение документов.
         `,
+        '21000',
     ),
     funeralEconomyPlusService: createSectionRoute(
         '/funeral/economy-plus',
@@ -89,6 +99,7 @@ export const SITE_ROUTES = {
             Похороны эконом плюс в Хабаровске от 40 000 ₽: бархатный гроб, памятник из
             мраморной крошки, катафалк, бригада, копка могилы и помощь с документами.
         `,
+        '40000',
     ),
     funeralStandardService: createSectionRoute(
         '/funeral/standard',
@@ -97,6 +108,7 @@ export const SITE_ROUTES = {
             Похороны стандарт в Хабаровске от 65 000 ₽: бархатный гроб, памятник из серого
             или черного гранита 800 мм, транспорт, бригада, документы и сопровождение семьи.
         `,
+        '65000',
     ),
     funeralPremiumService: createSectionRoute(
         '/funeral/premium',
@@ -105,6 +117,7 @@ export const SITE_ROUTES = {
             Похороны премиум в Хабаровске от 90 000 ₽: лакированный гроб премиум-класса,
             мягкая подушка, гранитный памятник, транспорт, бригада и сопровождение церемонии.
         `,
+        '90000',
     ),
     cremationService: createSectionRoute(
         '/cremation',
@@ -113,6 +126,7 @@ export const SITE_ROUTES = {
             Кремация в Хабаровске: бесплатный и платный вариант, оформление документов,
             передача вещей в морг, гроб, урна, транспорт и сопровождение семьи.
         `,
+        '19000',
     ),
     cremationFreeService: createSectionRoute(
         '/cremation/free',
@@ -121,6 +135,7 @@ export const SITE_ROUTES = {
             Бесплатная кремация в Хабаровске: проверка условий, консультация по документам,
             передача вещей в морг через специалиста и базовое сопровождение семьи.
         `,
+        '0',
     ),
     cremationPaidService: createSectionRoute(
         '/cremation/paid',
@@ -129,6 +144,7 @@ export const SITE_ROUTES = {
             Платная кремация в Хабаровске: гроб, урна, катафалк, бригада, копка могилы под урну,
             оформление документов и передача вещей в морг через специалиста.
         `,
+        '19000',
     ),
     cargoService: createSectionRoute(
         '/cargo',
@@ -137,6 +153,7 @@ export const SITE_ROUTES = {
             Транспортировка груза 200 из Хабаровска и в Хабаровск: документы, бальзамирование,
             цинковый короб, наземная перевозка или авиа и доставка до согласованного адреса.
         `,
+        '1200',
     ),
     graveImprovementService: createSectionRoute(
         '/grave-improvement',
@@ -145,6 +162,7 @@ export const SITE_ROUTES = {
             Благоустройство захоронений в Хабаровске: бесплатный выезд, осмотр, замеры,
             памятники, лавочки, столы, фундамент, стяжка, плитка, брусчатка и гранит.
         `,
+        '2800',
     ),
     products: createSectionRoute(
         '/products',
@@ -173,6 +191,62 @@ export const SITE_ROUTES = {
 } satisfies Record<string, SiteRoute>;
 
 export const getAbsoluteUrl = (path = '/') => new URL(path, SITE_URL).toString();
+
+const getRouteByPath = (path: string) =>
+    Object.values(SITE_ROUTES).find((route) => route.path === path);
+
+const getBreadcrumbItems = ({ path, title }: SiteRoute) => {
+    const segments = path.split('/').filter(Boolean);
+    const items = [{ name: 'Главная', path: '/' }];
+    let currentPath = '';
+
+    segments.forEach((segment) => {
+        currentPath = `${currentPath}/${segment}`;
+        const route = getRouteByPath(currentPath);
+
+        items.push({
+            name: route?.title ?? title,
+            path: currentPath,
+        });
+    });
+
+    return items;
+};
+
+export const createBreadcrumbJsonLd = (route: SiteRoute) => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: getBreadcrumbItems(route).map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: getAbsoluteUrl(item.path),
+    })),
+});
+
+export const createServiceJsonLd = (route: SiteRoute) => {
+    if (!route.offerPrice) return null;
+
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${getAbsoluteUrl(route.path)}#service`,
+        name: route.title,
+        description: route.description,
+        provider: { '@id': `${SITE_URL}/#funeral-home` },
+        areaServed: { '@type': 'City', name: SITE_ADDRESS_CITY },
+        offers: {
+            '@type': 'Offer',
+            price: route.offerPrice,
+            priceCurrency: 'RUB',
+            url: getAbsoluteUrl(route.path),
+            availability: 'https://schema.org/InStock',
+        },
+    };
+};
+
+export const createPageJsonLd = (route: SiteRoute) =>
+    [createBreadcrumbJsonLd(route), createServiceJsonLd(route)].filter(Boolean);
 
 export const createPageMetadata = ({ description, path, title }: SiteRoute): Metadata => {
     const url = getAbsoluteUrl(path);
@@ -294,3 +368,6 @@ export const createFuneralHomeJsonLd = () => ({
 });
 
 export const stringifyJsonLd = (value: unknown) => JSON.stringify(value).replace(/</g, '\\u003c');
+
+export const createPageJsonLdString = (route: SiteRoute) =>
+    stringifyJsonLd(createPageJsonLd(route));

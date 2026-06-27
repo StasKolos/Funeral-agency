@@ -1,19 +1,10 @@
 import AboutUs from '@/c-widgets/aboutUs/aboutUs';
-import Feedback from '@/c-widgets/feedback/feedback';
-import Main from '@/c-widgets/main/main';
-import Reviews from '@/c-widgets/reviews/reviews';
+import { PageContent } from '@/c-widgets/contentLayout/contentLayout';
 
 const AboutPage = () => (
-    <div className={'page-container'}>
-        <Main />
-        <div className={'divider'} />
+    <PageContent showReviews={true}>
         <AboutUs />
-        <div className={'divider'} />
-        <Feedback />
-        <div className={'divider'} />
-        <Reviews />
-        <div className={'divider'} />
-    </div>
+    </PageContent>
 );
 
 export default AboutPage;

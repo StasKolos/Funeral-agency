@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 
+import type { PaginatedResponse, Product, ProductCategory } from '@/d-shared/api/types';
+
 import { categoriesQueryKey, getCategories } from '@/d-shared/api/categories';
 import { getProducts, getProductsQueryKey } from '@/d-shared/api/products';
 import { openImageGallery } from '@/d-shared/utils/openImageGallery';
@@ -18,6 +20,12 @@ const COFFIN_CATEGORY_CODE = 'COFFIN';
 const PRODUCTS_PAGE_SIZE = 10;
 const SKELETON_ITEMS_COUNT = PRODUCTS_PAGE_SIZE;
 
+export type ProductsProps = {
+    initialCategories?: ProductCategory[] | undefined;
+    initialProductsResponse?: PaginatedResponse<Product> | undefined;
+    initialSelectedCategory?: string | undefined;
+};
+
 const getPaginationItems = (currentPage: number, totalPages: number) => {
     const pages = new Set([1, totalPages, currentPage - 1, currentPage, currentPage + 1]);
 
@@ -26,11 +34,15 @@ const getPaginationItems = (currentPage: number, totalPages: number) => {
         .sort((firstPage, secondPage) => firstPage - secondPage);
 };
 
-const Products = () => {
+const Products = ({
+    initialCategories,
+    initialProductsResponse,
+    initialSelectedCategory = '',
+}: ProductsProps) => {
     const router = useRouter();
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [currentFilter, setCurrentFilter] = useState('');
+    const [currentFilter, setCurrentFilter] = useState(initialSelectedCategory);
 
     const {
         data: categories = [],
@@ -39,20 +51,26 @@ const Products = () => {
     } = useQuery({
         queryKey: categoriesQueryKey,
         queryFn: getCategories,
+        ...(initialCategories ? { initialData: initialCategories } : {}),
     });
 
     const selectedCategory = currentFilter || categories[0]?.code || '';
+    const productQueryKey = getProductsQueryKey({
+        category: selectedCategory,
+        page: currentPage,
+        size: PRODUCTS_PAGE_SIZE,
+    });
+    const canUseInitialProducts =
+        Boolean(initialProductsResponse) &&
+        currentPage === 1 &&
+        selectedCategory === initialSelectedCategory;
 
     const {
         data: productsResponse,
         isError: isProductsError,
         isLoading: isProductsLoading,
     } = useQuery({
-        queryKey: getProductsQueryKey({
-            category: selectedCategory,
-            page: currentPage,
-            size: PRODUCTS_PAGE_SIZE,
-        }),
+        queryKey: productQueryKey,
         queryFn: () =>
             getProducts({
                 category: selectedCategory,
@@ -60,6 +78,7 @@ const Products = () => {
                 size: PRODUCTS_PAGE_SIZE,
             }),
         enabled: selectedCategory.length > 0,
+        ...(canUseInitialProducts ? { initialData: initialProductsResponse } : {}),
     });
 
     const isLoading = isCategoriesLoading || isProductsLoading;

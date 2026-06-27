@@ -14,7 +14,7 @@ export const cremationItems = [
     },
     {
         name: 'Платная',
-        cost: '30 000',
+        cost: '19 000',
         button: {
             href: '/cremation/paid#ServiceDetails',
             name: 'Подробнее',

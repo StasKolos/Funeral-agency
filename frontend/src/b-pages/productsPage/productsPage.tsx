@@ -1,16 +1,12 @@
-import Feedback from '@/c-widgets/feedback/feedback';
-import Main from '@/c-widgets/main/main';
-import Products from '@/c-widgets/products/products';
+import { PageContent } from '@/c-widgets/contentLayout/contentLayout';
+import Products, { type ProductsProps } from '@/c-widgets/products/products';
 
-const ProductsPage = () => (
-    <div className={'page-container'}>
-        <Main />
-        <div className={'divider'} />
-        <Products />
-        <div className={'divider'} />
-        <Feedback />
-        <div className={'divider'} />
-    </div>
+type ProductsPageProps = ProductsProps;
+
+const ProductsPage = (props: ProductsPageProps) => (
+    <PageContent>
+        <Products {...props} />
+    </PageContent>
 );
 
 export default ProductsPage;

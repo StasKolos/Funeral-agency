@@ -1,10 +1,25 @@
 import type { Metadata } from 'next';
 
 import FuneralStandardPage from '@/b-pages/funeralStandardPage/funeralStandardPage';
-import { createPageMetadata, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
+import {
+    createPageJsonLdString,
+    createPageMetadata,
+    SITE_ROUTES,
+} from '@/d-shared/seo/siteConfig';
 
-export const metadata: Metadata = createPageMetadata(SITE_ROUTES.funeralStandardService);
+const route = SITE_ROUTES.funeralStandardService;
+const pageJsonLd = createPageJsonLdString(route);
 
-const Page = () => <FuneralStandardPage />;
+export const metadata: Metadata = createPageMetadata(route);
+
+const Page = () => (
+    <>
+        <script
+            dangerouslySetInnerHTML={{ __html: pageJsonLd }}
+            type={'application/ld+json'}
+        />
+        <FuneralStandardPage />
+    </>
+);
 
 export default Page;

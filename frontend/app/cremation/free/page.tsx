@@ -1,10 +1,25 @@
 import type { Metadata } from 'next';
 
 import CremationFreePage from '@/b-pages/cremationFreePage/cremationFreePage';
-import { createPageMetadata, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
+import {
+    createPageJsonLdString,
+    createPageMetadata,
+    SITE_ROUTES,
+} from '@/d-shared/seo/siteConfig';
 
-export const metadata: Metadata = createPageMetadata(SITE_ROUTES.cremationFreeService);
+const route = SITE_ROUTES.cremationFreeService;
+const pageJsonLd = createPageJsonLdString(route);
 
-const Page = () => <CremationFreePage />;
+export const metadata: Metadata = createPageMetadata(route);
+
+const Page = () => (
+    <>
+        <script
+            dangerouslySetInnerHTML={{ __html: pageJsonLd }}
+            type={'application/ld+json'}
+        />
+        <CremationFreePage />
+    </>
+);
 
 export default Page;

@@ -1,10 +1,25 @@
 import type { Metadata } from 'next';
 
 import ServicesPage from '@/b-pages/servicesPage/servicesPage';
-import { createPageMetadata, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
+import {
+    createPageJsonLdString,
+    createPageMetadata,
+    SITE_ROUTES,
+} from '@/d-shared/seo/siteConfig';
 
-export const metadata: Metadata = createPageMetadata(SITE_ROUTES.services);
+const route = SITE_ROUTES.services;
+const pageJsonLd = createPageJsonLdString(route);
 
-const Page = () => <ServicesPage />;
+export const metadata: Metadata = createPageMetadata(route);
+
+const Page = () => (
+    <>
+        <script
+            dangerouslySetInnerHTML={{ __html: pageJsonLd }}
+            type={'application/ld+json'}
+        />
+        <ServicesPage />
+    </>
+);
 
 export default Page;
