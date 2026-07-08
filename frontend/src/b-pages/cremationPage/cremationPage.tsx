@@ -2,11 +2,12 @@ import PageContent from '@/c-widgets/pageContent/pageContent';
 import ServiceDetails from '@/c-widgets/serviceDetails/serviceDetails';
 import CremationServices from '@/c-widgets/services/cremationServices/cremationServices';
 import { serviceDetailsItems } from '@/d-shared/data/serviceDetailsItems';
+import { inlineText } from '@/d-shared/utils/inlineText';
 
-const MAIN_DESCRIPTION = [
-    'Поможем оформить кремацию, передать вещи в морг, подобрать гроб и урну,',
-    'организовать транспорт, документы, прощание и дальнейшее захоронение праха.',
-].join(' ');
+const MAIN_DESCRIPTION = inlineText`
+    Поможем оформить кремацию, передать вещи в морг, подобрать гроб и урну,
+    организовать транспорт, документы, прощание и дальнейшее захоронение праха.
+`;
 
 const CremationPage = () => (
     <PageContent

@@ -2,11 +2,12 @@ import PageContent from '@/c-widgets/pageContent/pageContent';
 import ServiceDetails from '@/c-widgets/serviceDetails/serviceDetails';
 import FuneralServices from '@/c-widgets/services/funeralServices/funeralServices';
 import { serviceDetailsItems } from '@/d-shared/data/serviceDetailsItems';
+import { inlineText } from '@/d-shared/utils/inlineText';
 
-const MAIN_DESCRIPTION = [
-    'Организуем похороны от первого звонка до захоронения: перевозка в морг,',
-    'документы, кладбище, катафалк, бригада, прощание и сопровождение семьи.',
-].join(' ');
+const MAIN_DESCRIPTION = inlineText`
+    Организуем похороны от первого звонка до захоронения: перевозка в морг,
+    документы, кладбище, катафалк, бригада, прощание и сопровождение семьи.
+`;
 
 const FuneralPage = () => (
     <PageContent

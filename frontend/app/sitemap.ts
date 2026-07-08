@@ -4,7 +4,7 @@ import { getCategories } from '@/d-shared/api/categories';
 import { getProductCategoryPath } from '@/d-shared/products/productRoutes';
 import { getAbsoluteUrl, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
 
-const LAST_MODIFIED = new Date('2026-06-27');
+const LAST_MODIFIED = new Date('2026-07-09');
 
 const getProductCategorySitemapItems = async (): Promise<MetadataRoute.Sitemap> => {
     try {

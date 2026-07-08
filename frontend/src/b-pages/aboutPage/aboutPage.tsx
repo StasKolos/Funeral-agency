@@ -1,10 +1,11 @@
 import AboutUs from '@/c-widgets/aboutUs/aboutUs';
 import PageContent from '@/c-widgets/pageContent/pageContent';
+import { inlineText } from '@/d-shared/utils/inlineText';
 
-const MAIN_DESCRIPTION = [
-    'Грань ДВ помогает семьям в Хабаровске организовать похороны, кремацию,',
-    'перевозку умерших и благоустройство мест захоронений с внимательным сопровождением.',
-].join(' ');
+const MAIN_DESCRIPTION = inlineText`
+    Грань ДВ помогает семьям в Хабаровске организовать похороны, кремацию,
+    перевозку умерших и благоустройство мест захоронений с внимательным сопровождением.
+`;
 
 const AboutPage = () => (
     <PageContent

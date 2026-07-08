@@ -1,11 +1,12 @@
 import PageContent from '@/c-widgets/pageContent/pageContent';
 import ServiceDetails from '@/c-widgets/serviceDetails/serviceDetails';
 import { serviceDetailsItems } from '@/d-shared/data/serviceDetailsItems';
+import { inlineText } from '@/d-shared/utils/inlineText';
 
-const MAIN_DESCRIPTION = [
-    'Базовый тариф от 21 000 ₽: гроб, временный памятник, катафалк, бригада,',
-    'копка могилы и сопровождение документов без лишних расходов.',
-].join(' ');
+const MAIN_DESCRIPTION = inlineText`
+    Базовый тариф от 21 000 ₽: гроб, временный памятник, катафалк, бригада,
+    копка могилы и сопровождение документов без лишних расходов.
+`;
 
 const FuneralEconomyPage = () => (
     <PageContent

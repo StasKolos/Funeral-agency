@@ -1,11 +1,12 @@
 import PageContent from '@/c-widgets/pageContent/pageContent';
 import ServiceDetails from '@/c-widgets/serviceDetails/serviceDetails';
 import { serviceDetailsItems } from '@/d-shared/data/serviceDetailsItems';
+import { inlineText } from '@/d-shared/utils/inlineText';
 
-const MAIN_DESCRIPTION = [
-    'Тариф от 65 000 ₽ с бархатным гробом и гранитным памятником.',
-    'Берём на себя документы, транспорт, бригаду, копку могилы и сопровождение церемонии.',
-].join(' ');
+const MAIN_DESCRIPTION = inlineText`
+    Тариф от 65 000 ₽ с бархатным гробом и гранитным памятником. Берём на себя документы,
+    транспорт, бригаду, копку могилы и сопровождение церемонии.
+`;
 
 const FuneralStandardPage = () => (
     <PageContent

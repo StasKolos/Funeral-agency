@@ -13,7 +13,10 @@ const Services = () => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
 
     return (
-        <section className={clsx('section-wrapper', s['wrapper'])}>
+        <section
+            className={clsx('section-wrapper', s['wrapper'])}
+            id={'Services'}
+        >
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>Самые доступные цены в Хабаровске</p>
