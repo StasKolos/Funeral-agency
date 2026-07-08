@@ -20,7 +20,7 @@ export const funeralItems = [
         ],
     },
     {
-        name: 'Эконом плюс',
+        name: 'Эконом-плюс',
         cost: '40 000',
         button: {
             href: '/funeral/economy-plus#ServiceDetails',
@@ -28,7 +28,7 @@ export const funeralItems = [
         },
         img: {
             src: '/funeral-2.svg',
-            alt: 'Иконка тарифа Эконом плюс',
+            alt: 'Иконка тарифа Эконом-плюс',
         },
         list: ['гроб бархат', 'памятник (мраморная крошка)', 'бригада', 'катафалк', 'копка могилы'],
     },

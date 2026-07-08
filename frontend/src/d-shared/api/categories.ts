@@ -20,8 +20,6 @@ export const getCategories = async () => {
                   'Сервер недоступен или запрос был прерван',
               ].join(' ');
 
-        // eslint-disable-next-line no-console
-        console.error(message);
         throw new Error(message);
     }
 };

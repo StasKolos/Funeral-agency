@@ -10,6 +10,7 @@ import type { PaginatedResponse, Product, ProductCategory } from '@/d-shared/api
 
 import { categoriesQueryKey, getCategories } from '@/d-shared/api/categories';
 import { getProducts, getProductsQueryKey } from '@/d-shared/api/products';
+import { getProductCategoryPath, PRODUCTS_PAGE_SIZE } from '@/d-shared/products/productRoutes';
 import { openImageGallery } from '@/d-shared/utils/openImageGallery';
 
 import ProductCard, { type ProductGalleryItem } from './productCard';
@@ -17,10 +18,10 @@ import s from './products.module.scss';
 import ProductSkeletonCard from './productSkeletonCard';
 
 const COFFIN_CATEGORY_CODE = 'COFFIN';
-const PRODUCTS_PAGE_SIZE = 10;
 const SKELETON_ITEMS_COUNT = PRODUCTS_PAGE_SIZE;
 
 export type ProductsProps = {
+    fixedCategory?: ProductCategory | undefined;
     initialCategories?: ProductCategory[] | undefined;
     initialProductsResponse?: PaginatedResponse<Product> | undefined;
     initialSelectedCategory?: string | undefined;
@@ -35,6 +36,7 @@ const getPaginationItems = (currentPage: number, totalPages: number) => {
 };
 
 const Products = ({
+    fixedCategory,
     initialCategories,
     initialProductsResponse,
     initialSelectedCategory = '',
@@ -42,7 +44,7 @@ const Products = ({
     const router = useRouter();
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [currentFilter, setCurrentFilter] = useState(initialSelectedCategory);
+    const isFixedCategory = Boolean(fixedCategory);
 
     const {
         data: categories = [],
@@ -51,10 +53,12 @@ const Products = ({
     } = useQuery({
         queryKey: categoriesQueryKey,
         queryFn: getCategories,
+        enabled: !isFixedCategory,
         ...(initialCategories ? { initialData: initialCategories } : {}),
     });
 
-    const selectedCategory = currentFilter || categories[0]?.code || '';
+    const selectedCategory =
+        fixedCategory?.code ?? (initialSelectedCategory || categories[0]?.code || '');
     const productQueryKey = getProductsQueryKey({
         category: selectedCategory,
         page: currentPage,
@@ -98,14 +102,17 @@ const Products = ({
         () => Array.from({ length: SKELETON_ITEMS_COUNT }, (_, index) => index),
         [],
     );
+    const productCategoryPath = fixedCategory
+        ? getProductCategoryPath(fixedCategory.code)
+        : '/products';
 
     useEffect(() => {
-        if (!isCategoriesError) return;
+        if (isFixedCategory || !isCategoriesError) return;
 
         toast.error('Не удалось загрузить категории', {
             toastId: 'products-categories-error',
         });
-    }, [isCategoriesError]);
+    }, [isCategoriesError, isFixedCategory]);
 
     useEffect(() => {
         if (!isProductsError) return;
@@ -119,14 +126,9 @@ const Products = ({
         openImageGallery(productItems, index);
     };
 
-    const handleFilterChange = (filter: string) => {
-        setCurrentFilter(filter);
-        setCurrentPage(1);
-    };
-
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
-        router.push('/products#Products');
+        router.push(`${productCategoryPath}#Products`);
     };
 
     return (
@@ -137,28 +139,14 @@ const Products = ({
             <div className={clsx('content-wrapper', 'content')}>
                 <div className={'header'}>
                     <p>Самые низкие цены в Хабаровске</p>
-                    <h2>Товары</h2>
+                    <h2>{fixedCategory?.name ?? 'Товары'}</h2>
                 </div>
-                <label className={s['filter-select-wrapper']}>
-                    <span>Категория товаров</span>
-                    <select
-                        className={s['filter-select']}
-                        disabled={categories.length === 0}
-                        onChange={(event) => handleFilterChange(event.target.value)}
-                        value={selectedCategory}
-                    >
-                        {categories.map((category) => (
-                            <option
-                                key={category.code}
-                                value={category.code}
-                            >
-                                {category.name}
-                            </option>
-                        ))}
-                    </select>
-                </label>
                 {isLoading && (
-                    <ul className={s['items']}>
+                    <ul
+                        className={clsx(s['items'], {
+                            [s['coffin-items']]: isCoffinItems,
+                        })}
+                    >
                         {skeletonItems.map((item) => (
                             <ProductSkeletonCard
                                 isCoffinItems={isCoffinItems}
@@ -168,7 +156,11 @@ const Products = ({
                     </ul>
                 )}
                 {!isLoading && (
-                    <ul className={s['items']}>
+                    <ul
+                        className={clsx(s['items'], {
+                            [s['coffin-items']]: isCoffinItems,
+                        })}
+                    >
                         {productItems.map((item, index) => (
                             <ProductCard
                                 index={index}

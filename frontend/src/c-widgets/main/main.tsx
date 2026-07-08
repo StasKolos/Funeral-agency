@@ -2,25 +2,39 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { inlineText } from '@/d-shared/utils/inlineText';
+
 import s from './main.module.scss';
 
-const Main = () => (
+export const DEFAULT_MAIN_HEADER = inlineText`
+    ОРГАНИЗАЦИЯ ПОХОРОН, КРЕМАЦИЯ, ТРАНСПОРТИРОВКА ТЕЛА УМЕРШЕГО, ПЕРЕВОЗКА УМЕРШИХ 24/7,
+    БЛАГОУСТРОЙСТВО МЕСТ ЗАХОРОНЕНИЙ, ОКАЗАНИЕ РИТУАЛЬНЫХ УСЛУГ
+`;
+
+export const DEFAULT_MAIN_DESCRIPTION = inlineText`
+    Мы проведём прощание с любовью и уважением, чтобы каждый момент отражал вашу заботу
+    о близком человеке. Нас выбирают по рекомендациям, доверяя организацию достойных похорон.
+`;
+
+type MainProps = {
+    description?: string | undefined;
+    header?: string | undefined;
+};
+
+const Main = ({
+    description = DEFAULT_MAIN_DESCRIPTION,
+    header = DEFAULT_MAIN_HEADER,
+}: MainProps) => (
     <section className={clsx('section-wrapper', s['main'])}>
         <div
             aria-hidden={true}
             className={s['background-opacity']}
         />
         <div className={clsx('content-wrapper', s['main-content'])}>
-            <h1 className={s['info']}>
-                ОРГАНИЗАЦИЯ ПОХОРОН, КРЕМАЦИЯ, ТРАНСПОРТИРОВКА ГРУЗА 200, ПЕРЕВОЗКА УМЕРШИХ 24/7.
-                <br />
-                БЛАГОУСТРОЙСТВО МЕСТ ЗАХОРОНЕНИЙ, ОКАЗАНИЕ РИТУАЛЬНЫХ УСЛУГ
-                <span>
-                    Мы проведём прощание с любовью и уважением, чтобы каждый момент отражал вашу
-                    заботу о близком человеке. Нас выбирают по рекомендациям, доверяя организацию
-                    достойных похорон.
-                </span>
-            </h1>
+            <div className={s['info']}>
+                <h1>{header}</h1>
+                <span>{description}</span>
+            </div>
             <ul className={s['contacts']}>
                 <li>
                     <Image

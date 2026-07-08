@@ -2,6 +2,7 @@ export type ProductCategory = {
     id: number;
     code: string;
     name: string;
+    imageUrl?: string | undefined;
 };
 
 export type Product = {

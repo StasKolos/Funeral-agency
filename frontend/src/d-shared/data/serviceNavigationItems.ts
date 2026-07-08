@@ -25,7 +25,7 @@ export const serviceNavigationItems = [
                 href: '/funeral/economy#ServiceDetails',
             },
             {
-                name: 'Эконом плюс',
+                name: 'Эконом-плюс',
                 href: '/funeral/economy-plus#ServiceDetails',
             },
             {
@@ -53,7 +53,7 @@ export const serviceNavigationItems = [
         ],
     },
     {
-        name: 'Транспортировка груза 200',
+        name: 'Транспортировка тела умершего',
         href: '/cargo#ServiceDetails',
     },
     {

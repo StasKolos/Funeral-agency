@@ -1,4 +1,4 @@
-import { PageContent } from '@/c-widgets/contentLayout/contentLayout';
+import PageContent from '@/c-widgets/pageContent/pageContent';
 import CremationServices from '@/c-widgets/services/cremationServices/cremationServices';
 import FuneralServices from '@/c-widgets/services/funeralServices/funeralServices';
 
