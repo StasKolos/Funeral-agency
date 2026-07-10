@@ -135,7 +135,7 @@ export const getCanonicalProductCategoryCode = (categoryCode: string) => {
 };
 
 export const getProductCategorySlug = (categoryCode: string) =>
-    getCanonicalProductCategoryCode(categoryCode).toLowerCase();
+    getCanonicalProductCategoryCode(categoryCode).toLowerCase().replace(/_/g, '-');
 
 export const getProductCategoryPath = (categoryCode: string) =>
     `/products/${encodeURIComponent(getProductCategorySlug(categoryCode))}`;
