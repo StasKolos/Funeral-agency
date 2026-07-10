@@ -21,6 +21,14 @@ export const metadata: Metadata = createRootMetadata();
 
 const funeralHomeJsonLd = stringifyJsonLd(createFuneralHomeJsonLd());
 const webSiteJsonLd = stringifyJsonLd(createWebSiteJsonLd());
+const googleTagId = 'G-CGW3F0KX93';
+const googleTagScriptUrl = `https://www.googletagmanager.com/gtag/js?id=${googleTagId}`;
+const googleTagCounter = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${googleTagId}');
+`;
 const yandexMetrikaCounter = `
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -64,6 +72,17 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                 id={'yandex-metrika'}
                 strategy={'beforeInteractive'}
                 type={'text/javascript'}
+            />
+            <Script
+                async={true}
+                id={'google-tag-manager'}
+                src={googleTagScriptUrl}
+                strategy={'afterInteractive'}
+            />
+            <Script
+                dangerouslySetInnerHTML={{ __html: googleTagCounter }}
+                id={'google-tag'}
+                strategy={'afterInteractive'}
             />
             <noscript
                 dangerouslySetInnerHTML={{
