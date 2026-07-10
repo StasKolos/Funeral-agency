@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 import { PropsWithChildren } from 'react';
 import { ToastContainer } from 'react-toastify';
 
@@ -58,8 +59,10 @@ const RootLayout = ({ children }: PropsWithChildren) => (
         lang={'ru'}
     >
         <body className={montserrat.className}>
-            <script
+            <Script
                 dangerouslySetInnerHTML={{ __html: yandexMetrikaCounter }}
+                id={'yandex-metrika'}
+                strategy={'beforeInteractive'}
                 type={'text/javascript'}
             />
             <noscript
