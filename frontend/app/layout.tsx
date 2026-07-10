@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
@@ -18,6 +18,9 @@ import {
 import './style.scss';
 
 export const metadata: Metadata = createRootMetadata();
+export const viewport: Viewport = {
+    colorScheme: 'light',
+};
 
 const funeralHomeJsonLd = stringifyJsonLd(createFuneralHomeJsonLd());
 const webSiteJsonLd = stringifyJsonLd(createWebSiteJsonLd());
