@@ -1,6 +1,9 @@
+import CremationServices from '@/c-widgets/cremationServices/cremationServices';
+import Faq from '@/c-widgets/faq/faq';
 import PageContent from '@/c-widgets/pageContent/pageContent';
 import ServiceDetails from '@/c-widgets/serviceDetails/serviceDetails';
-import CremationServices from '@/c-widgets/services/cremationServices/cremationServices';
+import { cremationFaqItems } from '@/d-shared/data/faqItems';
+import { cremationReviewsItems } from '@/d-shared/data/reviewsItems';
 import { serviceDetailsItems } from '@/d-shared/data/serviceDetailsItems';
 import { inlineText } from '@/d-shared/utils/inlineText';
 
@@ -13,10 +16,12 @@ const CremationPage = () => (
     <PageContent
         mainDescription={MAIN_DESCRIPTION}
         mainHeader={'Сколько стоит кремировать человека в Хабаровске'}
+        reviewItems={cremationReviewsItems}
         showReviews={true}
     >
         <ServiceDetails details={serviceDetailsItems.cremation} />
         <CremationServices />
+        <Faq items={cremationFaqItems} />
     </PageContent>
 );
 

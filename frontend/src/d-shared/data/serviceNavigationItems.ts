@@ -44,11 +44,11 @@ export const serviceNavigationItems = [
         children: [
             {
                 name: 'Бесплатная',
-                href: '/cremation/free#ServiceDetails',
+                href: '/cremation#Free',
             },
             {
                 name: 'Платная',
-                href: '/cremation/paid#ServiceDetails',
+                href: '/cremation#Paid',
             },
         ],
     },
