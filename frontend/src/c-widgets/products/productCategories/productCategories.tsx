@@ -14,12 +14,7 @@ import {
 
 import s from './productCategories.module.scss';
 
-const CATEGORY_ICONS = [
-    '/services-5.svg',
-    '/funeral-1.svg',
-    '/services-4.svg',
-    '/cremation-2.svg',
-];
+const CATEGORY_ICONS = ['/services-5.svg', '/funeral-1.svg', '/services-4.svg', '/cremation-2.svg'];
 
 const PRODUCT_CATEGORY_MIN_PRICES: Partial<Record<string, string>> = {
     BALLS: '2 000',

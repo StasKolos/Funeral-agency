@@ -4,13 +4,17 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-import { reviewsItems, reviewsSummary } from '@/d-shared/data/reviewsItems';
+import { reviewsItems, reviewsSummary, type ReviewItem } from '@/d-shared/data/reviewsItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 
 import s from './reviews.module.scss';
 
 const MAX_RATING = 5;
 const OVERFLOW_TOLERANCE = 1;
+
+type ReviewsProps = {
+    items?: ReviewItem[] | undefined;
+};
 
 type ReviewTextProps = {
     author: string;
@@ -64,7 +68,7 @@ const ReviewText = ({ text, author, isExpanded, onExpand }: ReviewTextProps) => 
     );
 };
 
-const Reviews = () => {
+const Reviews = ({ items = reviewsItems }: ReviewsProps) => {
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
     const summaryRef = useScrollAnimation<HTMLDivElement>(s['animated']);
     const [expandedReviewKey, setExpandedReviewKey] = useState<string | null>(null);
@@ -98,7 +102,7 @@ const Reviews = () => {
                     className={s['items']}
                     ref={listRef}
                 >
-                    {reviewsItems.map((review) => {
+                    {items.map((review) => {
                         const reviewKey = `${review.name}-${review.date}`;
                         const isExpanded = expandedReviewKey === reviewKey;
 

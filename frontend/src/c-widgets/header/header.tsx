@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ServicesDropdown from './components/servicesDropdown';
-import Sidebar from './components/sidebar';
 import s from './header.module.scss';
+import ServicesDropdown from './servicesDropdown/servicesDropdown';
+import Sidebar from './sidebar/sidebar';
 
 const Header = () => (
     <header className={s['header-wrapper']}>

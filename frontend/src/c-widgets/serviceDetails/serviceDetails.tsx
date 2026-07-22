@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import Link from 'next/link';
 import { useId } from 'react';
 
 import { ServiceDetailsItem } from '@/d-shared/data/serviceDetailsItems';
@@ -29,6 +30,22 @@ const ServiceDetails = ({ details }: ServiceDetailsProps) => {
                 </div>
                 <div className={s['content']}>
                     <p className={s['intro']}>{details.intro}</p>
+                    {details.related && (
+                        <p className={s['related']}>
+                            {details.related.map((part, index) =>
+                                typeof part === 'string' ? (
+                                    part
+                                ) : (
+                                    <Link
+                                        href={part.href}
+                                        key={`${part.href}-${index}`}
+                                    >
+                                        {part.text}
+                                    </Link>
+                                ),
+                            )}
+                        </p>
+                    )}
                     <div
                         className={s['columns']}
                         ref={columnsRef}

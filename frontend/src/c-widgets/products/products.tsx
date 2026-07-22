@@ -13,7 +13,7 @@ import { getProducts, getProductsQueryKey } from '@/d-shared/api/products';
 import { getProductCategoryPath, PRODUCTS_PAGE_SIZE } from '@/d-shared/products/productRoutes';
 import { openImageGallery } from '@/d-shared/utils/openImageGallery';
 
-import ProductCard, { type ProductGalleryItem } from './productCard';
+import ProductCard, { type ProductGalleryItem } from './productCard/productCard';
 import s from './products.module.scss';
 import ProductSkeletonCard from './productSkeletonCard';
 

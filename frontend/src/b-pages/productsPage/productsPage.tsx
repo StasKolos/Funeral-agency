@@ -1,7 +1,7 @@
 import type { ProductCategory } from '@/d-shared/api/types';
 
 import PageContent from '@/c-widgets/pageContent/pageContent';
-import ProductCategories from '@/c-widgets/products/productCategories';
+import ProductCategories from '@/c-widgets/products/productCategories/productCategories';
 import { inlineText } from '@/d-shared/utils/inlineText';
 
 type ProductsPageProps = {

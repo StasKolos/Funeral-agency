@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import ImageWithSkeleton from '@/d-shared/ui/imageWithSkeleton/imageWithSkeleton';
 
-import s from './products.module.scss';
+import s from './productCard.module.scss';
 
 const COFFIN_PRODUCT_IMAGE_HEIGHT = 150;
 const COFFIN_PRODUCT_IMAGE_WIDTH = 200;

@@ -3,27 +3,30 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
-import { faqItems } from '@/d-shared/data/faqItems';
+import { faqItems, type FaqItem } from '@/d-shared/data/faqItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 
 import s from './faq.module.scss';
 
-const faqJsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.answer,
-        },
-    })),
-}).replace(/</g, '\\u003c');
+type FaqProps = {
+    items?: FaqItem[];
+};
 
-const Faq = () => {
+const Faq = ({ items = faqItems }: FaqProps) => {
     const [openedIndex, setOpenedIndex] = useState<number | null>(null);
     const listRef = useScrollAnimation<HTMLUListElement>(s['animated']);
+    const faqJsonLd = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: items.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer,
+            },
+        })),
+    }).replace(/</g, '\\u003c');
 
     return (
         <section
@@ -43,7 +46,7 @@ const Faq = () => {
                     className={s['items']}
                     ref={listRef}
                 >
-                    {faqItems.map((item, index) => {
+                    {items.map((item, index) => {
                         const isOpened = openedIndex === index;
                         const answerId = `faq-answer-${index}`;
                         const questionId = `faq-question-${index}`;

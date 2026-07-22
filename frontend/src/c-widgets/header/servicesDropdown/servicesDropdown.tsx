@@ -8,7 +8,7 @@ import {
     serviceNavigationItems,
 } from '@/d-shared/data/serviceNavigationItems';
 
-import s from '../header.module.scss';
+import s from './servicesDropdown.module.scss';
 
 const ServicesDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);

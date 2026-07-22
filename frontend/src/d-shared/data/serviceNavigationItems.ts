@@ -22,19 +22,19 @@ export const serviceNavigationItems = [
         children: [
             {
                 name: 'Эконом',
-                href: '/funeral/economy#ServiceDetails',
+                href: '/funeral#Economy',
             },
             {
                 name: 'Эконом-плюс',
-                href: '/funeral/economy-plus#ServiceDetails',
+                href: '/funeral#EconomyPlus',
             },
             {
                 name: 'Стандарт',
-                href: '/funeral/standard#ServiceDetails',
+                href: '/funeral#Standard',
             },
             {
                 name: 'Премиум',
-                href: '/funeral/premium#ServiceDetails',
+                href: '/funeral#Premium',
             },
         ],
     },

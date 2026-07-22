@@ -10,7 +10,7 @@ import {
     serviceNavigationItems,
 } from '@/d-shared/data/serviceNavigationItems';
 
-import s from '../header.module.scss';
+import s from './sidebar.module.scss';
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);

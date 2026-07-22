@@ -1,5 +1,7 @@
 import { Children, Fragment, type ReactNode } from 'react';
 
+import type { ReviewItem } from '@/d-shared/data/reviewsItems';
+
 import Feedback from '@/c-widgets/feedback/feedback';
 import Main from '@/c-widgets/main/main';
 import Reviews from '@/c-widgets/reviews/reviews';
@@ -8,6 +10,7 @@ type PageContentProps = {
     children?: ReactNode;
     mainDescription?: string;
     mainHeader?: string;
+    reviewItems?: ReviewItem[];
     showFeedback?: boolean;
     showReviews?: boolean;
 };
@@ -18,6 +21,7 @@ const PageContent = ({
     children,
     mainDescription,
     mainHeader,
+    reviewItems,
     showFeedback = true,
     showReviews = false,
 }: PageContentProps) => (
@@ -41,7 +45,7 @@ const PageContent = ({
         )}
         {showReviews && (
             <>
-                <Reviews />
+                <Reviews items={reviewItems} />
                 <Divider />
             </>
         )}

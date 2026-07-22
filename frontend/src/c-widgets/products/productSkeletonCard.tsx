@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import s from './products.module.scss';
+import s from './productCard/productCard.module.scss';
 
 type ProductSkeletonCardProps = {
     isCoffinItems: boolean;
