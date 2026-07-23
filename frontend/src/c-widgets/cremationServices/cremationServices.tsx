@@ -4,13 +4,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CremationComparisonTable from '@/c-widgets/cremationComparisonTable/cremationComparisonTable';
 import {
     cremationItems,
     formatCremationOptionPrice,
 } from '@/d-shared/data/cremationItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 
-import CremationComparisonTable from './cremationComparisonTable/cremationComparisonTable';
 import s from './cremationServices.module.scss';
 
 const CremationServices = () => {

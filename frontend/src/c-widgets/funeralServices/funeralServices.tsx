@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import FuneralComparisonTable from '@/c-widgets/funeralComparisonTable/funeralComparisonTable';
 import { formatFuneralPackagePrice, funeralItems } from '@/d-shared/data/funeralItems';
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
 
-import FuneralComparisonTable from './funeralComparisonTable/funeralComparisonTable';
 import s from './funeralServices.module.scss';
 
 const FuneralServices = () => {
