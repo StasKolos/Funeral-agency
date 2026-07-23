@@ -58,6 +58,6 @@ export const serviceNavigationItems = [
     },
     {
         name: 'Благоустройство захоронений',
-        href: '/grave-improvement#ServiceDetails',
+        href: '/grave-improvement#GraveImprovementServices',
     },
 ] as const satisfies readonly ServiceNavigationItem[];

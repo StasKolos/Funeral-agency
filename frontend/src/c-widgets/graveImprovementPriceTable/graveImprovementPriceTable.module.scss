@@ -1,0 +1,121 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.description {
+  max-width: 900px;
+  align-self: center;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.scroll-hint {
+  display: none;
+  text-align: center;
+
+  @media (max-width: 800px) {
+    display: block;
+  }
+}
+
+.scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  outline-offset: 4px;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #000000;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #ffffff;
+  }
+}
+
+.table {
+  width: 100%;
+  min-width: 800px;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  th,
+  td {
+    padding: 18px 16px;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  thead th {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.05rem;
+  }
+
+  thead th:first-child,
+  tbody th {
+    position: sticky;
+    left: 0;
+    width: 280px;
+
+    @media (max-width: 800px) {
+      width: 190px;
+    }
+
+    @media (max-width: 500px) {
+      width: 140px;
+    }
+  }
+
+  thead th:first-child {
+    z-index: 3;
+  }
+
+  thead th:nth-child(2),
+  thead th:nth-child(3) {
+    width: 140px;
+  }
+
+  tbody th {
+    z-index: 2;
+    background-color: #ffffff;
+    font-weight: 700;
+    text-align: left;
+    box-shadow: 2px 0 0 #000000;
+  }
+
+  tbody td {
+    background-color: #ffffff;
+    border-left: 1px solid #000000;
+  }
+
+  tbody tr + tr th,
+  tbody tr + tr td {
+    border-top: 1px solid #000000;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}

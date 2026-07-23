@@ -1,8 +1,12 @@
+/* eslint-disable max-lines */
+
 const reviewText = (strings: TemplateStringsArray) =>
     String.raw({ raw: strings.raw })
         .replace(/\r?\n\s*/g, ' ')
         .replace(/\\n/g, '\n')
         .trim();
+
+const SERVICE_REVIEWS_LIMIT = 10;
 
 export type ReviewService =
     | 'cargo'
@@ -23,7 +27,7 @@ export type ReviewItem = {
 
 export const reviewsSummary = {
     rating: '5,0',
-    count: '22 отзыва',
+    count: '31 отзыв',
     sourceUrl: 'https://2gis.ru/khabarovsk/firm/70000001101924571/tab/reviews',
 };
 
@@ -282,7 +286,16 @@ const generalReviewsItems = reviewsItems.filter(
     (review) => !review.services?.length || review.services.includes('general'),
 );
 
+const graveImprovementSpecificReviewsItems = reviewsItems.filter((review) =>
+    review.services?.includes('grave-improvement'),
+);
+
 export const cremationReviewsItems = [
     ...cremationSpecificReviewsItems,
     ...generalReviewsItems,
 ];
+
+export const graveImprovementReviewsItems = [
+    ...graveImprovementSpecificReviewsItems,
+    ...generalReviewsItems,
+].slice(0, SERVICE_REVIEWS_LIMIT);

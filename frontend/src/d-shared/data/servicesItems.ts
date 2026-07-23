@@ -66,7 +66,7 @@ export const servicesItems = [
     },
     {
         name: 'Благоустройство захоронений',
-        cost: '2 800',
+        cost: '3 000',
         button: {
             href: graveImprovementService.href,
             name: 'Подробнее',
