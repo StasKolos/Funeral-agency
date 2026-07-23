@@ -55,6 +55,20 @@ export const serviceNavigationItems = [
     {
         name: 'Транспортировка тела умершего',
         href: '/cargo#ServiceDetails',
+        children: [
+            {
+                name: 'По Хабаровску',
+                href: '/cargo#Khabarovsk',
+            },
+            {
+                name: 'Железнодорожная',
+                href: '/cargo#Rail',
+            },
+            {
+                name: 'Авиаперевозка',
+                href: '/cargo#Air',
+            },
+        ],
     },
     {
         name: 'Благоустройство захоронений',

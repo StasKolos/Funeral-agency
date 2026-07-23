@@ -90,7 +90,7 @@ export const SITE_ROUTES = {
         'Перевозка тела умершего в Хабаровске',
         inlineText`
             Перевозка тела умершего в Хабаровске от 1 200 ₽: катафалк до морга,
-            доставка на похороны, груз 200, спецтранспорт и авиа. Работаем 24/7.
+            доставка на похороны, перевозка умершего, спецтранспорт и авиа. Работаем 24/7.
         `,
         '1200',
     ),
@@ -290,8 +290,8 @@ export const createFuneralHomeJsonLd = () => ({
         {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: WEEK_DAYS,
-            opens: '09:00',
-            closes: '18:00',
+            opens: '00:00',
+            closes: '23:59',
         },
     ],
     contactPoint: [

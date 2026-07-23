@@ -146,7 +146,7 @@ export const reviewsItems: ReviewItem[] = [
         initials: 'ТЛ',
         date: '2ГИС',
         rating: 5,
-        services: ['cremation'],
+        services: ['cargo', 'cremation'],
         text: reviewText`
             Уже второй раз обращаюсь в это ритуальное агентство! Причем сама нахожусь вообще не в
             Хабаровске! Все четко, по делу и, если можно так выразиться - с душой! Максим, вам
@@ -237,7 +237,7 @@ export const reviewsItems: ReviewItem[] = [
         initials: 'АБ',
         date: '2ГИС',
         rating: 5,
-        services: ['cremation'],
+        services: ['cargo', 'cremation'],
         text: reviewText`
             Спасибо вам Максим что помогли в транспортировке и доставки праха мамы очень вам
             благодарна вы очень хороший человек и вашему водителю спасибо
@@ -290,10 +290,19 @@ const graveImprovementSpecificReviewsItems = reviewsItems.filter((review) =>
     review.services?.includes('grave-improvement'),
 );
 
+const cargoSpecificReviewsItems = reviewsItems.filter((review) =>
+    review.services?.includes('cargo'),
+);
+
 export const cremationReviewsItems = [
     ...cremationSpecificReviewsItems,
     ...generalReviewsItems,
 ];
+
+export const cargoReviewsItems = [
+    ...cargoSpecificReviewsItems,
+    ...generalReviewsItems,
+].slice(0, SERVICE_REVIEWS_LIMIT);
 
 export const graveImprovementReviewsItems = [
     ...graveImprovementSpecificReviewsItems,
