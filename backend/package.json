@@ -13,6 +13,7 @@
         "start:dev": "nest start --watch",
         "start:debug": "nest start --debug --watch",
         "start:prod": "node dist/main",
+        "data:import-generated-products": "node scripts/import-generated-products.mjs",
         "lint": "eslint src eslint.config.mjs",
         "typecheck": "tsc --noEmit"
     },

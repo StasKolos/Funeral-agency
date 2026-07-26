@@ -14,6 +14,8 @@ export type ReviewService =
     | 'funeral'
     | 'general'
     | 'grave-improvement'
+    | 'product-monument'
+    | 'product-wreaths'
     | 'products';
 
 export type ReviewItem = {
@@ -88,7 +90,7 @@ export const reviewsItems: ReviewItem[] = [
         initials: 'НБ',
         date: '2ГИС',
         rating: 5,
-        services: ['funeral', 'grave-improvement'],
+        services: ['funeral', 'grave-improvement', 'product-monument'],
         text: reviewText`
             Обращались в прошлом году к Максиму за помощью в организации похорон дорогого человека.
             Что очень важно, получили чуткое отношение и понимание по всем вопросам. Документы
@@ -194,7 +196,7 @@ export const reviewsItems: ReviewItem[] = [
         initials: 'МЗ',
         date: '2ГИС',
         rating: 5,
-        services: ['products'],
+        services: ['products', 'product-wreaths'],
         text: reviewText`
             Благодарим за тёплое отношение и готовность помочь! Казалось бы, ради мелочи, как венок,
             Максим пересёк город и задержал сотрудника после окончания рабочего дня, чтобы сделать
@@ -308,3 +310,47 @@ export const graveImprovementReviewsItems = [
     ...graveImprovementSpecificReviewsItems,
     ...generalReviewsItems,
 ].slice(0, SERVICE_REVIEWS_LIMIT);
+
+const GRAVE_IMPROVEMENT_PRODUCT_CODES = new Set([
+    'BALLS',
+    'CROSS',
+    'FENCES',
+    'MONUMENT',
+    'TABLES_AND_CHAIRS',
+    'VASES',
+]);
+
+const FUNERAL_PRODUCT_CODES = new Set(['BASKETS', 'COFFIN', 'WREATHS']);
+
+const PRODUCT_SPECIFIC_REVIEW_SERVICES: Partial<Record<string, ReviewService>> = {
+    MONUMENT: 'product-monument',
+    WREATHS: 'product-wreaths',
+};
+
+const normalizeProductCategoryCode = (categoryCode: string) =>
+    categoryCode.toUpperCase().replace(/-/g, '_');
+
+export const getProductCategoryReviews = (categoryCode: string) => {
+    const normalizedCategoryCode = normalizeProductCategoryCode(categoryCode);
+    const productSpecificService = PRODUCT_SPECIFIC_REVIEW_SERVICES[normalizedCategoryCode];
+    const relatedService = GRAVE_IMPROVEMENT_PRODUCT_CODES.has(normalizedCategoryCode)
+        ? 'grave-improvement'
+        : FUNERAL_PRODUCT_CODES.has(normalizedCategoryCode)
+          ? 'funeral'
+          : undefined;
+    const productSpecificReviews = productSpecificService
+        ? reviewsItems.filter((review) => review.services?.includes(productSpecificService))
+        : [];
+    const relatedReviews = relatedService
+        ? reviewsItems.filter((review) => review.services?.includes(relatedService))
+        : [];
+
+    return Array.from(
+        new Set([
+            ...productSpecificReviews,
+            ...relatedReviews,
+            ...generalReviewsItems,
+            ...reviewsItems,
+        ]),
+    ).slice(0, SERVICE_REVIEWS_LIMIT);
+};

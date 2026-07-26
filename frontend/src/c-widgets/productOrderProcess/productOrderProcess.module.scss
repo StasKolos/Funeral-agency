@@ -1,0 +1,44 @@
+.wrapper {
+  background-color: #e4e4e4;
+  color: #000000;
+}
+
+.steps {
+  padding: 32px 32px 32px 56px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  box-shadow:
+    0 2px 4px -2px #0000001a,
+    0 4px 6px -1px #0000001a;
+
+  li {
+    padding: 20px 0 20px 8px;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    list-style-position: outside;
+    list-style-type: decimal;
+
+    & + li {
+      border-top: 2px solid #e4e4e4;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  @media (max-width: 600px) {
+    padding: 24px 24px 24px 48px;
+  }
+}

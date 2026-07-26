@@ -5,7 +5,6 @@ export type CargoOptionComparisonValue = boolean | null | string;
 export type CargoOptionComparison = {
     agentSupport: CargoOptionComparisonValue;
     carrierCoordination: CargoOptionComparisonValue;
-    companions: CargoOptionComparisonValue;
     destinationMeeting: CargoOptionComparisonValue;
     documents: CargoOptionComparisonValue;
     geography: CargoOptionComparisonValue;
@@ -56,12 +55,11 @@ export const cargoItems: CargoOption[] = [
             destinationMeeting: true,
             hearse: true,
             agentSupport: true,
-            documents: 'Помощь с оформлением',
+            documents: 'Полное сопровождение',
             carrierCoordination: false,
             preparation: 'По обстоятельствам',
             zincContainer: 'По требованиям маршрута',
             ticketsAndFees: false,
-            companions: 'Перевозим в катафалке',
         },
         details: {
             included: [
@@ -95,12 +93,11 @@ export const cargoItems: CargoOption[] = [
             destinationMeeting: true,
             hearse: true,
             agentSupport: true,
-            documents: 'Оформляет агент',
+            documents: 'Полное сопровождение',
             carrierCoordination: true,
             preparation: 'По требованиям перевозчика',
             zincContainer: 'Уточняется по маршруту',
             ticketsAndFees: 'В итоговой смете',
-            companions: 'Организуем поездку',
         },
         details: {
             included: [
@@ -139,12 +136,11 @@ export const cargoItems: CargoOption[] = [
             destinationMeeting: true,
             hearse: true,
             agentSupport: true,
-            documents: 'Оформляет агент',
+            documents: 'Полное сопровождение',
             carrierCoordination: true,
             preparation: 'По требованиям авиакомпании',
             zincContainer: 'По правилам авиакомпании',
             ticketsAndFees: 'В итоговой смете',
-            companions: 'Помогаем с перелётом',
         },
         details: {
             included: [

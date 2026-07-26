@@ -26,7 +26,6 @@ const comparisonRows: ComparisonRow[] = [
     { key: 'preparation', label: 'Подготовка к перевозке' },
     { key: 'zincContainer', label: 'Цинковый контейнер' },
     { key: 'ticketsAndFees', label: 'Билеты и сборы' },
-    { key: 'companions', label: 'Сопровождающие' },
 ];
 
 const ComparisonValue = ({ value }: { value: CargoOptionComparisonValue }) => {
