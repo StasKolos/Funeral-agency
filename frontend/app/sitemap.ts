@@ -4,7 +4,7 @@ import { getCategories } from '@/d-shared/api/categories';
 import { getProductCategoryPath } from '@/d-shared/products/productRoutes';
 import { getAbsoluteUrl, SITE_ROUTES } from '@/d-shared/seo/siteConfig';
 
-const LAST_MODIFIED = new Date('2026-07-24');
+const LAST_MODIFIED = new Date('2026-07-26');
 
 export const dynamic = 'force-dynamic';
 

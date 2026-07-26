@@ -314,6 +314,7 @@ export const graveImprovementReviewsItems = [
 const GRAVE_IMPROVEMENT_PRODUCT_CODES = new Set([
     'BALLS',
     'CROSS',
+    'DECORATIVE_DETAILS',
     'FENCES',
     'MONUMENT',
     'TABLES_AND_CHAIRS',
