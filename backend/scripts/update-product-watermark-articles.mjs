@@ -130,7 +130,7 @@ const getVersionedImageKey = (imageKey) => {
 };
 
 const getOriginalImageKey = (imageKey) =>
-    imageKey.replace(/-(?:article|watermark)-v2(?=\.webp$)/, '');
+    imageKey.replace(/-(?:article-v2|watermark-v[23])(?=\.webp$)/, '');
 
 const getFullWatermarkImageKey = (imageKey) => {
     const extension = extname(imageKey);
@@ -729,7 +729,7 @@ const main = async () => {
                     : getVersionedImageKey(product.imageKey),
             ),
             ...allLegacyProducts.map((product) =>
-                product.imageKey.includes('-watermark-v2.webp')
+                /-watermark-v[23]\.webp$/.test(product.imageKey)
                     ? product.imageKey
                     : getFullWatermarkImageKey(product.imageKey),
             ),
@@ -747,7 +747,7 @@ const main = async () => {
                 operation: 'replace-article',
             }));
         const legacyProducts = allLegacyProducts
-            .filter((product) => !product.imageKey.includes('-watermark-v2.webp'))
+            .filter((product) => !/-watermark-v[23]\.webp$/.test(product.imageKey))
             .map((product) => ({
                 ...product,
                 newArticle: getCurrentArticle(product.name),
