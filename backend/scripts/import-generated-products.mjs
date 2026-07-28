@@ -37,36 +37,43 @@ const getRequiredEnvironmentValue = (name) => {
 
 const CATEGORY_CONFIG = {
     MONUMENT: {
+        articlePrefix: 'С',
         name: 'Стеллы',
         sortOrder: 10,
         storageDirectory: 'products/monument',
     },
     CROSS: {
+        articlePrefix: 'К',
         name: 'Кресты',
         sortOrder: 30,
         storageDirectory: 'products/cross',
     },
     DECORATIVE_DETAILS: {
+        articlePrefix: 'Д',
         name: 'Декоративные детали',
         sortOrder: 35,
         storageDirectory: 'products/decorative-details',
     },
     TABLES_AND_CHAIRS: {
+        articlePrefix: 'С',
         name: 'Столы и лавки',
         sortOrder: 40,
         storageDirectory: 'products/tables-and-chairs',
     },
     FENCES: {
+        articlePrefix: 'О',
         name: 'Ограды',
         sortOrder: 50,
         storageDirectory: 'products/fences',
     },
     VASES: {
+        articlePrefix: 'В',
         name: 'Вазы',
         sortOrder: 60,
         storageDirectory: 'products/vases',
     },
     BALLS: {
+        articlePrefix: 'Ш',
         name: 'Шары',
         sortOrder: 70,
         storageDirectory: 'products/balls',
@@ -251,15 +258,29 @@ const main = async () => {
     const fileNames = (await readdir(generatedProductsDirectory))
         .filter((fileName) => fileName.endsWith('.webp'))
         .sort((left, right) => left.localeCompare(right, 'en', { numeric: true }));
-    const manifest = fileNames.map(createManifestItem).sort((left, right) => {
-        const categoryComparison = left.categoryCode.localeCompare(right.categoryCode);
+    const categoryArticlePositions = new Map();
+    const manifest = fileNames
+        .map(createManifestItem)
+        .sort((left, right) => {
+            const categoryComparison = left.categoryCode.localeCompare(right.categoryCode);
 
-        if (categoryComparison !== 0) {
-            return categoryComparison;
-        }
+            if (categoryComparison !== 0) {
+                return categoryComparison;
+            }
 
-        return left.groupOrder - right.groupOrder || left.articleNumber - right.articleNumber;
-    });
+            return left.groupOrder - right.groupOrder || left.articleNumber - right.articleNumber;
+        })
+        .map((item) => {
+            const articlePosition = (categoryArticlePositions.get(item.categoryCode) ?? 0) + 1;
+            const category = CATEGORY_CONFIG[item.categoryCode];
+            const productType = item.name.replace(/\s+[А-ЯЁA-Z]+-\d+$/u, '');
+            categoryArticlePositions.set(item.categoryCode, articlePosition);
+
+            return {
+                ...item,
+                name: `${productType} ${category.articlePrefix}-${articlePosition}`,
+            };
+        });
 
     if (manifest.length !== EXPECTED_PRODUCT_COUNT) {
         throw new Error(
@@ -392,11 +413,13 @@ const main = async () => {
                         notIn: imageKeys,
                     },
                 },
-                _max: {
+                _min: {
                     sortOrder: true,
                 },
             });
-            const baseSortOrder = existingBase._max.sortOrder ?? 0;
+            const existingMinSortOrder = existingBase._min.sortOrder ?? 0;
+            const baseSortOrder =
+                existingMinSortOrder - (items.length + 1) * SORT_ORDER_STEP;
 
             items.forEach((item, index) => {
                 const data = {

@@ -14,6 +14,7 @@
         "start:debug": "nest start --debug --watch",
         "start:prod": "node dist/main",
         "data:import-generated-products": "node scripts/import-generated-products.mjs",
+        "data:update-product-watermark-articles": "node scripts/update-product-watermark-articles.mjs",
         "lint": "eslint src eslint.config.mjs",
         "typecheck": "tsc --noEmit"
     },
