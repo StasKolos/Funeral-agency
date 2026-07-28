@@ -8,7 +8,7 @@ import { PrismaPg } from '@prisma/adapter-pg';
 import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import { createRequire } from 'node:module';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { basename, dirname, extname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
@@ -40,6 +40,8 @@ const getArgumentValue = (name) => {
 const APPLY = process.argv.includes('--apply');
 const previewCount = Number(getArgumentValue('preview') ?? 0);
 const matchFilter = getArgumentValue('match');
+const exportDirectoryArgument = getArgumentValue('export-legacy-directory');
+const importDirectoryArgument = getArgumentValue('import-legacy-directory');
 const outputDirectory = resolve(
     repositoryDirectory,
     getArgumentValue('output') ?? 'tmp/watermark-preview',
@@ -517,6 +519,130 @@ const getObjectBuffer = async (s3Client, bucket, imageKey) => {
     return Buffer.from(await response.Body.transformToByteArray());
 };
 
+const getThirdVersionImageKey = (imageKey) =>
+    imageKey.replace(/-watermark-v[23](?=\.webp$)/, '-watermark-v3');
+
+const getTransferFilePath = (directory, imageKey) => {
+    const resolvedDirectory = resolve(directory);
+    const filePath = resolve(resolvedDirectory, ...imageKey.split('/'));
+
+    if (
+        !filePath.startsWith(`${resolvedDirectory}/`) &&
+        !filePath.startsWith(`${resolvedDirectory}\\`)
+    ) {
+        throw new Error(`Invalid image key outside transfer directory: ${imageKey}`);
+    }
+
+    return filePath;
+};
+
+const exportLegacyWatermarks = async (products, s3Client, bucket, exportDirectory) => {
+    const legacyProducts = products.filter((product) =>
+        /-watermark-v2\.webp$/.test(product.imageKey),
+    );
+
+    if (legacyProducts.length !== EXPECTED_LEGACY_PRODUCT_COUNT) {
+        throw new Error(
+            `Expected ${EXPECTED_LEGACY_PRODUCT_COUNT} local legacy watermarks, found ${legacyProducts.length}`,
+        );
+    }
+
+    let completedCount = 0;
+
+    await runWithConcurrency(legacyProducts, PROCESS_CONCURRENCY, async (product) => {
+        const newImageKey = getThirdVersionImageKey(product.imageKey);
+        const filePath = getTransferFilePath(exportDirectory, newImageKey);
+        const image = await getObjectBuffer(s3Client, bucket, product.imageKey);
+        await mkdir(dirname(filePath), { recursive: true });
+        await writeFile(filePath, image);
+        completedCount += 1;
+
+        if (completedCount % 25 === 0 || completedCount === legacyProducts.length) {
+            console.log(`Exported ${completedCount}/${legacyProducts.length} legacy watermarks`);
+        }
+    });
+
+    console.log(`Exported ${completedCount} clean legacy watermarks.`);
+};
+
+const importLegacyWatermarks = async (products, prisma, s3Client, bucket, importDirectory) => {
+    const legacyProducts = products.filter((product) =>
+        /-watermark-v[23]\.webp$/.test(product.imageKey),
+    );
+
+    if (legacyProducts.length !== EXPECTED_LEGACY_PRODUCT_COUNT) {
+        throw new Error(
+            `Expected ${EXPECTED_LEGACY_PRODUCT_COUNT} production legacy products, found ${legacyProducts.length}`,
+        );
+    }
+
+    const pendingProducts = legacyProducts.filter((product) =>
+        product.imageKey.endsWith('-watermark-v2.webp'),
+    );
+    let completedCount = 0;
+
+    await runWithConcurrency(pendingProducts, PROCESS_CONCURRENCY, async (product) => {
+        const newImageKey = getThirdVersionImageKey(product.imageKey);
+        const filePath = getTransferFilePath(importDirectory, newImageKey);
+        const image = await readFile(filePath);
+
+        await s3Client.send(
+            new PutObjectCommand({
+                Bucket: bucket,
+                Key: newImageKey,
+                Body: image,
+                ContentType: 'image/webp',
+                CacheControl: 'public, max-age=31536000, immutable',
+            }),
+        );
+        await s3Client.send(
+            new HeadObjectCommand({
+                Bucket: bucket,
+                Key: newImageKey,
+            }),
+        );
+
+        const updateResult = await prisma.product.updateMany({
+            where: {
+                id: product.id,
+                imageKey: product.imageKey,
+            },
+            data: {
+                imageKey: newImageKey,
+            },
+        });
+
+        if (updateResult.count !== 1) {
+            throw new Error(
+                `Product ${product.id} changed while the clean image was being imported`,
+            );
+        }
+
+        completedCount += 1;
+
+        if (completedCount % 25 === 0 || completedCount === pendingProducts.length) {
+            console.log(
+                `Imported ${completedCount}/${pendingProducts.length} clean legacy watermarks`,
+            );
+        }
+    });
+
+    const expectedImageKeys = legacyProducts.map((product) =>
+        getThirdVersionImageKey(product.imageKey),
+    );
+    await runWithConcurrency(expectedImageKeys, PROCESS_CONCURRENCY, async (imageKey) => {
+        await s3Client.send(
+            new HeadObjectCommand({
+                Bucket: bucket,
+                Key: imageKey,
+            }),
+        );
+    });
+    console.log(
+        `Imported ${completedCount} clean legacy watermarks and verified ${expectedImageKeys.length} S3 objects.`,
+    );
+};
+
 const main = async () => {
     if (APPLY && previewCount > 0) {
         throw new Error('Use either --apply or --preview=N, not both');
@@ -553,6 +679,36 @@ const main = async () => {
                 },
             },
         });
+
+        if (exportDirectoryArgument && importDirectoryArgument) {
+            throw new Error('Use either legacy export or legacy import, not both');
+        }
+
+        if (exportDirectoryArgument) {
+            await exportLegacyWatermarks(
+                products,
+                s3Client,
+                bucket,
+                resolve(exportDirectoryArgument),
+            );
+            return;
+        }
+
+        if (importDirectoryArgument) {
+            if (!APPLY) {
+                throw new Error('Legacy import requires --apply');
+            }
+
+            await importLegacyWatermarks(
+                products,
+                prisma,
+                s3Client,
+                bucket,
+                resolve(importDirectoryArgument),
+            );
+            return;
+        }
+
         const matchingProducts = products.filter(
             (product) =>
                 !matchFilter ||
