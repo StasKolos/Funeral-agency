@@ -2,12 +2,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import CartLink from './cartLink/cartLink';
 import s from './header.module.scss';
 import ServicesDropdown from './servicesDropdown/servicesDropdown';
 import Sidebar from './sidebar/sidebar';
 
 const Header = () => (
-    <header className={s['header-wrapper']}>
+    <header className={clsx('section-wrapper', s['header-wrapper'])}>
         <div className={clsx(s['header'], 'content-wrapper')}>
             <Link
                 aria-label={'Перейти к контактной информации'}
@@ -50,11 +51,16 @@ const Header = () => (
                     </li>
                 </ul>
             </nav>
-            <div className={s['contact-wrapper']}>
-                <Link href={'tel:+79625873238'}>+7(962)587-32-38</Link>
-                <p>Работаем круглосуточно</p>
+            <div className={s['controls']}>
+                <div className={s['contact-wrapper']}>
+                    <Link href={'tel:+79625873238'}>+7(962)587-32-38</Link>
+                    <p>Работаем круглосуточно</p>
+                </div>
+                <div className={s['actions']}>
+                    <CartLink />
+                    <Sidebar />
+                </div>
             </div>
-            <Sidebar />
         </div>
     </header>
 );

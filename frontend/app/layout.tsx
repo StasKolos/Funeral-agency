@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Montserrat } from 'next/font/google';
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import Script from 'next/script';
 import { PropsWithChildren } from 'react';
 import { ToastContainer } from 'react-toastify';
 
+import CartProvider from '@/a-app/providers/cartProvider';
 import QueryProvider from '@/a-app/providers/queryProvider';
 import ContentLayout from '@/c-widgets/contentLayout/contentLayout';
 import {
@@ -58,8 +59,16 @@ const yandexMetrikaCounter = `
     });
 `;
 
-const montserrat = Montserrat({
-    weight: ['400', '700'],
+const cormorantGaramond = Cormorant_Garamond({
+    variable: '--font-heading',
+    weight: 'variable',
+    subsets: ['cyrillic', 'latin'],
+    display: 'swap',
+});
+
+const manrope = Manrope({
+    variable: '--font-body',
+    weight: 'variable',
     subsets: ['cyrillic', 'latin'],
     display: 'swap',
 });
@@ -69,7 +78,7 @@ const RootLayout = ({ children }: PropsWithChildren) => (
         data-scroll-behavior={'smooth'}
         lang={'ru'}
     >
-        <body className={montserrat.className}>
+        <body className={`${cormorantGaramond.variable} ${manrope.variable}`}>
             <Script
                 dangerouslySetInnerHTML={{ __html: yandexMetrikaCounter }}
                 id={'yandex-metrika'}
@@ -115,7 +124,9 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                 position={'bottom-right'}
             />
             <QueryProvider>
-                <ContentLayout>{children}</ContentLayout>
+                <CartProvider>
+                    <ContentLayout>{children}</ContentLayout>
+                </CartProvider>
             </QueryProvider>
         </body>
     </html>

@@ -17,6 +17,8 @@ const ProductSkeletonCard = ({ isCoffinItems }: ProductSkeletonCardProps) => (
         <span className={clsx(s['image-wrapper'], s['skeleton-image-wrapper'])}>
             <span className={s['skeleton-image']} />
         </span>
+        <span className={s['skeleton-price']} />
+        <span className={s['skeleton-button']} />
     </li>
 );
 

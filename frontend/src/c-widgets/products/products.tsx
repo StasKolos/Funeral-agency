@@ -10,6 +10,7 @@ import type { PaginatedResponse, Product, ProductCategory } from '@/d-shared/api
 
 import { categoriesQueryKey, getCategories } from '@/d-shared/api/categories';
 import { getProducts, getProductsQueryKey } from '@/d-shared/api/products';
+import { useCart } from '@/d-shared/cart/cartContext';
 import { getProductCategoryPath, PRODUCTS_PAGE_SIZE } from '@/d-shared/products/productRoutes';
 import { openImageGallery } from '@/d-shared/utils/openImageGallery';
 
@@ -42,6 +43,7 @@ const Products = ({
     initialSelectedCategory = '',
 }: ProductsProps) => {
     const router = useRouter();
+    const { addItem } = useCart();
 
     const [currentPage, setCurrentPage] = useState(1);
     const isFixedCategory = Boolean(fixedCategory);
@@ -92,6 +94,7 @@ const Products = ({
                 alt: product.name,
                 header: product.name,
                 id: product.id,
+                price: product.price,
                 src: product.imageUrl,
             })),
         [productsResponse?.items],
@@ -126,9 +129,22 @@ const Products = ({
         openImageGallery(productItems, index);
     };
 
+    const handleAddToCart = (productId: number) => {
+        addItem(productId);
+        toast.success('Товар добавлен в корзину', {
+            toastId: `product-added-to-cart-${productId}`,
+        });
+    };
+
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
-        router.push(`${productCategoryPath}#Products`);
+        router.push(`${productCategoryPath}#Products`, {
+            scroll: false,
+        });
+        document.getElementById('Products')?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
     };
 
     return (
@@ -167,6 +183,7 @@ const Products = ({
                                 isCoffinItems={isCoffinItems}
                                 item={item}
                                 key={item.id}
+                                onAddToCart={handleAddToCart}
                                 onOpenImageGallery={handleOpenImageGallery}
                             />
                         ))}

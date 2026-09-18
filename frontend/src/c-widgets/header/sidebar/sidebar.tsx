@@ -34,9 +34,9 @@ const Sidebar = () => {
             >
                 <Image
                     alt={'Иконка бокового меню'}
-                    height={30}
+                    height={40}
                     src={'/sidebar-icon.svg'}
-                    width={30}
+                    width={40}
                 />
             </button>
             <div

@@ -1,7 +1,4 @@
-import type { KeyboardEvent } from 'react';
-
 import clsx from 'clsx';
-import Image from 'next/image';
 
 import ImageWithSkeleton from '@/d-shared/ui/imageWithSkeleton/imageWithSkeleton';
 
@@ -11,11 +8,13 @@ const COFFIN_PRODUCT_IMAGE_HEIGHT = 150;
 const COFFIN_PRODUCT_IMAGE_WIDTH = 200;
 const PRODUCT_IMAGE_HEIGHT = 200;
 const PRODUCT_IMAGE_WIDTH = 150;
+const priceFormatter = new Intl.NumberFormat('ru-RU');
 
 export type ProductGalleryItem = {
     alt: string;
     header: string;
     id: number;
+    price: number;
     src: string;
 };
 
@@ -23,35 +22,32 @@ type ProductCardProps = {
     index: number;
     isCoffinItems: boolean;
     item: ProductGalleryItem;
+    onAddToCart: (productId: number) => void;
     onOpenImageGallery: (index: number) => void;
 };
 
-const ProductCard = ({ index, isCoffinItems, item, onOpenImageGallery }: ProductCardProps) => {
-    const handleGalleryKeyDown = (event: KeyboardEvent<HTMLLIElement>) => {
-        if (event.key !== 'Enter' && event.key !== ' ') return;
+const formatPrice = (price: number) =>
+    priceFormatter.format(price).replaceAll('\u00a0', ' ').replaceAll('\u202f', ' ');
 
-        event.preventDefault();
-        onOpenImageGallery(index);
-    };
-
-    return (
-        <li
-            className={clsx(s['item'], {
-                [s['coffin-item']]: isCoffinItems,
-            })}
+const ProductCard = ({
+    index,
+    isCoffinItems,
+    item,
+    onAddToCart,
+    onOpenImageGallery,
+}: ProductCardProps) => (
+    <li
+        className={clsx(s['item'], {
+            [s['coffin-item']]: isCoffinItems,
+        })}
+    >
+        <h3>{item.header}</h3>
+        <button
+            aria-label={`Открыть изображение товара «${item.header}»`}
+            className={s['gallery-button']}
             onClick={() => onOpenImageGallery(index)}
-            onKeyDown={handleGalleryKeyDown}
-            role={'button'}
-            tabIndex={0}
+            type={'button'}
         >
-            <Image
-                alt={'Иконка клик по кнопке'}
-                className={s['tap-icon']}
-                height={30}
-                src={'/tap-click-icon.svg'}
-                width={30}
-            />
-            <h3>{item.header}</h3>
             <ImageWithSkeleton
                 alt={item.alt}
                 className={s['image']}
@@ -63,8 +59,16 @@ const ProductCard = ({ index, isCoffinItems, item, onOpenImageGallery }: Product
                 width={isCoffinItems ? COFFIN_PRODUCT_IMAGE_WIDTH : PRODUCT_IMAGE_WIDTH}
                 wrapperClassName={s['image-wrapper']}
             />
-        </li>
-    );
-};
+        </button>
+        <p className={s['price']}>{`${formatPrice(item.price)} ₽`}</p>
+        <button
+            className={s['add-to-cart-button']}
+            onClick={() => onAddToCart(item.id)}
+            type={'button'}
+        >
+            В корзину
+        </button>
+    </li>
+);
 
 export default ProductCard;
