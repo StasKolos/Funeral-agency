@@ -74,6 +74,25 @@ Frontend будет доступен на `http://localhost:3000`.
 
 Frontend ходит к backend через proxy `/api/backend/*`, который настроен в `frontend/next.config.mjs`.
 
+## Отправка заказов на почту
+
+Заказы отправляет backend через SMTP. Для ящика `z-l00@bk.ru` добавьте в
+`backend/.env`:
+
+```dotenv
+SMTP_HOST=smtp.mail.ru
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=z-l00@bk.ru
+SMTP_PASSWORD=пароль_для_внешнего_приложения
+MAIL_FROM="Грань ДВ <z-l00@bk.ru>"
+ORDER_RECIPIENT_EMAIL=z-l00@bk.ru
+```
+
+Для `SMTP_PASSWORD` нужен отдельный пароль для внешнего приложения, а не основной
+пароль от почты. Если почтовый провайдер изменится, достаточно заменить SMTP-параметры
+без изменений в коде заказа.
+
 ## Проверки
 
 Backend:
@@ -120,3 +139,25 @@ npm audit
 - PostgreSQL хранит категории и товары.
 - MinIO хранит изображения товаров.
 - Backup должен включать код, дамп PostgreSQL и данные MinIO.
+
+### Цены товаров
+
+Цены из таблицы поставщика сохранены в `backend/prisma/data/product-prices.json`.
+Импорт сопоставляет товары по категории и артикулу, проверяет полный список и
+изменяет только цену. По умолчанию выполняется проверка без записи:
+
+```sh
+cd backend
+node scripts/update-product-prices.mjs --input prisma/data/product-prices.json
+```
+
+Для применения нужен отдельный путь к резервной копии существующих товаров:
+
+```sh
+node scripts/update-product-prices.mjs --input prisma/data/product-prices.json --apply --backup /safe/path/product-prices-before.json
+```
+
+Скрипт рассчитан на подключение к локальной БД, в том числе при запуске на сервере.
+Перед production-импортом также создайте полный дамп PostgreSQL.
+Минимальная цена категории рассчитывается автоматически по её товарам.
+Цены стелл С-397–С-416 пока временные: 92 000–100 000 ₽.
