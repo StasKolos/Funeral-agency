@@ -1,0 +1,3207 @@
+[
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-1",
+    "price": 55000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-2",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-3",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-4",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-5",
+    "price": 50000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-6",
+    "price": 52000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-7",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-8",
+    "price": 130000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-9",
+    "price": 130000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-10",
+    "price": 143000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-11",
+    "price": 147000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-12",
+    "price": 180000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-13",
+    "price": 170000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-14",
+    "price": 173000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-15",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-16",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-17",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-18",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-19",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-20",
+    "price": 275000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-21",
+    "price": 345000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-22",
+    "price": 345000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-23",
+    "price": 345000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-24",
+    "price": 345000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-25",
+    "price": 315000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-26",
+    "price": 315000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-27",
+    "price": 315000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-28",
+    "price": 315000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-29",
+    "price": 315000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-30",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-31",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-32",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-33",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-34",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-35",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-36",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-37",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-38",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-39",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-40",
+    "price": 90000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-41",
+    "price": 103000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-42",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-43",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-44",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-45",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-46",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-47",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-48",
+    "price": 90000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-49",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-50",
+    "price": 77000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-51",
+    "price": 76000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-52",
+    "price": 74000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-53",
+    "price": 77000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-54",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-55",
+    "price": 71000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-56",
+    "price": 73000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-57",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-58",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-59",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-60",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-61",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-62",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-63",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-64",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-65",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-66",
+    "price": 83000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-67",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-68",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-69",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-70",
+    "price": 73000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-71",
+    "price": 73000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-72",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-73",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-74",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-75",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-76",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-77",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-78",
+    "price": 81000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-79",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-80",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-81",
+    "price": 78000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-82",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-83",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-84",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-85",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-86",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-87",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-88",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-89",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-90",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-91",
+    "price": 83000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-92",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-93",
+    "price": 79000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-94",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-95",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-96",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-97",
+    "price": 81000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-98",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-99",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-100",
+    "price": 91000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-101",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-102",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-103",
+    "price": 98000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-104",
+    "price": 101000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-105",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-106",
+    "price": 120000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-107",
+    "price": 137000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-108",
+    "price": 150000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-109",
+    "price": 155000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-110",
+    "price": 159000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-111",
+    "price": 168000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-112",
+    "price": 138000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-113",
+    "price": 136000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-114",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-115",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-116",
+    "price": 81000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-117",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-118",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-119",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-120",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-121",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-122",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-123",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-124",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-125",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-126",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-127",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-128",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-129",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-130",
+    "price": 78000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-131",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-132",
+    "price": 83000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-133",
+    "price": 83000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-134",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-135",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-136",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-137",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-138",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-139",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-140",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-141",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-142",
+    "price": 75000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-143",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-144",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-145",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-146",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-147",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-148",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-149",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-150",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-151",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-152",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-153",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-154",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-155",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-156",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-157",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-158",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-159",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-160",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-161",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-162",
+    "price": 81000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-163",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-164",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-165",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-166",
+    "price": 97000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-167",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-168",
+    "price": 84000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-169",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-170",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-171",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-172",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-173",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-174",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-175",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-176",
+    "price": 83000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-177",
+    "price": 81000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-178",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-179",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-180",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-181",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-182",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-183",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-184",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-185",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-186",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-187",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-188",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-189",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-190",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-191",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-192",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-193",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-194",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-195",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-196",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-197",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-198",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-199",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-200",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-201",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-202",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-203",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-204",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-205",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-206",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-207",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-208",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-209",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-210",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-211",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-212",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-213",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-214",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-215",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-216",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-217",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-218",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-219",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-220",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-221",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-222",
+    "price": 108000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-223",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-224",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-225",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-226",
+    "price": 102000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-227",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-228",
+    "price": 112000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-229",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-230",
+    "price": 112000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-231",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-232",
+    "price": 102000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-233",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-234",
+    "price": 108000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-235",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-236",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-237",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-238",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-239",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-240",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-241",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-242",
+    "price": 103000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-243",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-244",
+    "price": 110000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-245",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-246",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-247",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-248",
+    "price": 110000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-249",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-250",
+    "price": 115000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-251",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-252",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-253",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-254",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-255",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-256",
+    "price": 106000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-257",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-258",
+    "price": 109000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-259",
+    "price": 60000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-260",
+    "price": 110000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-261",
+    "price": 61000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-262",
+    "price": 106000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-263",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-264",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-265",
+    "price": 61000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-266",
+    "price": 106000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-267",
+    "price": 61000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-268",
+    "price": 108000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-269",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-270",
+    "price": 108000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-271",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-272",
+    "price": 113000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-273",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-274",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-275",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-276",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-277",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-278",
+    "price": 102000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-279",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-280",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-281",
+    "price": 61000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-282",
+    "price": 99000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-283",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-284",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-285",
+    "price": 61000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-286",
+    "price": 103000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-287",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-288",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-289",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-290",
+    "price": 117000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-291",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-292",
+    "price": 105000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-293",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-294",
+    "price": 103000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-295",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-296",
+    "price": 102000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-297",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-298",
+    "price": 103000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-299",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-300",
+    "price": 109000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-301",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-302",
+    "price": 111000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-303",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-304",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-305",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-306",
+    "price": 101000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-307",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-308",
+    "price": 107000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-309",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-310",
+    "price": 102000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-311",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-312",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-313",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-314",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-315",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-316",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-317",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-318",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-319",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-320",
+    "price": 62000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-321",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-322",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-323",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-324",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-325",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-326",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-327",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-328",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-329",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-330",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-331",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-332",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-333",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-334",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-335",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-336",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-337",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-338",
+    "price": 63000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-339",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-340",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-341",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-342",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-343",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-344",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-345",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-346",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-347",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-348",
+    "price": 89000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-349",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-350",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-351",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-352",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-353",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-354",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-355",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-356",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-357",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-358",
+    "price": 70000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-359",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-360",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-361",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-362",
+    "price": 71000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-363",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-364",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-365",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-366",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-367",
+    "price": 87000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-368",
+    "price": 90000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-369",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-370",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-371",
+    "price": 90000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-372",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-373",
+    "price": 66000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-374",
+    "price": 68000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-375",
+    "price": 85000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-376",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-377",
+    "price": 82000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-378",
+    "price": 72000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-379",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-380",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-381",
+    "price": 64000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-382",
+    "price": 65000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-383",
+    "price": 69000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-384",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-385",
+    "price": 71000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-386",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-387",
+    "price": 67000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-388",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-389",
+    "price": 80000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-390",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-391",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-392",
+    "price": 90000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-393",
+    "price": 88000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-394",
+    "price": 73000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-395",
+    "price": 74000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-396",
+    "price": 86000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-397",
+    "price": 97000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-398",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-399",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-400",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-401",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-402",
+    "price": 96000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-403",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-404",
+    "price": 97000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-405",
+    "price": 94000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-406",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-407",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-408",
+    "price": 93000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-409",
+    "price": 94000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-410",
+    "price": 98000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-411",
+    "price": 95000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-412",
+    "price": 94000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-413",
+    "price": 100000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-414",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-415",
+    "price": 92000
+  },
+  {
+    "categoryCode": "MONUMENT",
+    "article": "С-416",
+    "price": 93000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-1",
+    "price": 38000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-2",
+    "price": 39500
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-3",
+    "price": 39500
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-4",
+    "price": 49000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-5",
+    "price": 49000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-6",
+    "price": 79000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-7",
+    "price": 79000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-8",
+    "price": 79000
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-9",
+    "price": 79500
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-10",
+    "price": 79300
+  },
+  {
+    "categoryCode": "TABLES_AND_CHAIRS",
+    "article": "С-11",
+    "price": 69200
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-1",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-2",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-3",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-4",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-5",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-6",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-7",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-8",
+    "price": 10500
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-9",
+    "price": 10500
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-10",
+    "price": 11000
+  },
+  {
+    "categoryCode": "BALLS",
+    "article": "Ш-11",
+    "price": 11000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-1",
+    "price": 17500
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-2",
+    "price": 17500
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-3",
+    "price": 16300
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-4",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-5",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-6",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-7",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-8",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-9",
+    "price": 31000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-10",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-11",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-12",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-13",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-14",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-15",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-16",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-17",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-18",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-19",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-20",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-21",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-22",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-23",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-24",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-25",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-26",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-27",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-28",
+    "price": 31000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-29",
+    "price": 31000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-30",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-31",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-32",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-33",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-34",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-35",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-36",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-37",
+    "price": 32000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-38",
+    "price": 17500
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-39",
+    "price": 16300
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-40",
+    "price": 17500
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-41",
+    "price": 16300
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-42",
+    "price": 16300
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-43",
+    "price": 16300
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-44",
+    "price": 17500
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-45",
+    "price": 20000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-46",
+    "price": 27000
+  },
+  {
+    "categoryCode": "VASES",
+    "article": "В-47",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-1",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-2",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-3",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-4",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-5",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-6",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-7",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-8",
+    "price": 23000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-9",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-10",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-11",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-12",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-13",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-14",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-15",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-16",
+    "price": 21000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-17",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-18",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-19",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-20",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-21",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-22",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-23",
+    "price": 20000
+  },
+  {
+    "categoryCode": "DECORATIVE_DETAILS",
+    "article": "Д-24",
+    "price": 20000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-1",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-2",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-3",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-4",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-5",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-6",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-7",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-8",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-9",
+    "price": 23000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-10",
+    "price": 18000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-11",
+    "price": 18000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-12",
+    "price": 18000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-13",
+    "price": 20000
+  },
+  {
+    "categoryCode": "CROSS",
+    "article": "К-14",
+    "price": 18000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-1",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-2",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-3",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-4",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-5",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-6",
+    "price": 220000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-7",
+    "price": 220000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-8",
+    "price": 220000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-9",
+    "price": 220000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-10",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-11",
+    "price": 200000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-12",
+    "price": 220000
+  },
+  {
+    "categoryCode": "FENCES",
+    "article": "О-13",
+    "price": 200000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-1",
+    "price": 65000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-2",
+    "price": 68000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-3",
+    "price": 70000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-4",
+    "price": 69000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-5",
+    "price": 64000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-6",
+    "price": 67000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-7",
+    "price": 64000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-8",
+    "price": 58000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-9",
+    "price": 73000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-10",
+    "price": 59000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-11",
+    "price": 57000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-12",
+    "price": 70000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-13",
+    "price": 69000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-14",
+    "price": 58000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-15",
+    "price": 120000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-16",
+    "price": 62000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-17",
+    "price": 62000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-18",
+    "price": 56000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-19",
+    "price": 65000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-20",
+    "price": 64000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-21",
+    "price": 43000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-22",
+    "price": 41000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-23",
+    "price": 63000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-24",
+    "price": 83000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-25",
+    "price": 128000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-26",
+    "price": 138000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-27",
+    "price": 150000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-28",
+    "price": 51000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-29",
+    "price": 71000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-30",
+    "price": 68000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-31",
+    "price": 57000
+  },
+  {
+    "categoryCode": "COFFIN",
+    "article": "Г-32",
+    "price": 64000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-1",
+    "price": 9000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-2",
+    "price": 8800
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-3",
+    "price": 15000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-4",
+    "price": 10000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-5",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-6",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-7",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-8",
+    "price": 9100
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-9",
+    "price": 9300
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-10",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-11",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-12",
+    "price": 9000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-13",
+    "price": 11000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-14",
+    "price": 10000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-15",
+    "price": 11500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-16",
+    "price": 11500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-17",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-18",
+    "price": 9500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-19",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-20",
+    "price": 11600
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-21",
+    "price": 13000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-22",
+    "price": 9700
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-23",
+    "price": 7500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-24",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-25",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-26",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-27",
+    "price": 14200
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-28",
+    "price": 12000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-29",
+    "price": 7500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-30",
+    "price": 7500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-31",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-32",
+    "price": 13000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-33",
+    "price": 15000
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-34",
+    "price": 10300
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-35",
+    "price": 8700
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-36",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-37",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-38",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-39",
+    "price": 7600
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-40",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-41",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-42",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-43",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-44",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-45",
+    "price": 8500
+  },
+  {
+    "categoryCode": "WREATHS",
+    "article": "В-46",
+    "price": 8500
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-1",
+    "price": 6800
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-2",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-3",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-4",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-5",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-6",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-7",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-8",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-9",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-10",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-11",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-12",
+    "price": 7500
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-13",
+    "price": 7500
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-14",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-15",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-16",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-17",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-18",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-19",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-20",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-21",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-22",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-23",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-24",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-25",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-26",
+    "price": 7000
+  },
+  {
+    "categoryCode": "BASKETS",
+    "article": "К-27",
+    "price": 7000
+  }
+]

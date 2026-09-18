@@ -11,35 +11,50 @@ export class CategoriesService {
     ) {}
 
     async findAll() {
-        const categories = await this.prisma.productCategory.findMany({
-            orderBy: [
-                {
-                    sortOrder: 'asc',
-                },
-                {
-                    id: 'asc',
-                },
-            ],
-            select: {
-                id: true,
-                code: true,
-                name: true,
-                products: {
-                    take: 1,
-                    orderBy: [
-                        {
-                            sortOrder: 'asc',
-                        },
-                        {
-                            id: 'asc',
-                        },
-                    ],
-                    select: {
-                        imageKey: true,
-                    },
-                },
+        const categoryPricesQuery = this.prisma.product.groupBy({
+            by: ['categoryId'],
+            orderBy: {
+                categoryId: 'asc',
+            },
+            _min: {
+                price: true,
             },
         });
+        const [categories, categoryPrices] = await this.prisma.$transaction([
+            this.prisma.productCategory.findMany({
+                orderBy: [
+                    {
+                        sortOrder: 'asc',
+                    },
+                    {
+                        id: 'asc',
+                    },
+                ],
+                select: {
+                    id: true,
+                    code: true,
+                    name: true,
+                    products: {
+                        take: 1,
+                        orderBy: [
+                            {
+                                sortOrder: 'asc',
+                            },
+                            {
+                                id: 'asc',
+                            },
+                        ],
+                        select: {
+                            imageKey: true,
+                        },
+                    },
+                },
+            }),
+            categoryPricesQuery,
+        ]);
+        const minPricesByCategoryId = new Map(
+            categoryPrices.map((category) => [category.categoryId, category._min.price]),
+        );
 
         return categories.map((category) => {
             const firstProduct = category.products[0];
@@ -48,6 +63,7 @@ export class CategoriesService {
                 id: category.id,
                 code: category.code,
                 name: category.name,
+                minPrice: minPricesByCategoryId.get(category.id) ?? null,
                 imageUrl: firstProduct
                     ? this.storage.getPublicUrl(firstProduct.imageKey)
                     : undefined,

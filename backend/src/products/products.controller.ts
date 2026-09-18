@@ -6,6 +6,11 @@ import { ProductsService } from './products.service';
 export class ProductsController {
     constructor(private readonly productsService: ProductsService) {}
 
+    @Get('by-ids')
+    findByIds(@Query('ids') ids?: string) {
+        return this.productsService.findByIds(ids);
+    }
+
     @Get()
     findAll(
         @Query('category') category?: string,
