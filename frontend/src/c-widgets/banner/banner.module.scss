@@ -31,6 +31,10 @@
   }
 }
 
+.price {
+  white-space: nowrap;
+}
+
 .animated {
   .content {
     animation: banner-drive-in 0.95s ease-out forwards;

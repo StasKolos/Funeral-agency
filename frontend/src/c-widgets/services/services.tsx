@@ -31,17 +31,25 @@ const Services = () => {
                             className={s['item']}
                             key={index}
                         >
-                            <div className={s['item-info']}>
+                            <div className={s['item-header']}>
                                 <h3>{item.name}</h3>
+                                <p>{`От ${item.cost} ₽`}</p>
+                            </div>
+                            <div className={s['item-content']}>
                                 <Image
                                     alt={item.img.alt}
-                                    className={s['icon']}
-                                    height={174}
+                                    className={s['image']}
+                                    height={600}
+                                    sizes={[
+                                        '(max-width: 400px) calc(100vw - 88px)',
+                                        '(max-width: 600px) calc(100vw - 128px)',
+                                        '(max-width: 1100px) calc(100vw - 144px)',
+                                        '420px',
+                                    ].join(', ')}
                                     src={item.img.src}
-                                    width={150}
+                                    width={800}
                                 />
-                                <p>{`От ${item.cost} ₽`}</p>
-                                <ul>
+                                <ul className={s['details']}>
                                     {item.list.map((listItem, index) => (
                                         <li key={index}>{listItem}</li>
                                     ))}
