@@ -2,7 +2,7 @@ import type { ProductCategory } from '@/d-shared/api/types';
 
 import { inlineText } from '@/d-shared/utils/inlineText';
 
-export const PRODUCTS_PAGE_SIZE = 10;
+export const PRODUCTS_PAGE_SIZE = 30;
 
 const PRODUCT_CATEGORY_CODE_ALIASES: Record<string, string> = {
     HORIZONTAL_MONUMENT: 'MONUMENT',
@@ -70,8 +70,8 @@ const PRODUCT_CATEGORY_SEO: Record<
         title: 'Декоративные детали из гранита: купить в Хабаровске',
         h1: 'Декоративные детали из гранита в Хабаровске',
         description: inlineText`
-            Декоративные детали из гранита в Хабаровске: книги, звёзды и сердца
-            для памятников. Подбор цвета, изготовление по размерам, доставка и установка.
+            Декоративные детали из гранита в Хабаровске от 1 000 ₽: книги, звёзды
+            и сердца для памятников. Подбор цвета, изготовление, доставка и установка.
         `,
         mainDescription: inlineText`
             Изготавливаем гранитные книги, звёзды и сердца для оформления памятников
@@ -178,9 +178,19 @@ export const createProductCategoryMainDescription = (category: ProductCategory) 
         поможем выбрать подходящий вариант и согласовать детали заказа.
     `;
 
-export const createProductCategoryDescription = (category: ProductCategory) =>
-    getProductCategorySeo(category)?.description ??
-    inlineText`
+export const createProductCategoryDescription = (category: ProductCategory) => {
+    const description = getProductCategorySeo(category)?.description;
+
+    if (description) {
+        const price = category.minPrice;
+        const priceText =
+            price != null ? ` от ${new Intl.NumberFormat('ru-RU').format(price)} ₽` : '';
+
+        return description.replace(/ от [\d\s]+ ₽/u, priceText);
+    }
+
+    return inlineText`
         Каталог товаров категории «${category.name}» в Хабаровске: ритуальные товары
         и принадлежности с подбором под задачу семьи. Цены уточним по телефону.
     `;
+};

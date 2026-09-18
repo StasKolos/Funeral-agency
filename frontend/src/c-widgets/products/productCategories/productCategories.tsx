@@ -1,32 +1,19 @@
 'use client';
 
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import type { ProductCategory } from '@/d-shared/api/types';
 
 import { useScrollAnimation } from '@/d-shared/hooks/useScrollAnimation';
-import {
-    getCanonicalProductCategoryCode,
-    getProductCategoryPath,
-} from '@/d-shared/products/productRoutes';
+import { getProductCategoryPath } from '@/d-shared/products/productRoutes';
+import ImageWithSkeleton from '@/d-shared/ui/imageWithSkeleton/imageWithSkeleton';
 
 import s from './productCategories.module.scss';
 
 const CATEGORY_ICONS = ['/services-5.svg', '/funeral-1.svg', '/services-4.svg', '/cremation-2.svg'];
 
-const PRODUCT_CATEGORY_MIN_PRICES: Partial<Record<string, string>> = {
-    BALLS: '2 000',
-    BASKETS: '1 000',
-    COFFIN: '5 000',
-    CROSS: '4 000',
-    FENCES: '5 000',
-    MONUMENT: '3 000',
-    TABLES_AND_CHAIRS: '10 000',
-    VASES: '2 000',
-    WREATHS: '1 000',
-};
+const priceFormatter = new Intl.NumberFormat('ru-RU');
 
 type ProductCategoriesProps = {
     categories?: ProductCategory[] | undefined;
@@ -47,8 +34,9 @@ const ProductCategories = ({ categories = [] }: ProductCategoriesProps) => {
                 </div>
                 <div className={s['content']}>
                     <p className={s['price-note']}>
-                        Цены указаны ориентировочно. Точную стоимость уточняйте по телефону: мы
-                        проконсультируем и подберём подходящий вариант под вашу задачу.
+                        В категориях указана минимальная цена товара. Стоимость выбранной модели
+                        смотрите в карточке. Доставку, установку и индивидуальные изменения
+                        согласуем отдельно.
                     </p>
                     {categories.length === 0 && (
                         <p className={s['empty']}>Категории товаров временно недоступны</p>
@@ -65,10 +53,7 @@ const ProductCategories = ({ categories = [] }: ProductCategoriesProps) => {
                                 const imageAlt = category.imageUrl
                                     ? `Фото товара категории ${category.name}`
                                     : `Иконка категории ${category.name}`;
-                                const minPrice =
-                                    PRODUCT_CATEGORY_MIN_PRICES[
-                                        getCanonicalProductCategoryCode(category.code)
-                                    ];
+                                const minPrice = category.minPrice;
                                 const categoryPath = getProductCategoryPath(category.code);
 
                                 return (
@@ -78,20 +63,24 @@ const ProductCategories = ({ categories = [] }: ProductCategoriesProps) => {
                                     >
                                         <div className={s['item-info']}>
                                             <h3>{category.name}</h3>
-                                            <Image
+                                            <ImageWithSkeleton
                                                 alt={imageAlt}
                                                 className={s['image']}
                                                 height={150}
+                                                sizes={'150px'}
                                                 src={imageSrc}
                                                 width={150}
+                                                wrapperClassName={s['image-wrapper']}
                                             />
-                                            {minPrice && <p>{`От ${minPrice} ₽`}</p>}
+                                            {minPrice != null && (
+                                                <p>{`От ${priceFormatter.format(minPrice)} ₽`}</p>
+                                            )}
                                         </div>
                                         <Link
                                             className={s['button']}
                                             href={`${categoryPath}#Products`}
                                         >
-                                            Подробнее
+                                            Каталог
                                         </Link>
                                     </li>
                                 );
