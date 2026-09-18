@@ -52,7 +52,7 @@ const Main = ({
                         src={'/whatsapp-icon.svg'}
                         width={24}
                     />
-                    <Link href={'https://wa.me/+79625873238?text=Здравствуйте%2C'}>
+                    <Link href={'https://wa.me/79625873238?text=Здравствуйте%2C'}>
                         +7(962)587-32-38
                     </Link>
                 </li>

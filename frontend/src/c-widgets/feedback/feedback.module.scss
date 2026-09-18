@@ -63,7 +63,7 @@
 }
 
 .button-wrapper {
-  width: 100%;
+  width: min(100%, 600px);
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -88,13 +88,22 @@
   position: relative;
   padding: 20px;
   width: 100%;
+  border: 2px solid #000000;
   font-size: 1rem;
   color: #ffffff;
   background-color: #000000;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
-    transform: scale(1.02);
+    color: #000000;
+    background-color: #ffffff;
+
+    img {
+      filter: none;
+    }
   }
 
   &:active {

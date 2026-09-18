@@ -1,7 +1,6 @@
 .footer-wrapper {
   position: relative;
   width: 100%;
-  padding: 40px 120px;
   color: #ffffff;
   background-image: url('/footer-bg-image.webp');
   background-repeat: no-repeat;
@@ -24,16 +23,11 @@
     background-position-y: 0;
   }
 
-  @media (max-width: 1100px) {
-    padding: 40px 60px;
-  }
-
   @media (max-width: 700px) {
     background-position-x: -100px;
   }
 
   @media (max-width: 400px) {
-    padding: 80px 30px;
     background-position-x: -500px;
   }
 }
@@ -175,15 +169,19 @@
   z-index: 1;
 
   padding: 10px 14px;
-  border-radius: 8px;
+  border: 2px solid #000000;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.62);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
-    transform: scale(1.03);
+    color: #000000;
+    background-color: #ffffff;
   }
 }

@@ -10,7 +10,7 @@ const OFFICE_MAP_FRAME_SRC =
 
 const Footer = () => (
     <footer
-        className={s['footer-wrapper']}
+        className={clsx('section-wrapper', s['footer-wrapper'])}
         id={'Footer'}
     >
         <div className={clsx(s['footer'], 'content-wrapper')}>
@@ -51,7 +51,7 @@ const Footer = () => (
                         src={'/whatsapp-icon.svg'}
                         width={24}
                     />
-                    <Link href={'https://wa.me/+79625873238?text=Здравствуйте%2C'}>
+                    <Link href={'https://wa.me/79625873238?text=Здравствуйте%2C'}>
                         +7(962)587-32-38
                     </Link>
                 </li>
